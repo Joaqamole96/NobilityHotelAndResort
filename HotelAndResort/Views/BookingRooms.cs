@@ -27,47 +27,40 @@ namespace HotelAndResort.Views
             tbxTotalCount.Text = Convert.ToString(totalCount);
         }
 
-        private void LoadAvailableRooms()
+        private void LoadRoomsWhere(string condition)
         {
-            //try
-            //{
-            //    string query = null;
-            //    query = "SELECT * FROM `available_rooms` WHERE `is_available` = 1";
+            try
+            {
+                flpAvailableRooms.Controls.Clear();
 
-            //    DataTable results = DatabaseHelper.Select(query);
+                string query = "SELECT * FROM `rooms` WHERE " + condition;
 
-            //    if (results.Rows.Count > 0)
-            //    {
-            //        flpItemsList.SuspendLayout();
-            //        foreach (DataRow row in results.Rows)
-            //        {
-            //            int primary_key = Convert.ToInt32(row[0]);
+                DataTable results = DatabaseHelper.Select(query);
 
-            //            UserControl itemTab = null;
-            //            if (itemTabType == "Rooms")
-            //            {
-            //                itemTab = new RoomItemTab(primary_key);
-            //            }
-            //            else if (itemTabType == "Services")
-            //            {
-            //                itemTab = new ServiceItemTab(primary_key);
-            //            }
-            //            itemTab.Width = flpItemsList.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
+                if (results.Rows.Count > 0)
+                {
+                    flpAvailableRooms.SuspendLayout();
+                    foreach (DataRow row in results.Rows)
+                    {
+                        int primary_key = Convert.ToInt32(row[0]);
 
-            //            flpItemsList.Controls.Add(itemTab);
+                        UserControl itemTab = new RoomItemTab(primary_key);
+                        itemTab.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 
-            //        }
-            //        flpItemsList.ResumeLayout();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No data found for the specified ID.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error loading content: {ex.Message}");
-            //}
+                        flpAvailableRooms.Controls.Add(itemTab);
+
+                    }
+                    flpAvailableRooms.ResumeLayout();
+                }
+                else
+                {
+                    MessageBox.Show("No data found for the specified ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading content: {ex.Message}");
+            }
         }
 
         private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
@@ -80,11 +73,12 @@ namespace HotelAndResort.Views
             dtpCheckIn.MinDate = DateTime.Now;
             dtpCheckOut.MinDate = dtpCheckIn.Value;
             UpdateTotalCount();
+            LoadRoomsWhere("`status` = 'available'");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
+            LoadRoomsWhere($"`status` = 'available' AND `capacity` >= {totalCount}");
         }
 
         private void btnNavHome_Click(object sender, EventArgs e)

@@ -464,6 +464,7 @@
             // 
             // flpAvailableRooms
             // 
+            this.flpAvailableRooms.AutoScroll = true;
             this.flpAvailableRooms.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpAvailableRooms.Location = new System.Drawing.Point(227, 175);
             this.flpAvailableRooms.Name = "flpAvailableRooms";

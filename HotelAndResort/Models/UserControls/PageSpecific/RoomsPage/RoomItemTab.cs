@@ -17,7 +17,7 @@ namespace HotelAndResort.Models.UserControls.PageSpecific.RoomsPage
         {
             InitializeComponent();
 
-            string query = $"SELECT * FROM `rooms` r JOIN `available_rooms` a ON a.room_id = r.room_id WHERE a.availableroom_id = {primary_key}";
+            string query = $"SELECT * FROM `rooms` WHERE room_id = {primary_key}";
 
             try
             {
