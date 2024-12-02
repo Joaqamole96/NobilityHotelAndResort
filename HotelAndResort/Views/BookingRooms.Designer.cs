@@ -41,35 +41,37 @@
             this.lblSidePanelTitle = new System.Windows.Forms.Label();
             this.pbxSidePanelLogo = new System.Windows.Forms.PictureBox();
             this.pnlBookingDetails = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlGuests = new System.Windows.Forms.Panel();
+            this.tbxTotalCount = new System.Windows.Forms.TextBox();
+            this.tbxLabelSpecialCount = new System.Windows.Forms.TextBox();
+            this.nudSpecialCount = new System.Windows.Forms.NumericUpDown();
+            this.tbxLabelChildrenCount = new System.Windows.Forms.TextBox();
+            this.nudChildrenCount = new System.Windows.Forms.NumericUpDown();
+            this.tbxLabelAdultCount = new System.Windows.Forms.TextBox();
+            this.nudAdultCount = new System.Windows.Forms.NumericUpDown();
+            this.tbxLabelTotalCount = new System.Windows.Forms.TextBox();
             this.lblGuests = new System.Windows.Forms.Label();
             this.lblBookingDetails = new System.Windows.Forms.Label();
             this.pnlDates = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCheckOut = new System.Windows.Forms.Label();
             this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
             this.lblCheckIn = new System.Windows.Forms.Label();
             this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
             this.lblDates = new System.Windows.Forms.Label();
-            this.tbxLabelTotalCount = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.tbxTotalCount = new System.Windows.Forms.TextBox();
+            this.flpAvailableRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSelectedRoom = new System.Windows.Forms.Panel();
             this.pnlSidePanel.SuspendLayout();
             this.flpSidePanelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSidePanelLogo)).BeginInit();
             this.pnlBookingDetails.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             this.pnlGuests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).BeginInit();
             this.pnlDates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidePanel
@@ -247,50 +249,128 @@
             // 
             // pnlBookingDetails
             // 
-            this.pnlBookingDetails.Controls.Add(this.panel2);
-            this.pnlBookingDetails.Controls.Add(this.pnlGuests);
             this.pnlBookingDetails.Controls.Add(this.lblBookingDetails);
+            this.pnlBookingDetails.Controls.Add(this.pnlSearch);
+            this.pnlBookingDetails.Controls.Add(this.pnlGuests);
             this.pnlBookingDetails.Controls.Add(this.pnlDates);
             this.pnlBookingDetails.Location = new System.Drawing.Point(200, 0);
             this.pnlBookingDetails.Name = "pnlBookingDetails";
             this.pnlBookingDetails.Size = new System.Drawing.Size(1080, 150);
             this.pnlBookingDetails.TabIndex = 2;
             // 
-            // panel2
+            // pnlSearch
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(864, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 118);
-            this.panel2.TabIndex = 4;
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSearch.Controls.Add(this.btnSearch);
+            this.pnlSearch.Location = new System.Drawing.Point(864, 30);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(214, 118);
+            this.pnlSearch.TabIndex = 4;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 46);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search for Rooms";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(26, 34);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(160, 46);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search for Rooms";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // pnlGuests
             // 
             this.pnlGuests.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlGuests.Controls.Add(this.tbxTotalCount);
-            this.pnlGuests.Controls.Add(this.textBox3);
-            this.pnlGuests.Controls.Add(this.numericUpDown4);
-            this.pnlGuests.Controls.Add(this.textBox2);
-            this.pnlGuests.Controls.Add(this.numericUpDown3);
-            this.pnlGuests.Controls.Add(this.textBox1);
-            this.pnlGuests.Controls.Add(this.numericUpDown2);
+            this.pnlGuests.Controls.Add(this.tbxLabelSpecialCount);
+            this.pnlGuests.Controls.Add(this.nudSpecialCount);
+            this.pnlGuests.Controls.Add(this.tbxLabelChildrenCount);
+            this.pnlGuests.Controls.Add(this.nudChildrenCount);
+            this.pnlGuests.Controls.Add(this.tbxLabelAdultCount);
+            this.pnlGuests.Controls.Add(this.nudAdultCount);
             this.pnlGuests.Controls.Add(this.tbxLabelTotalCount);
             this.pnlGuests.Controls.Add(this.lblGuests);
             this.pnlGuests.Location = new System.Drawing.Point(540, 30);
             this.pnlGuests.Name = "pnlGuests";
             this.pnlGuests.Size = new System.Drawing.Size(324, 118);
             this.pnlGuests.TabIndex = 3;
+            // 
+            // tbxTotalCount
+            // 
+            this.tbxTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTotalCount.Location = new System.Drawing.Point(103, 34);
+            this.tbxTotalCount.Name = "tbxTotalCount";
+            this.tbxTotalCount.ReadOnly = true;
+            this.tbxTotalCount.Size = new System.Drawing.Size(56, 22);
+            this.tbxTotalCount.TabIndex = 11;
+            this.tbxTotalCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tbxLabelSpecialCount
+            // 
+            this.tbxLabelSpecialCount.Location = new System.Drawing.Point(176, 86);
+            this.tbxLabelSpecialCount.Name = "tbxLabelSpecialCount";
+            this.tbxLabelSpecialCount.ReadOnly = true;
+            this.tbxLabelSpecialCount.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelSpecialCount.TabIndex = 10;
+            this.tbxLabelSpecialCount.Text = "Senior/PWD:";
+            // 
+            // nudSpecialCount
+            // 
+            this.nudSpecialCount.Location = new System.Drawing.Point(250, 86);
+            this.nudSpecialCount.Name = "nudSpecialCount";
+            this.nudSpecialCount.Size = new System.Drawing.Size(44, 20);
+            this.nudSpecialCount.TabIndex = 9;
+            // 
+            // tbxLabelChildrenCount
+            // 
+            this.tbxLabelChildrenCount.Location = new System.Drawing.Point(176, 60);
+            this.tbxLabelChildrenCount.Name = "tbxLabelChildrenCount";
+            this.tbxLabelChildrenCount.ReadOnly = true;
+            this.tbxLabelChildrenCount.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelChildrenCount.TabIndex = 8;
+            this.tbxLabelChildrenCount.Text = "Children:";
+            // 
+            // nudChildrenCount
+            // 
+            this.nudChildrenCount.Location = new System.Drawing.Point(250, 60);
+            this.nudChildrenCount.Name = "nudChildrenCount";
+            this.nudChildrenCount.Size = new System.Drawing.Size(44, 20);
+            this.nudChildrenCount.TabIndex = 7;
+            // 
+            // tbxLabelAdultCount
+            // 
+            this.tbxLabelAdultCount.Location = new System.Drawing.Point(176, 34);
+            this.tbxLabelAdultCount.Name = "tbxLabelAdultCount";
+            this.tbxLabelAdultCount.ReadOnly = true;
+            this.tbxLabelAdultCount.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelAdultCount.TabIndex = 6;
+            this.tbxLabelAdultCount.Text = "Adults:";
+            // 
+            // nudAdultCount
+            // 
+            this.nudAdultCount.Location = new System.Drawing.Point(250, 34);
+            this.nudAdultCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAdultCount.Name = "nudAdultCount";
+            this.nudAdultCount.Size = new System.Drawing.Size(44, 20);
+            this.nudAdultCount.TabIndex = 5;
+            this.nudAdultCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tbxLabelTotalCount
+            // 
+            this.tbxLabelTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLabelTotalCount.Location = new System.Drawing.Point(13, 34);
+            this.tbxLabelTotalCount.Name = "tbxLabelTotalCount";
+            this.tbxLabelTotalCount.ReadOnly = true;
+            this.tbxLabelTotalCount.Size = new System.Drawing.Size(90, 22);
+            this.tbxLabelTotalCount.TabIndex = 4;
+            this.tbxLabelTotalCount.Text = "Total Guests:";
             // 
             // lblGuests
             // 
@@ -318,7 +398,7 @@
             // pnlDates
             // 
             this.pnlDates.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlDates.Controls.Add(this.label1);
+            this.pnlDates.Controls.Add(this.lblCheckOut);
             this.pnlDates.Controls.Add(this.dtpCheckOut);
             this.pnlDates.Controls.Add(this.lblCheckIn);
             this.pnlDates.Controls.Add(this.dtpCheckIn);
@@ -328,15 +408,15 @@
             this.pnlDates.Size = new System.Drawing.Size(540, 118);
             this.pnlDates.TabIndex = 2;
             // 
-            // label1
+            // lblCheckOut
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Check-out";
+            this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOut.Location = new System.Drawing.Point(293, 27);
+            this.lblCheckOut.Name = "lblCheckOut";
+            this.lblCheckOut.Size = new System.Drawing.Size(56, 13);
+            this.lblCheckOut.TabIndex = 6;
+            this.lblCheckOut.Text = "Check-out";
             // 
             // dtpCheckOut
             // 
@@ -376,83 +456,19 @@
             this.lblDates.Text = "Dates";
             this.lblDates.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tbxLabelTotalCount
+            // flpAvailableRooms
             // 
-            this.tbxLabelTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLabelTotalCount.Location = new System.Drawing.Point(13, 34);
-            this.tbxLabelTotalCount.Name = "tbxLabelTotalCount";
-            this.tbxLabelTotalCount.ReadOnly = true;
-            this.tbxLabelTotalCount.Size = new System.Drawing.Size(90, 22);
-            this.tbxLabelTotalCount.TabIndex = 4;
-            this.tbxLabelTotalCount.Text = "Total Guests:";
+            this.flpAvailableRooms.Location = new System.Drawing.Point(227, 175);
+            this.flpAvailableRooms.Name = "flpAvailableRooms";
+            this.flpAvailableRooms.Size = new System.Drawing.Size(712, 520);
+            this.flpAvailableRooms.TabIndex = 3;
             // 
-            // textBox1
+            // pnlSelectedRoom
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(74, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Adults:";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(250, 34);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown2.TabIndex = 5;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(176, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(74, 20);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "Children:";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(250, 60);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown3.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(176, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(74, 20);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Senior/PWD:";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(250, 86);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown4.TabIndex = 9;
-            // 
-            // tbxTotalCount
-            // 
-            this.tbxTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTotalCount.Location = new System.Drawing.Point(103, 34);
-            this.tbxTotalCount.Name = "tbxTotalCount";
-            this.tbxTotalCount.ReadOnly = true;
-            this.tbxTotalCount.Size = new System.Drawing.Size(56, 22);
-            this.tbxTotalCount.TabIndex = 11;
-            this.tbxTotalCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.pnlSelectedRoom.Location = new System.Drawing.Point(964, 150);
+            this.pnlSelectedRoom.Name = "pnlSelectedRoom";
+            this.pnlSelectedRoom.Size = new System.Drawing.Size(316, 570);
+            this.pnlSelectedRoom.TabIndex = 4;
             // 
             // frmBookingRooms
             // 
@@ -460,6 +476,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.pnlSelectedRoom);
+            this.Controls.Add(this.flpAvailableRooms);
             this.Controls.Add(this.pnlSidePanel);
             this.Controls.Add(this.pnlBookingDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -471,14 +489,14 @@
             this.flpSidePanelNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSidePanelLogo)).EndInit();
             this.pnlBookingDetails.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
             this.pnlGuests.ResumeLayout(false);
             this.pnlGuests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).EndInit();
             this.pnlDates.ResumeLayout(false);
             this.pnlDates.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,21 +519,23 @@
         private System.Windows.Forms.Label lblBookingDetails;
         private System.Windows.Forms.Label lblDates;
         private System.Windows.Forms.Panel pnlDates;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Panel pnlGuests;
         private System.Windows.Forms.Label lblGuests;
         private System.Windows.Forms.DateTimePicker dtpCheckIn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.DateTimePicker dtpCheckOut;
         private System.Windows.Forms.Label lblCheckIn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox tbxLabelTotalCount;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.TextBox tbxLabelAdultCount;
+        private System.Windows.Forms.NumericUpDown nudAdultCount;
+        private System.Windows.Forms.TextBox tbxLabelSpecialCount;
+        private System.Windows.Forms.NumericUpDown nudSpecialCount;
+        private System.Windows.Forms.TextBox tbxLabelChildrenCount;
+        private System.Windows.Forms.NumericUpDown nudChildrenCount;
         private System.Windows.Forms.TextBox tbxTotalCount;
+        private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
+        private System.Windows.Forms.Panel pnlSelectedRoom;
     }
 }
