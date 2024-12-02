@@ -16,6 +16,7 @@ namespace HotelAndResort
         public static Form frmAbout = new frmAboutUsPage();
         public static Form frmContact = new frmContactUsPage();
         public static Form frmLogin = new frmLoginPage();
+        public static Form frmBookingRooms = new frmBookingRooms();
 
         public static void OpenForm(Form currentForm, Form targetForm)
         {

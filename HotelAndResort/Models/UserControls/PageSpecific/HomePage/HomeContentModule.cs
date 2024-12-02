@@ -64,5 +64,10 @@ namespace HotelAndResort.Models.UserControls.PageSpecific.HomePage
             lblDescription.Dispose();
             btnCTA.Dispose();
         }
+
+        private void btnCTA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

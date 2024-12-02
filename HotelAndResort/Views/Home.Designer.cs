@@ -255,6 +255,7 @@
             this.btnCTA.TabIndex = 8;
             this.btnCTA.Text = " Book Now";
             this.btnCTA.UseVisualStyleBackColor = false;
+            this.btnCTA.Click += new System.EventHandler(this.btnCTA_Click);
             // 
             // lblAdvert
             // 
