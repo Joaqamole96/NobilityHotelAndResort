@@ -28,7 +28,7 @@ namespace HotelAndResort
         private void frmHome_Load(object sender, EventArgs e)
         {
             // 0. Initialize database
-            // DatabaseHelper.Initialize();
+            DatabaseHelper.Initialize();
 
             Size size = new Size(flpHomeContent.Width / 2 - 10, flpHomeContent.Height / 2 - 10);
             flpHomeContent.Controls.Add(new HomeContentModule(size));

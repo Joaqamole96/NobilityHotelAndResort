@@ -71,16 +71,6 @@ CREATE TABLE Rooms (
     status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
 );
 
--- Create Available_Rooms table
-CREATE TABLE Available_Rooms (
-    availableroom_id INT AUTO_INCREMENT PRIMARY KEY,
-    room_id INT NOT NULL,
-    is_available BOOLEAN DEFAULT TRUE,
-    date DATE NOT NULL,
-
-    FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
-);
-
 -- Create Reserved_Rooms table
 CREATE TABLE Reserved_Rooms (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -104,16 +94,6 @@ CREATE TABLE Services (
     price DECIMAL(10, 2) NOT NULL,
     quantity INT NOT NULL,
     status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
-);
-
--- Create Available_Services table
-CREATE TABLE Available_Services (
-    availableservice_id INT AUTO_INCREMENT PRIMARY KEY,
-    service_id INT NOT NULL,
-    is_available BOOLEAN DEFAULT TRUE,
-    date DATE NOT NULL,
-
-    FOREIGN KEY (service_id) REFERENCES Services(service_id)
 );
 
 -- Create Reserved_Services table
@@ -172,10 +152,3 @@ VALUES
 
 
 
-
-
-INSERT INTO Available_Rooms (room_id, is_available, date)
-SELECT room_id, TRUE, CURRENT_TIMESTAMP FROM Rooms;
-
-INSERT INTO Available_Services (service_id, is_available, date)
-SELECT service_id, TRUE, CURRENT_TIMESTAMP FROM Services;
