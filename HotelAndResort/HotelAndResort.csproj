@@ -137,17 +137,17 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Helpers\DatabaseHelper.cs" />
-    <Compile Include="Models\UserControls\PageCommon\FlowContainer.cs">
+    <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\PageCommon\FlowContainer.Designer.cs">
-      <DependentUpon>FlowContainer.cs</DependentUpon>
+    <Compile Include="Models\UserControls\AvailableRoomItem.Designer.cs">
+      <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.cs">
+    <Compile Include="Models\UserControls\SelectedRoomItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.Designer.cs">
-      <DependentUpon>RoomModule.cs</DependentUpon>
+    <Compile Include="Models\UserControls\SelectedRoomItem.Designer.cs">
+      <DependentUpon>SelectedRoomItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BookingRooms.cs">
       <SubType>Form</SubType>
@@ -202,11 +202,11 @@
     <EmbeddedResource Include="DASHBOARD PAGE%28ADMIN%29.resx">
       <DependentUpon>DASHBOARD PAGE%28ADMIN%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageCommon\FlowContainer.resx">
-      <DependentUpon>FlowContainer.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
+      <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.resx">
-      <DependentUpon>RoomModule.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\SelectedRoomItem.resx">
+      <DependentUpon>SelectedRoomItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BookingRooms.resx">
       <DependentUpon>BookingRooms.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace HotelAndResort.Models.UserControls
 {
-    partial class RoomItem
+    partial class AvailableRoomItem
     {
         /// <summary> 
         /// Required designer variable.
@@ -44,22 +44,24 @@
             this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(201)))), ((int)(((byte)(136)))));
             this.btnCTABooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCTABooking.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTABooking.Location = new System.Drawing.Point(869, 85);
+            this.btnCTABooking.Location = new System.Drawing.Point(590, 85);
             this.btnCTABooking.Margin = new System.Windows.Forms.Padding(0);
             this.btnCTABooking.Name = "btnCTABooking";
-            this.btnCTABooking.Size = new System.Drawing.Size(102, 22);
+            this.btnCTABooking.Size = new System.Drawing.Size(100, 25);
             this.btnCTABooking.TabIndex = 27;
             this.btnCTABooking.Text = "Select Room";
             this.btnCTABooking.UseVisualStyleBackColor = false;
+            this.btnCTABooking.Click += new System.EventHandler(this.btnCTABooking_Click);
             // 
             // lblRoomDescription
             // 
-            this.lblRoomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblRoomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoomDescription.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomDescription.Location = new System.Drawing.Point(168, 72);
-            this.lblRoomDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRoomDescription.Location = new System.Drawing.Point(166, 80);
+            this.lblRoomDescription.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDescription.Name = "lblRoomDescription";
-            this.lblRoomDescription.Size = new System.Drawing.Size(597, 30);
+            this.lblRoomDescription.Size = new System.Drawing.Size(350, 30);
             this.lblRoomDescription.TabIndex = 26;
             this.lblRoomDescription.Text = "[RoomDescription]";
             this.lblRoomDescription.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -68,7 +70,7 @@
             // 
             this.lblRoomDisclaimer.AutoSize = true;
             this.lblRoomDisclaimer.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomDisclaimer.Location = new System.Drawing.Point(890, 33);
+            this.lblRoomDisclaimer.Location = new System.Drawing.Point(900, 43);
             this.lblRoomDisclaimer.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDisclaimer.Name = "lblRoomDisclaimer";
             this.lblRoomDisclaimer.Size = new System.Drawing.Size(83, 42);
@@ -78,13 +80,15 @@
             // 
             // lblRoomCapacity
             // 
+            this.lblRoomCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoomCapacity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomCapacity.Location = new System.Drawing.Point(171, 36);
-            this.lblRoomCapacity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRoomCapacity.Location = new System.Drawing.Point(166, 32);
+            this.lblRoomCapacity.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomCapacity.Name = "lblRoomCapacity";
-            this.lblRoomCapacity.Size = new System.Drawing.Size(317, 16);
+            this.lblRoomCapacity.Size = new System.Drawing.Size(205, 16);
             this.lblRoomCapacity.TabIndex = 25;
-            this.lblRoomCapacity.Text = "Good for [RoomCapacity]-[RoomCapacity + 1] people";
+            this.lblRoomCapacity.Text = "Good for [RoomCapacity]-[RoomCapacity + 1] pax";
             // 
             // lblRoomPrice
             // 
@@ -100,8 +104,11 @@
             // 
             // pbxRoomThumbnail
             // 
-            this.pbxRoomThumbnail.Location = new System.Drawing.Point(10, 12);
-            this.pbxRoomThumbnail.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxRoomThumbnail.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pbxRoomThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxRoomThumbnail.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbxRoomThumbnail.Location = new System.Drawing.Point(10, 10);
+            this.pbxRoomThumbnail.Margin = new System.Windows.Forms.Padding(5);
             this.pbxRoomThumbnail.Name = "pbxRoomThumbnail";
             this.pbxRoomThumbnail.Size = new System.Drawing.Size(150, 100);
             this.pbxRoomThumbnail.TabIndex = 22;
@@ -110,15 +117,15 @@
             // lblRoomType
             // 
             this.lblRoomType.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomType.Location = new System.Drawing.Point(171, 14);
-            this.lblRoomType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRoomType.Location = new System.Drawing.Point(165, 10);
+            this.lblRoomType.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(200, 22);
+            this.lblRoomType.Size = new System.Drawing.Size(225, 22);
             this.lblRoomType.TabIndex = 21;
             this.lblRoomType.Text = "[RoomType]";
             this.lblRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // RoomItem
+            // AvailableRoomItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,8 +137,10 @@
             this.Controls.Add(this.lblRoomPrice);
             this.Controls.Add(this.pbxRoomThumbnail);
             this.Controls.Add(this.lblRoomType);
-            this.Name = "RoomItem";
-            this.Size = new System.Drawing.Size(982, 121);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "AvailableRoomItem";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Size = new System.Drawing.Size(700, 120);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

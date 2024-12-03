@@ -40,17 +40,13 @@
             this.lblSidePanelCredits = new System.Windows.Forms.Label();
             this.lblSidePanelTitle = new System.Windows.Forms.Label();
             this.pbxSidePanelLogo = new System.Windows.Forms.PictureBox();
-            this.lblBookingDetails = new System.Windows.Forms.Label();
+            this.lblMainDetails = new System.Windows.Forms.Label();
             this.pnlDates = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
-            this.lblCheckOut = new System.Windows.Forms.Label();
             this.lblCheckIn = new System.Windows.Forms.Label();
-            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
             this.lblDates = new System.Windows.Forms.Label();
             this.flpAvailableRooms = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlSelectedRoom = new System.Windows.Forms.Panel();
-            this.lblSelectedRoom = new System.Windows.Forms.Label();
             this.flpBookingDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGuests = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,21 +59,26 @@
             this.tbxLabelChildren = new System.Windows.Forms.TextBox();
             this.tbxTotalCount = new System.Windows.Forms.TextBox();
             this.lblGuests = new System.Windows.Forms.Label();
-            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.pnlSearchRooms = new System.Windows.Forms.Panel();
             this.btnSearchRooms = new System.Windows.Forms.Button();
+            this.pnlSelectedRoom = new System.Windows.Forms.Panel();
+            this.flpSelectedRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSelectedRooms = new System.Windows.Forms.Label();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlSidePanel.SuspendLayout();
             this.flpSidePanelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSidePanelLogo)).BeginInit();
             this.pnlDates.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.pnlSelectedRoom.SuspendLayout();
             this.flpBookingDetails.SuspendLayout();
             this.pnlGuests.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).BeginInit();
-            this.pnlSearch.SuspendLayout();
+            this.pnlSearchRooms.SuspendLayout();
+            this.pnlSelectedRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidePanel
@@ -246,6 +247,7 @@
             // 
             this.pbxSidePanelLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxSidePanelLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbxSidePanelLogo.Location = new System.Drawing.Point(30, 15);
             this.pbxSidePanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbxSidePanelLogo.Name = "pbxSidePanelLogo";
@@ -253,89 +255,70 @@
             this.pbxSidePanelLogo.TabIndex = 15;
             this.pbxSidePanelLogo.TabStop = false;
             // 
-            // lblBookingDetails
+            // lblMainDetails
             // 
-            this.lblBookingDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBookingDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblBookingDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingDetails.Location = new System.Drawing.Point(5, 5);
-            this.lblBookingDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.lblBookingDetails.Name = "lblBookingDetails";
-            this.lblBookingDetails.Size = new System.Drawing.Size(1068, 30);
-            this.lblBookingDetails.TabIndex = 0;
-            this.lblBookingDetails.Text = "Main Details";
-            this.lblBookingDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMainDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMainDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainDetails.Location = new System.Drawing.Point(5, 5);
+            this.lblMainDetails.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblMainDetails.Name = "lblMainDetails";
+            this.lblMainDetails.Size = new System.Drawing.Size(750, 30);
+            this.lblMainDetails.TabIndex = 0;
+            this.lblMainDetails.Text = "Main Details";
+            this.lblMainDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnlDates
             // 
             this.pnlDates.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDates.Controls.Add(this.tableLayoutPanel1);
             this.pnlDates.Controls.Add(this.lblDates);
-            this.pnlDates.Location = new System.Drawing.Point(8, 38);
+            this.pnlDates.Location = new System.Drawing.Point(5, 40);
+            this.pnlDates.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.pnlDates.Name = "pnlDates";
-            this.pnlDates.Size = new System.Drawing.Size(520, 118);
+            this.pnlDates.Size = new System.Drawing.Size(300, 118);
             this.pnlDates.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtpCheckIn, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtpCheckOut, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblCheckOut, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCheckIn, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtpCheckIn, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 23);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(518, 93);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(298, 93);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // dtpCheckOut
             // 
             this.dtpCheckOut.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpCheckOut.Location = new System.Drawing.Point(262, 22);
+            this.dtpCheckOut.Location = new System.Drawing.Point(71, 51);
+            this.dtpCheckOut.Margin = new System.Windows.Forms.Padding(5);
             this.dtpCheckOut.Name = "dtpCheckOut";
-            this.dtpCheckOut.Size = new System.Drawing.Size(253, 20);
+            this.dtpCheckOut.Size = new System.Drawing.Size(222, 20);
             this.dtpCheckOut.TabIndex = 5;
-            // 
-            // lblCheckOut
-            // 
-            this.lblCheckOut.AutoSize = true;
-            this.lblCheckOut.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOut.Location = new System.Drawing.Point(262, 3);
-            this.lblCheckOut.Margin = new System.Windows.Forms.Padding(3);
-            this.lblCheckOut.Name = "lblCheckOut";
-            this.lblCheckOut.Size = new System.Drawing.Size(253, 13);
-            this.lblCheckOut.TabIndex = 6;
-            this.lblCheckOut.Text = "Check-out";
             // 
             // lblCheckIn
             // 
             this.lblCheckIn.AutoSize = true;
-            this.lblCheckIn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblCheckIn.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckIn.Location = new System.Drawing.Point(3, 3);
-            this.lblCheckIn.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCheckIn.Location = new System.Drawing.Point(5, 5);
+            this.lblCheckIn.Margin = new System.Windows.Forms.Padding(5);
             this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(253, 13);
+            this.lblCheckIn.Size = new System.Drawing.Size(56, 13);
             this.lblCheckIn.TabIndex = 4;
             this.lblCheckIn.Text = "Check-in";
-            // 
-            // dtpCheckIn
-            // 
-            this.dtpCheckIn.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckIn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpCheckIn.Location = new System.Drawing.Point(3, 22);
-            this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(253, 20);
-            this.dtpCheckIn.TabIndex = 3;
-            this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
+            this.lblCheckIn.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblDates
             // 
@@ -344,7 +327,7 @@
             this.lblDates.Location = new System.Drawing.Point(0, 0);
             this.lblDates.Margin = new System.Windows.Forms.Padding(0);
             this.lblDates.Name = "lblDates";
-            this.lblDates.Size = new System.Drawing.Size(518, 23);
+            this.lblDates.Size = new System.Drawing.Size(298, 23);
             this.lblDates.TabIndex = 1;
             this.lblDates.Text = "Dates";
             this.lblDates.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -359,38 +342,19 @@
             this.flpAvailableRooms.Size = new System.Drawing.Size(711, 506);
             this.flpAvailableRooms.TabIndex = 3;
             // 
-            // pnlSelectedRoom
-            // 
-            this.pnlSelectedRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlSelectedRoom.Controls.Add(this.lblSelectedRoom);
-            this.pnlSelectedRoom.Location = new System.Drawing.Point(964, 150);
-            this.pnlSelectedRoom.Name = "pnlSelectedRoom";
-            this.pnlSelectedRoom.Size = new System.Drawing.Size(316, 570);
-            this.pnlSelectedRoom.TabIndex = 4;
-            // 
-            // lblSelectedRoom
-            // 
-            this.lblSelectedRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedRoom.Location = new System.Drawing.Point(0, 23);
-            this.lblSelectedRoom.Name = "lblSelectedRoom";
-            this.lblSelectedRoom.Size = new System.Drawing.Size(309, 23);
-            this.lblSelectedRoom.TabIndex = 0;
-            this.lblSelectedRoom.Text = "Selected Room:";
-            this.lblSelectedRoom.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // flpBookingDetails
             // 
             this.flpBookingDetails.AutoSize = true;
             this.flpBookingDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpBookingDetails.Controls.Add(this.lblBookingDetails);
+            this.flpBookingDetails.Controls.Add(this.lblMainDetails);
             this.flpBookingDetails.Controls.Add(this.pnlDates);
             this.flpBookingDetails.Controls.Add(this.pnlGuests);
-            this.flpBookingDetails.Controls.Add(this.pnlSearch);
+            this.flpBookingDetails.Controls.Add(this.pnlSearchRooms);
             this.flpBookingDetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpBookingDetails.Location = new System.Drawing.Point(202, 0);
             this.flpBookingDetails.Name = "flpBookingDetails";
             this.flpBookingDetails.Padding = new System.Windows.Forms.Padding(5);
-            this.flpBookingDetails.Size = new System.Drawing.Size(1078, 168);
+            this.flpBookingDetails.Size = new System.Drawing.Size(762, 172);
             this.flpBookingDetails.TabIndex = 5;
             // 
             // pnlGuests
@@ -398,19 +362,21 @@
             this.pnlGuests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGuests.Controls.Add(this.tableLayoutPanel2);
             this.pnlGuests.Controls.Add(this.lblGuests);
-            this.pnlGuests.Location = new System.Drawing.Point(534, 38);
+            this.pnlGuests.Location = new System.Drawing.Point(310, 40);
+            this.pnlGuests.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.pnlGuests.Name = "pnlGuests";
-            this.pnlGuests.Size = new System.Drawing.Size(320, 118);
+            this.pnlGuests.Size = new System.Drawing.Size(300, 118);
             this.pnlGuests.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelTotal, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.nudSpecialCount, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelSpecial, 2, 2);
@@ -426,7 +392,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 93);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(298, 93);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tbxLabelTotal
@@ -435,7 +401,7 @@
             this.tbxLabelTotal.Location = new System.Drawing.Point(3, 3);
             this.tbxLabelTotal.Name = "tbxLabelTotal";
             this.tbxLabelTotal.ReadOnly = true;
-            this.tbxLabelTotal.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelTotal.Size = new System.Drawing.Size(68, 20);
             this.tbxLabelTotal.TabIndex = 14;
             this.tbxLabelTotal.Text = "Adults:";
             this.tbxLabelTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -443,9 +409,9 @@
             // nudSpecialCount
             // 
             this.nudSpecialCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudSpecialCount.Location = new System.Drawing.Point(243, 55);
+            this.nudSpecialCount.Location = new System.Drawing.Point(225, 55);
             this.nudSpecialCount.Name = "nudSpecialCount";
-            this.nudSpecialCount.Size = new System.Drawing.Size(74, 20);
+            this.nudSpecialCount.Size = new System.Drawing.Size(70, 20);
             this.nudSpecialCount.TabIndex = 9;
             this.nudSpecialCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSpecialCount.ValueChanged += new System.EventHandler(this.nudSpecialCount_ValueChanged);
@@ -453,10 +419,10 @@
             // tbxLabelSpecial
             // 
             this.tbxLabelSpecial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxLabelSpecial.Location = new System.Drawing.Point(163, 55);
+            this.tbxLabelSpecial.Location = new System.Drawing.Point(151, 55);
             this.tbxLabelSpecial.Name = "tbxLabelSpecial";
             this.tbxLabelSpecial.ReadOnly = true;
-            this.tbxLabelSpecial.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelSpecial.Size = new System.Drawing.Size(68, 20);
             this.tbxLabelSpecial.TabIndex = 10;
             this.tbxLabelSpecial.Text = "Senior/PWD:";
             this.tbxLabelSpecial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -464,9 +430,9 @@
             // nudChildrenCount
             // 
             this.nudChildrenCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudChildrenCount.Location = new System.Drawing.Point(243, 29);
+            this.nudChildrenCount.Location = new System.Drawing.Point(225, 29);
             this.nudChildrenCount.Name = "nudChildrenCount";
-            this.nudChildrenCount.Size = new System.Drawing.Size(74, 20);
+            this.nudChildrenCount.Size = new System.Drawing.Size(70, 20);
             this.nudChildrenCount.TabIndex = 7;
             this.nudChildrenCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudChildrenCount.ValueChanged += new System.EventHandler(this.nudChildrenCount_ValueChanged);
@@ -474,10 +440,10 @@
             // tbxLabelAdult
             // 
             this.tbxLabelAdult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxLabelAdult.Location = new System.Drawing.Point(163, 3);
+            this.tbxLabelAdult.Location = new System.Drawing.Point(151, 3);
             this.tbxLabelAdult.Name = "tbxLabelAdult";
             this.tbxLabelAdult.ReadOnly = true;
-            this.tbxLabelAdult.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelAdult.Size = new System.Drawing.Size(68, 20);
             this.tbxLabelAdult.TabIndex = 6;
             this.tbxLabelAdult.Text = "Adults:";
             this.tbxLabelAdult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -485,14 +451,14 @@
             // nudAdultCount
             // 
             this.nudAdultCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudAdultCount.Location = new System.Drawing.Point(243, 3);
+            this.nudAdultCount.Location = new System.Drawing.Point(225, 3);
             this.nudAdultCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudAdultCount.Name = "nudAdultCount";
-            this.nudAdultCount.Size = new System.Drawing.Size(74, 20);
+            this.nudAdultCount.Size = new System.Drawing.Size(70, 20);
             this.nudAdultCount.TabIndex = 5;
             this.nudAdultCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudAdultCount.Value = new decimal(new int[] {
@@ -505,20 +471,20 @@
             // tbxLabelChildren
             // 
             this.tbxLabelChildren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxLabelChildren.Location = new System.Drawing.Point(163, 29);
+            this.tbxLabelChildren.Location = new System.Drawing.Point(151, 29);
             this.tbxLabelChildren.Name = "tbxLabelChildren";
             this.tbxLabelChildren.ReadOnly = true;
-            this.tbxLabelChildren.Size = new System.Drawing.Size(74, 20);
+            this.tbxLabelChildren.Size = new System.Drawing.Size(68, 20);
             this.tbxLabelChildren.TabIndex = 8;
             this.tbxLabelChildren.Text = "Children:";
             this.tbxLabelChildren.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbxTotalCount
             // 
-            this.tbxTotalCount.Location = new System.Drawing.Point(83, 3);
+            this.tbxTotalCount.Location = new System.Drawing.Point(77, 3);
             this.tbxTotalCount.Name = "tbxTotalCount";
             this.tbxTotalCount.ReadOnly = true;
-            this.tbxTotalCount.Size = new System.Drawing.Size(74, 20);
+            this.tbxTotalCount.Size = new System.Drawing.Size(68, 20);
             this.tbxTotalCount.TabIndex = 15;
             this.tbxTotalCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -529,30 +495,93 @@
             this.lblGuests.Location = new System.Drawing.Point(0, 0);
             this.lblGuests.Margin = new System.Windows.Forms.Padding(0);
             this.lblGuests.Name = "lblGuests";
-            this.lblGuests.Size = new System.Drawing.Size(318, 23);
+            this.lblGuests.Size = new System.Drawing.Size(298, 23);
             this.lblGuests.TabIndex = 1;
             this.lblGuests.Text = "Guests";
             this.lblGuests.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnlSearch
+            // pnlSearchRooms
             // 
-            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Controls.Add(this.btnSearchRooms);
-            this.pnlSearch.Location = new System.Drawing.Point(860, 38);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(200, 118);
-            this.pnlSearch.TabIndex = 5;
+            this.pnlSearchRooms.Controls.Add(this.btnSearchRooms);
+            this.pnlSearchRooms.Location = new System.Drawing.Point(615, 40);
+            this.pnlSearchRooms.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearchRooms.Name = "pnlSearchRooms";
+            this.pnlSearchRooms.Size = new System.Drawing.Size(134, 117);
+            this.pnlSearchRooms.TabIndex = 5;
             // 
             // btnSearchRooms
             // 
             this.btnSearchRooms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRooms.Location = new System.Drawing.Point(0, 0);
+            this.btnSearchRooms.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.btnSearchRooms.Name = "btnSearchRooms";
-            this.btnSearchRooms.Size = new System.Drawing.Size(198, 116);
-            this.btnSearchRooms.TabIndex = 2;
+            this.btnSearchRooms.Size = new System.Drawing.Size(134, 117);
+            this.btnSearchRooms.TabIndex = 6;
             this.btnSearchRooms.Text = "Search for Rooms";
             this.btnSearchRooms.UseVisualStyleBackColor = true;
+            this.btnSearchRooms.Click += new System.EventHandler(this.btnSearchRooms_Click);
+            // 
+            // pnlSelectedRoom
+            // 
+            this.pnlSelectedRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSelectedRoom.Controls.Add(this.flpSelectedRooms);
+            this.pnlSelectedRoom.Controls.Add(this.lblSelectedRooms);
+            this.pnlSelectedRoom.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlSelectedRoom.Location = new System.Drawing.Point(964, 0);
+            this.pnlSelectedRoom.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSelectedRoom.Name = "pnlSelectedRoom";
+            this.pnlSelectedRoom.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlSelectedRoom.Size = new System.Drawing.Size(316, 720);
+            this.pnlSelectedRoom.TabIndex = 4;
+            // 
+            // flpSelectedRooms
+            // 
+            this.flpSelectedRooms.AutoScroll = true;
+            this.flpSelectedRooms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpSelectedRooms.Location = new System.Drawing.Point(5, 35);
+            this.flpSelectedRooms.Margin = new System.Windows.Forms.Padding(0);
+            this.flpSelectedRooms.Name = "flpSelectedRooms";
+            this.flpSelectedRooms.Size = new System.Drawing.Size(302, 676);
+            this.flpSelectedRooms.TabIndex = 2;
+            // 
+            // lblSelectedRooms
+            // 
+            this.lblSelectedRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSelectedRooms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSelectedRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedRooms.Location = new System.Drawing.Point(5, 5);
+            this.lblSelectedRooms.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.lblSelectedRooms.Name = "lblSelectedRooms";
+            this.lblSelectedRooms.Size = new System.Drawing.Size(302, 30);
+            this.lblSelectedRooms.TabIndex = 1;
+            this.lblSelectedRooms.Text = "Selected Rooms:";
+            this.lblSelectedRooms.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dtpCheckIn
+            // 
+            this.dtpCheckIn.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpCheckIn.Location = new System.Drawing.Point(71, 5);
+            this.dtpCheckIn.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(222, 20);
+            this.dtpCheckIn.TabIndex = 8;
+            this.dtpCheckIn.Value = new System.DateTime(2024, 12, 3, 16, 6, 12, 0);
+            this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 51);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Check-out";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmBookingRooms
             // 
@@ -575,7 +604,6 @@
             this.pnlDates.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.pnlSelectedRoom.ResumeLayout(false);
             this.flpBookingDetails.ResumeLayout(false);
             this.pnlGuests.ResumeLayout(false);
             this.pnlGuests.PerformLayout();
@@ -584,7 +612,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).EndInit();
-            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearchRooms.ResumeLayout(false);
+            this.pnlSelectedRoom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,16 +633,12 @@
         private System.Windows.Forms.Label lblSidePanelCredits;
         private System.Windows.Forms.Label lblSidePanelTitle;
         private System.Windows.Forms.PictureBox pbxSidePanelLogo;
-        private System.Windows.Forms.Label lblBookingDetails;
+        private System.Windows.Forms.Label lblMainDetails;
         private System.Windows.Forms.Label lblDates;
         private System.Windows.Forms.Panel pnlDates;
-        private System.Windows.Forms.DateTimePicker dtpCheckIn;
-        private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.DateTimePicker dtpCheckOut;
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
-        private System.Windows.Forms.Panel pnlSelectedRoom;
-        private System.Windows.Forms.Label lblSelectedRoom;
         private System.Windows.Forms.FlowLayoutPanel flpBookingDetails;
         private System.Windows.Forms.Panel pnlGuests;
         private System.Windows.Forms.TextBox tbxLabelSpecial;
@@ -623,11 +648,16 @@
         private System.Windows.Forms.TextBox tbxLabelAdult;
         private System.Windows.Forms.NumericUpDown nudAdultCount;
         private System.Windows.Forms.Label lblGuests;
-        private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.Button btnSearchRooms;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox tbxLabelTotal;
         private System.Windows.Forms.TextBox tbxTotalCount;
+        private System.Windows.Forms.Panel pnlSearchRooms;
+        private System.Windows.Forms.Button btnSearchRooms;
+        private System.Windows.Forms.Panel pnlSelectedRoom;
+        private System.Windows.Forms.Label lblSelectedRooms;
+        private System.Windows.Forms.FlowLayoutPanel flpSelectedRooms;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpCheckIn;
     }
 }

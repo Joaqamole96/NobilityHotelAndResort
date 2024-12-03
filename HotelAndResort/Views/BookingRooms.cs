@@ -1,5 +1,5 @@
 ﻿using HotelAndResort.Models.Data;
-using HotelAndResort.Models.UserControls.PageSpecific.RoomsPage;
+using HotelAndResort.Models.UserControls;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -8,18 +8,13 @@ namespace HotelAndResort.Views
 {
     public partial class frmBookingRooms : Form
     {
+        // * ---------- User-Defined Attributes and Methods ---------- * //
+
+        // * Attributes * //
+
         public static int totalCount = 1;
 
-        public frmBookingRooms()
-        {
-            InitializeComponent();
-        }
-
-        private void UpdateTotalCount()
-        {
-            totalCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
-            tbxTotalCount.Text = totalCount.ToString();
-        }
+        // * Methods * //
 
         private void LoadRoomsWhere(string condition)
         {
@@ -36,19 +31,16 @@ namespace HotelAndResort.Views
                     flpAvailableRooms.SuspendLayout();
                     foreach (DataRow row in results.Rows)
                     {
-                        int primary_key = Convert.ToInt32(row[0]);
+                        int room_id = Convert.ToInt32(row[0]);
+                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(room_id);
 
-                        UserControl itemTab = new RoomModule(primary_key);
-                        itemTab.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
+                        flpAvailableRooms.Controls.Add(availableRoomItem);
 
-                        flpAvailableRooms.Controls.Add(itemTab);
+                        availableRoomItem.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 
+                        availableRoomItem.RoomSelected += AddSelectedRoom;
                     }
                     flpAvailableRooms.ResumeLayout();
-                }
-                else
-                {
-                    MessageBox.Show("No data found for the specified ID.");
                 }
             }
             catch (Exception ex)
@@ -57,24 +49,79 @@ namespace HotelAndResort.Views
             }
         }
 
-        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
+        private void UpdateTotalCount()
         {
-            dtpCheckOut.MinDate = dtpCheckIn.Value;
+            totalCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
+            tbxTotalCount.Text = totalCount.ToString();
+            LoadRoomsWhere($"`status` = 'available' AND `capacity` >= {totalCount}");
+        }
+
+        public void AddSelectedRoom(int room_id)
+        {
+            flpSelectedRooms.SuspendLayout();
+
+            SelectedRoomItem selectedRoomItem = new SelectedRoomItem(room_id);
+            flpSelectedRooms.Controls.Add(selectedRoomItem);
+
+            selectedRoomItem.Dock = DockStyle.Top;
+
+            flpSelectedRooms.ResumeLayout();
+        }
+
+        // * ---------- Natural Attributes and Methods ---------- * //
+
+        // * Methods * //
+
+        // Main //
+
+        public frmBookingRooms()
+        {
+            InitializeComponent();
         }
 
         private void BookingRooms_Load(object sender, EventArgs e)
         {
+            dtpCheckIn.Value = DateTime.Now;
             dtpCheckIn.MinDate = DateTime.Now;
+            dtpCheckOut.Value = dtpCheckIn.Value;
             dtpCheckOut.MinDate = dtpCheckIn.Value;
 
             UpdateTotalCount();
             LoadRoomsWhere("`status` = 'available'");
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        // Check-in and check-out date //
+
+        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCheckOut.MinDate = dtpCheckIn.Value;
+        }
+
+        // Guests //
+
+        private void nudAdultCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTotalCount();
+        }
+
+        private void nudChildrenCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTotalCount();
+        }
+
+        private void nudSpecialCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTotalCount();
+        }
+
+        // Search Rooms //
+
+        private void btnSearchRooms_Click(object sender, EventArgs e)
         {
             LoadRoomsWhere($"`status` = 'available' AND `capacity` >= {totalCount}");
         }
+
+        // Navigation //
 
         private void btnNavHome_Click(object sender, EventArgs e)
         {
@@ -112,21 +159,6 @@ namespace HotelAndResort.Views
             {
                 Application.Exit();
             }
-        }
-
-        private void nudAdultCount_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateTotalCount();
-        }
-
-        private void nudChildrenCount_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateTotalCount();
-        }
-
-        private void nudSpecialCount_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateTotalCount();
         }
     }
 }

@@ -1,15 +1,5 @@
 ﻿using HotelAndResort.Models.Data;
-using HotelAndResort.Models.UserControls;
-using HotelAndResort.Models.UserControls.PageSpecific.HomePage;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort
@@ -28,7 +18,7 @@ namespace HotelAndResort
         private void frmHome_Load(object sender, EventArgs e)
         {
             // 0. Initialize database
-            DatabaseHelper.Initialize();
+            // DatabaseHelper.Initialize();
         }
 
         private void btnNavHome_Click(object sender, EventArgs e)
