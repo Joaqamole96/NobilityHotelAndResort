@@ -29,12 +29,6 @@ namespace HotelAndResort
         {
             // 0. Initialize database
             DatabaseHelper.Initialize();
-
-            Size size = new Size(flpHomeContent.Width / 2 - 10, flpHomeContent.Height / 2 - 10);
-            flpHomeContent.Controls.Add(new HomeContentModule(size));
-            flpHomeContent.Controls.Add(new HomeContentModule(size, 1));
-            flpHomeContent.Controls.Add(new HomeContentModule(size, 2));
-            flpHomeContent.Controls.Add(new HomeContentModule(size));
         }
 
         private void btnNavHome_Click(object sender, EventArgs e)
@@ -78,6 +72,16 @@ namespace HotelAndResort
         private void btnCTA_Click(object sender, EventArgs e)
         {
             init.OpenForm(this, init.frmBookingRooms);
+        }
+
+        private void btnContentCTA_Rooms_Click(object sender, EventArgs e)
+        {
+            init.OpenForm(this, init.frmRooms);
+        }
+
+        private void btnContentCTA_Services_Click(object sender, EventArgs e)
+        {
+            init.OpenForm(this, init.frmServices);
         }
     }
 }

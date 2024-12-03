@@ -22,33 +22,6 @@ DROP TABLE IF EXISTS Users;
 
 
 
-
--- Create HomeContent table
-CREATE TABLE HomeContent (
-    homecontent_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(50),
-    heading VARCHAR(50),
-    description VARCHAR(255),
-    button_txt VARCHAR(15)
-);
-
-
-
-
-
-INSERT INTO HomeContent (title, heading, description, button_txt)
-VALUES
-("Services", "Experience the Fun", "Safety and comfort are key factors in leisure stays these days. We assure you of medical-grade stringent sanitation procedures in preparing our rooms for guests so you can stay with us with peace of mind.", "Book Now");
-
-INSERT INTO HomeContent (title, heading, description, button_txt)
-VALUES
-("Rooms", "Experience the Comfort", "Safety and comfort are key factors in leisure stays these days. We assure you of medical-grade stringent sanitation procedures in preparing our rooms for guests so you can stay with us with peace of mind.", "Book Now");
-
-
-
-
-
-
 -- Create Users table
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -74,16 +47,16 @@ CREATE TABLE Rooms (
 -- Create Reserved_Rooms table
 CREATE TABLE Reserved_Rooms (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    room_id INT NOT NULL,
+    user_id INT,
+    room_id INT,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
     total_price DECIMAL(10, 2) NOT NULL,
     has_services BOOLEAN DEFAULT FALSE,
     status ENUM('reserved', 'canceled', 'checked-in') DEFAULT 'reserved',
     
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES Rooms(room_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- Create Services table
@@ -99,12 +72,12 @@ CREATE TABLE Services (
 -- Create Reserved_Services table
 CREATE TABLE Reserved_Services (
     reserved_service_id INT AUTO_INCREMENT PRIMARY KEY,
-    reservation_id INT NOT NULL,
-    service_id INT NOT NULL,
+    reservation_id INT,
+    service_id INT,
     total_price DECIMAL(10, 2) NOT NULL,
     
-    FOREIGN KEY (reservation_id) REFERENCES Reserved_Rooms(reservation_id),
-    FOREIGN KEY (service_id) REFERENCES Services(service_id)
+    FOREIGN KEY (reservation_id) REFERENCES Reserved_Rooms(reservation_id)  ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -145,10 +118,30 @@ VALUES
 -- Insert Services
 INSERT INTO Services (service_name, description, price, quantity, status)
 VALUES
-("Public Pool", "A pool accessible by the hotel and resort patrons.", 200,1, "available"),
-("Private Pool", "A private pool that can be rented hourly by the hotel and resort patrons.", 300, 1, "available"),
-("Party Area", "A venue to hold celebrations and functions.", 3000, 1, "available"),
-("Cottage", "A small hut near the resort's pools.", 1500, 4, "available");
-
-
-
+(
+    "Public Pool", 
+    "A pool accessible by the hotel and resort patrons.", 
+    200.00, 
+    8, 
+    "available"
+),
+(
+    "Private Pool", 
+    "A private pool that can be rented hourly by the hotel and resort patrons.", 
+    300.00, 
+    1, 
+    "available"
+),
+(
+    "Party Area", 
+    "A venue to hold celebrations and functions.", 
+    3000.00, 
+    1, 
+    "available"),
+(
+    "Cottage", 
+    "A small hut near the resort's pools.", 
+    1500.00, 
+    4, 
+    "available"
+);

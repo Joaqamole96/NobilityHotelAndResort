@@ -120,4 +120,10 @@
   <data name="lblAdvert.Text" xml:space="preserve">
     <value>Welcome to Nobility Hotel and Resort! Experience unparalleled comfort and relaxation with us. Book your stay today and make memories to treasure. For inquiries or reservations, reach out to us at: 📞 +99999999999 or +88888888888.</value>
   </data>
+  <data name="lblContentDescription_Rooms.Text" xml:space="preserve">
+    <value>Safety and comfort are key factors in leisure stays these days. We assure you of medical-grade stringent sanitation procedures in preparing our rooms for guests so you can stay with us with peace of mind.</value>
+  </data>
+  <data name="lblContentDescription_Services.Text" xml:space="preserve">
+    <value>Safety and comfort are key factors in leisure stays these days. We assure you of medical-grade stringent sanitation procedures in preparing our rooms for guests so you can stay with us with peace of mind.</value>
+  </data>
 </root>

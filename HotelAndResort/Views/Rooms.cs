@@ -19,11 +19,6 @@ namespace HotelAndResort
             InitializeComponent();
         }
 
-        private void RoomsPage_frm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNavHome_Click(object sender, EventArgs e)
         {
             init.OpenForm(this, init.frmHome);
@@ -62,9 +57,19 @@ namespace HotelAndResort
             }
         }
 
-        private void itemTabList1_Load(object sender, EventArgs e)
+        private void btnCTABooking_Standard_Click(object sender, EventArgs e)
         {
-            itemTabList1.Populate("Rooms");
+
+        }
+
+        private void btnCTABooking_Premium_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCTABooking_Deluxe_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

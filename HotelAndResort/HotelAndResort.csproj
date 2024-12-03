@@ -143,23 +143,11 @@
     <Compile Include="Models\UserControls\PageCommon\FlowContainer.Designer.cs">
       <DependentUpon>FlowContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\ItemTabList.cs">
+    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\ItemTabList.Designer.cs">
-      <DependentUpon>ItemTabList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomItemTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomItemTab.Designer.cs">
-      <DependentUpon>RoomItemTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\ServiceItemTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\ServiceItemTab.Designer.cs">
-      <DependentUpon>ServiceItemTab.cs</DependentUpon>
+    <Compile Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.Designer.cs">
+      <DependentUpon>RoomModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BookingRooms.cs">
       <SubType>Form</SubType>
@@ -178,30 +166,6 @@
     </Compile>
     <Compile Include="Views\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\Banner.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\Banner.Designer.cs">
-      <DependentUpon>Banner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\RibbonAdvert.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\RibbonAdvert.Designer.cs">
-      <DependentUpon>RibbonAdvert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageCommon\NavigationPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageCommon\NavigationPanel.Designer.cs">
-      <DependentUpon>NavigationPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\HomeContentModule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Models\UserControls\PageSpecific\HomePage\HomeContentModule.Designer.cs">
-      <DependentUpon>HomeContentModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Rooms.cs">
       <SubType>Form</SubType>
@@ -241,14 +205,8 @@
     <EmbeddedResource Include="Models\UserControls\PageCommon\FlowContainer.resx">
       <DependentUpon>FlowContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\RoomsPage\ItemTabList.resx">
-      <DependentUpon>ItemTabList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\RoomsPage\RoomItemTab.resx">
-      <DependentUpon>RoomItemTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\RoomsPage\ServiceItemTab.resx">
-      <DependentUpon>ServiceItemTab.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\PageSpecific\RoomsPage\RoomModule.resx">
+      <DependentUpon>RoomModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BookingRooms.resx">
       <DependentUpon>BookingRooms.cs</DependentUpon>
@@ -258,18 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN PAGE.resx">
       <DependentUpon>LOGIN PAGE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\HomePage\Banner.resx">
-      <DependentUpon>Banner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\HomePage\RibbonAdvert.resx">
-      <DependentUpon>RibbonAdvert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageCommon\NavigationPanel.resx">
-      <DependentUpon>NavigationPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\PageSpecific\HomePage\HomeContentModule.resx">
-      <DependentUpon>HomeContentModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>

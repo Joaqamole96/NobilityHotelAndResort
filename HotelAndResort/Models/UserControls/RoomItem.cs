@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
 {
-    public partial class Banner : UserControl
+    public partial class RoomItem : UserControl
     {
-        public Banner()
+        public RoomItem()
         {
             InitializeComponent();
         }

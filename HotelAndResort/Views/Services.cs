@@ -17,11 +17,6 @@ namespace HotelAndResort.Views
             InitializeComponent();
         }
 
-        private void itemTabList1_Load(object sender, EventArgs e)
-        {
-            itemTabList1.Populate("Services");
-        }
-
         private void btnNavHome_Click(object sender, EventArgs e)
         {
             init.OpenForm(this, init.frmHome);

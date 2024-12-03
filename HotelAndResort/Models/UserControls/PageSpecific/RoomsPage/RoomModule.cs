@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls.PageSpecific.RoomsPage
 {
-    public partial class RoomItemTab : UserControl
+    public partial class RoomModule : UserControl
     {
-        public RoomItemTab(int primary_key)
+        public RoomModule(int primary_key)
         {
             InitializeComponent();
 
@@ -31,6 +31,38 @@ namespace HotelAndResort.Models.UserControls.PageSpecific.RoomsPage
                     lblRoomCapacity.Text = row["capacity"].ToString();
                     lblRoomDescription.Text = row["description"].ToString();
                     lblRoomPrice.Text = row["price"].ToString();
+                    btnCTABooking.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("No data found for the specified ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading content: {ex.Message}");
+            }
+        }
+        public RoomModule(int primary_key, string button_txt)
+        {
+            InitializeComponent();
+
+            string query = $"SELECT * FROM `rooms` WHERE room_id = {primary_key}";
+
+            try
+            {
+                DataTable result = DatabaseHelper.Select(query);
+
+                if (result.Rows.Count > 0)
+                {
+                    DataRow row = result.Rows[0];
+
+                    lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
+                    lblRoomCapacity.Text = row["capacity"].ToString();
+                    lblRoomDescription.Text = row["description"].ToString();
+                    lblRoomPrice.Text = row["price"].ToString();
+                    btnCTABooking.Text = button_txt;
+
                 }
                 else
                 {

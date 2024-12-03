@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Windows.Forms;
 
 namespace HotelAndResort.Models.Data
 {
@@ -40,7 +41,7 @@ namespace HotelAndResort.Models.Data
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error selecting records: {ex.Message}", ex);
+                throw new Exception($"DatabaseHelper.cs | Initialize() | ERROR: {ex.Message}", ex);
             }
         }
 

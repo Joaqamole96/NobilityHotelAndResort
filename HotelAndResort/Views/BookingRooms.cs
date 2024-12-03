@@ -1,13 +1,7 @@
 ﻿using HotelAndResort.Models.Data;
 using HotelAndResort.Models.UserControls.PageSpecific.RoomsPage;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Views
@@ -24,7 +18,7 @@ namespace HotelAndResort.Views
         private void UpdateTotalCount()
         {
             totalCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
-            tbxTotalCount.Text = Convert.ToString(totalCount);
+            tbxTotalCount.Text = totalCount.ToString();
         }
 
         private void LoadRoomsWhere(string condition)
@@ -44,7 +38,7 @@ namespace HotelAndResort.Views
                     {
                         int primary_key = Convert.ToInt32(row[0]);
 
-                        UserControl itemTab = new RoomItemTab(primary_key);
+                        UserControl itemTab = new RoomModule(primary_key);
                         itemTab.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 
                         flpAvailableRooms.Controls.Add(itemTab);
@@ -72,6 +66,7 @@ namespace HotelAndResort.Views
         {
             dtpCheckIn.MinDate = DateTime.Now;
             dtpCheckOut.MinDate = dtpCheckIn.Value;
+
             UpdateTotalCount();
             LoadRoomsWhere("`status` = 'available'");
         }
