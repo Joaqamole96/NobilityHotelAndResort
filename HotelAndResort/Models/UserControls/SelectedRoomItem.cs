@@ -1,12 +1,6 @@
 ﻿using HotelAndResort.Models.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
@@ -48,7 +42,7 @@ namespace HotelAndResort.Models.UserControls
 
         private void lblRemoveItem_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Dispose();
         }
     }
 }

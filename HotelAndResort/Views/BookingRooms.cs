@@ -13,6 +13,7 @@ namespace HotelAndResort.Views
         // * Attributes * //
 
         public static int totalCount = 1;
+        public SelectedRoomItem selectedRoomItem = null;
 
         // * Methods * //
 
@@ -60,12 +61,28 @@ namespace HotelAndResort.Views
         {
             flpSelectedRooms.SuspendLayout();
 
-            SelectedRoomItem selectedRoomItem = new SelectedRoomItem(room_id);
+            //SelectedRoomItem selectedRoomItem = new SelectedRoomItem(room_id);
+            //flpSelectedRooms.Controls.Add(selectedRoomItem);
+
+            //selectedRoomItem.Dock = DockStyle.Top;
+
+            flpSelectedRooms.Controls.Clear();
+
+            if (selectedRoomItem != null)
+            {
+                DeleteSelectedRoom(selectedRoomItem);
+            }
+            selectedRoomItem = new SelectedRoomItem(room_id);
             flpSelectedRooms.Controls.Add(selectedRoomItem);
 
             selectedRoomItem.Dock = DockStyle.Top;
 
             flpSelectedRooms.ResumeLayout();
+        }
+
+        public static void DeleteSelectedRoom(SelectedRoomItem selectedRoomItem)
+        {
+            selectedRoomItem?.Dispose();
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //
