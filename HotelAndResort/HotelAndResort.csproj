@@ -136,6 +136,8 @@
       <DependentUpon>LOGIN PAGE.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Models\Classes\Reservation.cs" />
+    <Compile Include="Models\Classes\Reserved_Services.cs" />
     <Compile Include="Models\Helpers\DatabaseHelper.cs" />
     <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
@@ -149,17 +151,11 @@
     <Compile Include="Models\UserControls\ReservationItem.Designer.cs">
       <DependentUpon>ReservationItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BookingRooms.cs">
+    <Compile Include="Views\Booking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\BookingRooms.Designer.cs">
-      <DependentUpon>BookingRooms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BookingServices.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\BookingServices.Designer.cs">
-      <DependentUpon>BookingServices.cs</DependentUpon>
+    <Compile Include="Views\Booking.Designer.cs">
+      <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Services.cs">
       <SubType>Form</SubType>
@@ -202,11 +198,8 @@
     <EmbeddedResource Include="Models\UserControls\ReservationItem.resx">
       <DependentUpon>ReservationItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BookingRooms.resx">
-      <DependentUpon>BookingRooms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\BookingServices.resx">
-      <DependentUpon>BookingServices.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Booking.resx">
+      <DependentUpon>Booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

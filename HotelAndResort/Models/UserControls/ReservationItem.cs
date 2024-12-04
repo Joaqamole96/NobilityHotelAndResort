@@ -7,44 +7,53 @@ namespace HotelAndResort.Models.UserControls
 {
     public partial class ReservationItem : UserControl
     {
-        private int room_id;
-        private double total_price = 0;
+        //public ReservationItem(int room_id)
+        //{
+        //    InitializeComponent();
 
-        public ReservationItem(int room_id)
+        //    try
+        //    {
+        //        string query = $"SELECT * FROM `rooms` WHERE `room_id` = {room_id}";
+        //        DataTable result = DatabaseHelper.Select(query);
+
+        //        if (result.Rows.Count > 0)
+        //        {
+        //            DataRow row = result.Rows[0];
+
+        //            lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
+        //            lblRoomCapacity.Text = $"Good for {row["room_capacity"].ToString()}-{(Convert.ToInt32(row["room_capacity"]) + 1).ToString()} pax";
+        //            lblRoomDescription.Text = row["room_description"].ToString();
+        //            lblTotalPrice.Text = row["room_price"].ToString();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("No data found for the specified ID.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error loading content: {ex.Message}");
+        //    }
+        //}
+
+        public ReservationItem(Reservation reservation)
         {
             InitializeComponent();
 
-            this.room_id = room_id;
+            //lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
+            //lblRoomCapacity.Text = $"Good for {row["room_capacity"].ToString()}-{(Convert.ToInt32(row["room_capacity"]) + 1).ToString()} pax";
+            //lblRoomDescription.Text = row["room_description"].ToString();
+            //lblTotalPrice.Text = row["room_price"].ToString();
 
-            string query = $"SELECT * FROM `rooms` WHERE `room_id` = {this.room_id}";
+            lblRoomType.Text = reservation.RoomNumber + " | " + reservation.RoomType;
+            lblRoomCapacity.Text = reservation.RoomCapacity.ToString();
+            lblRoomDescription.Text = reservation.RoomDescription;
 
-            try
-            {
-                DataTable result = DatabaseHelper.Select(query);
+            lblReservationPrice.Text = reservation.ReservationPrice.ToString();
 
-                if (result.Rows.Count > 0)
-                {
-                    DataRow row = result.Rows[0];
-
-                    lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
-                    lblRoomCapacity.Text = $"Good for {row["capacity"].ToString()}-{(Convert.ToInt32(row["capacity"]) + 1).ToString()} pax";
-                    lblRoomDescription.Text = row["description"].ToString();
-
-                    total_price = Convert.ToDouble(row["price"]);
-                    lblTotalPrice.Text = total_price.ToString();
-
-                    // Set the ReservationItem as the current room reservation
-                    Global.reservedRoom = result;
-                }
-                else
-                {
-                    MessageBox.Show("No data found for the specified ID.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading content: {ex.Message}");
-            }
+            lblCheckIn.Text = reservation.CheckInDateTime.ToString();
+            lblCheckOut.Text = reservation.CheckOutDateTime.ToString();
+            lblGuests.Text = reservation.GuestCount.ToString() + " guests";
         }
 
         private void btnExit_Click(object sender, EventArgs e)

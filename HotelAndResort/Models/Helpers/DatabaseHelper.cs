@@ -70,5 +70,25 @@ namespace HotelAndResort.Models.Data
 
             return resultTable;
         }
+
+        public static void Execute(string query)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error executing non-query: {ex.Message}", ex);
+            }
+        }
+
     }
 }

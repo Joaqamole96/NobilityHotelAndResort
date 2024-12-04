@@ -1,16 +1,12 @@
 ﻿using HotelAndResort.Views;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort
 {
     public class Global
     {
+        public static Reservation reservation;
+
         public static Form frmHome = new frmHome();
         public static Form frmRooms = new frmRooms();
         public static Form frmServices = new frmServices();
@@ -18,10 +14,6 @@ namespace HotelAndResort
         public static Form frmContact = new frmContactUsPage();
         public static Form frmLogin = new frmLoginPage();
         public static Form frmBookingRooms = new frmBookingRooms();
-        public static Form frmBookingServices = new frmBookingServices();
-
-        public static DataTable reservedRoom;
-        public static DataTable reservedServices;
 
         public static void OpenForm(Form currentForm, Form targetForm)
         {

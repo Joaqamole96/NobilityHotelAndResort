@@ -45,10 +45,11 @@
             this.lblLabelCheckIn = new System.Windows.Forms.Label();
             this.pnlDivider1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblReservationPrice = new System.Windows.Forms.Label();
             this.lblLabelTotalPrice = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.tlpDates.SuspendLayout();
@@ -106,6 +107,7 @@
             // pnlDetails
             // 
             this.pnlDetails.AutoSize = true;
+            this.pnlDetails.Controls.Add(this.panel2);
             this.pnlDetails.Controls.Add(this.lblAddServices);
             this.pnlDetails.Controls.Add(this.tlpDates);
             this.pnlDetails.Controls.Add(this.pnlDivider1);
@@ -113,7 +115,7 @@
             this.pnlDetails.Controls.Add(this.panel1);
             this.pnlDetails.Location = new System.Drawing.Point(10, 118);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(322, 160);
+            this.pnlDetails.Size = new System.Drawing.Size(322, 165);
             this.pnlDetails.TabIndex = 29;
             // 
             // lblAddServices
@@ -265,7 +267,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.lblTotalPrice, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblReservationPrice, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblLabelTotalPrice, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 5);
@@ -276,16 +278,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(322, 27);
             this.tableLayoutPanel1.TabIndex = 38;
             // 
-            // lblTotalPrice
+            // lblReservationPrice
             // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPrice.Location = new System.Drawing.Point(88, 7);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(5);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(227, 13);
-            this.lblTotalPrice.TabIndex = 32;
-            this.lblTotalPrice.Text = "[TotalPrice]";
+            this.lblReservationPrice.AutoSize = true;
+            this.lblReservationPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReservationPrice.Location = new System.Drawing.Point(88, 7);
+            this.lblReservationPrice.Margin = new System.Windows.Forms.Padding(5);
+            this.lblReservationPrice.Name = "lblReservationPrice";
+            this.lblReservationPrice.Size = new System.Drawing.Size(227, 13);
+            this.lblReservationPrice.TabIndex = 32;
+            this.lblReservationPrice.Text = "[ReservationPrice]";
             // 
             // lblLabelTotalPrice
             // 
@@ -322,6 +324,17 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 160);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.MinimumSize = new System.Drawing.Size(0, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(322, 5);
+            this.panel2.TabIndex = 42;
+            // 
             // ReservationItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +350,7 @@
             this.MinimumSize = new System.Drawing.Size(340, 0);
             this.Name = "ReservationItem";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(340, 286);
+            this.Size = new System.Drawing.Size(340, 291);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -359,7 +372,7 @@
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblReservationPrice;
         private System.Windows.Forms.Label lblLabelTotalPrice;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tlpDates;
@@ -373,5 +386,6 @@
         private System.Windows.Forms.Label lblGuests;
         private System.Windows.Forms.Label lblLabelGuests;
         private System.Windows.Forms.Label lblAddServices;
+        private System.Windows.Forms.Panel panel2;
     }
 }

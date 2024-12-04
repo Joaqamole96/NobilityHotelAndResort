@@ -1,13 +1,6 @@
 ﻿using HotelAndResort.Models.Data;
-using HotelAndResort.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
@@ -41,9 +34,9 @@ namespace HotelAndResort.Models.UserControls
                     DataRow row = result.Rows[0];
 
                     lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
-                    lblRoomCapacity.Text = $"Good for {row["capacity"].ToString()}-{(Convert.ToInt32(row["capacity"]) + 1).ToString()} pax";
-                    lblRoomDescription.Text = row["description"].ToString();
-                    lblRoomPrice.Text = row["price"].ToString();
+                    lblRoomCapacity.Text = $"Good for {row["room_capacity"].ToString()}-{(Convert.ToInt32(row["room_capacity"]) + 1).ToString()} pax";
+                    lblRoomDescription.Text = row["room_description"].ToString();
+                    lblRoomPrice.Text = row["room_price"].ToString();
                 }
                 else
                 {

@@ -58,7 +58,7 @@
             this.tbxLabelAdult = new System.Windows.Forms.TextBox();
             this.nudAdultCount = new System.Windows.Forms.NumericUpDown();
             this.tbxLabelChildren = new System.Windows.Forms.TextBox();
-            this.tbxTotalCount = new System.Windows.Forms.TextBox();
+            this.tbxGuestCount = new System.Windows.Forms.TextBox();
             this.lblGuests = new System.Windows.Forms.Label();
             this.tlpSortControls = new System.Windows.Forms.TableLayoutPanel();
             this.pnlSelectedRoom = new System.Windows.Forms.Panel();
@@ -66,7 +66,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.lblReservationDetails = new System.Windows.Forms.Label();
+            this.tbcBooking = new System.Windows.Forms.TabControl();
+            this.tbpgAvailableRooms = new System.Windows.Forms.TabPage();
             this.flpAvailableRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbpgAvailableServices = new System.Windows.Forms.TabPage();
             this.pnlSidePanel.SuspendLayout();
             this.flpSidePanelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSidePanelLogo)).BeginInit();
@@ -80,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).BeginInit();
             this.pnlSelectedRoom.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tbcBooking.SuspendLayout();
+            this.tbpgAvailableRooms.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidePanel
@@ -403,7 +408,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelAdult, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.nudAdultCount, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelChildren, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tbxTotalCount, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbxGuestCount, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 23);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -498,16 +503,16 @@
             this.tbxLabelChildren.Text = "Children:";
             this.tbxLabelChildren.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tbxTotalCount
+            // tbxGuestCount
             // 
-            this.tbxTotalCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxTotalCount.Location = new System.Drawing.Point(87, 3);
-            this.tbxTotalCount.Name = "tbxTotalCount";
-            this.tbxTotalCount.ReadOnly = true;
-            this.tbxTotalCount.Size = new System.Drawing.Size(78, 20);
-            this.tbxTotalCount.TabIndex = 15;
-            this.tbxTotalCount.Text = "1";
-            this.tbxTotalCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxGuestCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxGuestCount.Location = new System.Drawing.Point(87, 3);
+            this.tbxGuestCount.Name = "tbxGuestCount";
+            this.tbxGuestCount.ReadOnly = true;
+            this.tbxGuestCount.Size = new System.Drawing.Size(78, 20);
+            this.tbxGuestCount.TabIndex = 15;
+            this.tbxGuestCount.Text = "1";
+            this.tbxGuestCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblGuests
             // 
@@ -599,17 +604,49 @@
             this.lblReservationDetails.Text = "Reservation Details";
             this.lblReservationDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tbcBooking
+            // 
+            this.tbcBooking.Controls.Add(this.tbpgAvailableRooms);
+            this.tbcBooking.Controls.Add(this.tbpgAvailableServices);
+            this.tbcBooking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcBooking.Location = new System.Drawing.Point(202, 183);
+            this.tbcBooking.Name = "tbcBooking";
+            this.tbcBooking.SelectedIndex = 0;
+            this.tbcBooking.Size = new System.Drawing.Size(712, 537);
+            this.tbcBooking.TabIndex = 6;
+            // 
+            // tbpgAvailableRooms
+            // 
+            this.tbpgAvailableRooms.Controls.Add(this.flpAvailableRooms);
+            this.tbpgAvailableRooms.Location = new System.Drawing.Point(4, 22);
+            this.tbpgAvailableRooms.Name = "tbpgAvailableRooms";
+            this.tbpgAvailableRooms.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpgAvailableRooms.Size = new System.Drawing.Size(704, 511);
+            this.tbpgAvailableRooms.TabIndex = 0;
+            this.tbpgAvailableRooms.Text = "tabPage1";
+            this.tbpgAvailableRooms.UseVisualStyleBackColor = true;
+            // 
             // flpAvailableRooms
             // 
             this.flpAvailableRooms.AutoScroll = true;
             this.flpAvailableRooms.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpAvailableRooms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpAvailableRooms.Location = new System.Drawing.Point(202, 183);
+            this.flpAvailableRooms.Location = new System.Drawing.Point(3, 3);
             this.flpAvailableRooms.Margin = new System.Windows.Forms.Padding(5);
             this.flpAvailableRooms.Name = "flpAvailableRooms";
             this.flpAvailableRooms.Padding = new System.Windows.Forms.Padding(10);
-            this.flpAvailableRooms.Size = new System.Drawing.Size(712, 537);
-            this.flpAvailableRooms.TabIndex = 6;
+            this.flpAvailableRooms.Size = new System.Drawing.Size(698, 505);
+            this.flpAvailableRooms.TabIndex = 7;
+            // 
+            // tbpgAvailableServices
+            // 
+            this.tbpgAvailableServices.Location = new System.Drawing.Point(4, 22);
+            this.tbpgAvailableServices.Name = "tbpgAvailableServices";
+            this.tbpgAvailableServices.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpgAvailableServices.Size = new System.Drawing.Size(704, 511);
+            this.tbpgAvailableServices.TabIndex = 1;
+            this.tbpgAvailableServices.Text = "tabPage2";
+            this.tbpgAvailableServices.UseVisualStyleBackColor = true;
             // 
             // frmBookingRooms
             // 
@@ -617,7 +654,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.flpAvailableRooms);
+            this.Controls.Add(this.tbcBooking);
             this.Controls.Add(this.flpBookingDetails);
             this.Controls.Add(this.pnlSelectedRoom);
             this.Controls.Add(this.pnlSidePanel);
@@ -645,6 +682,8 @@
             this.pnlSelectedRoom.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tbcBooking.ResumeLayout(false);
+            this.tbpgAvailableRooms.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,7 +720,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox tbxLabelTotal;
-        private System.Windows.Forms.TextBox tbxTotalCount;
+        private System.Windows.Forms.TextBox tbxGuestCount;
         private System.Windows.Forms.Panel pnlSelectedRoom;
         private System.Windows.Forms.Label lblReservationDetails;
         private System.Windows.Forms.Label label2;
@@ -689,7 +728,10 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flpReservationDetails;
-        private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
         private System.Windows.Forms.TableLayoutPanel tlpSortControls;
+        private System.Windows.Forms.TabControl tbcBooking;
+        private System.Windows.Forms.TabPage tbpgAvailableRooms;
+        private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
+        private System.Windows.Forms.TabPage tbpgAvailableServices;
     }
 }

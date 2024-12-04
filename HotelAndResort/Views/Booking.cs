@@ -12,10 +12,11 @@ namespace HotelAndResort.Views
 
         // * Attributes * //
 
-        public static int totalCount = 1;
+        public static int guestCount = 1;
+        public static int reserved_room_id;
 
-        public static int reservedRoomId;
         public static ReservationItem reservationItem = null;
+        public static Reservation reservation = new Reservation();
 
         // * Methods * //
 
@@ -27,7 +28,7 @@ namespace HotelAndResort.Views
                 flpAvailableRooms.SuspendLayout();
 
                 // Fetch all available rooms that can hold the no. of guests and are currently not selected
-                string query = $"SELECT * FROM `rooms` WHERE `status` = 'available' AND `capacity` >= {totalCount} AND `room_id` != {reservedRoomId}";
+                string query = $"SELECT * FROM `rooms` WHERE `room_status` = 'available' AND `room_capacity` >= {guestCount} AND `room_id` != {reserved_room_id}";
                 DataTable results = DatabaseHelper.Select(query);
 
                 if (results.Rows.Count > 0)
@@ -38,8 +39,7 @@ namespace HotelAndResort.Views
                     foreach (DataRow row in results.Rows)
                     {
                         // Add the available room to the FlowLayoutPanel as an AvailableRoomItem
-                        reservedRoomId = Convert.ToInt32(row[0]);
-                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(reservedRoomId);
+                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]));
                         flpAvailableRooms.Controls.Add(availableRoomItem);
 
                         // Adjust and equip the AvailableRoomItem
@@ -53,15 +53,15 @@ namespace HotelAndResort.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{this} | UpdateAvailableRooms() | Error: {ex.Message}");
+                MessageBox.Show($"Booking.cs | UpdateAvailableRooms() | Error: {ex.Message}");
             }
         }
 
         private void UpdateTotalCount()
         {
             // Update the total no. of guests
-            totalCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
-            tbxTotalCount.Text = totalCount.ToString();
+            guestCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
+            tbxGuestCount.Text = guestCount.ToString();
 
             // Update the FlowLayoutPanel for available rooms
             UpdateAvailableRooms();
@@ -69,25 +69,69 @@ namespace HotelAndResort.Views
 
         public void InsertAvailableRoom(int room_id)
         {
+            // Set Reservation attributes
+            reservation.CheckInDateTime = dtpCheckIn.Value;
+            reservation.CheckOutDateTime = dtpCheckOut.Value;
+            reservation.GuestCount = guestCount;
+            reservation.ReservationStatus = "draft";
+
+            // Set the current room_id to the reservation_id for exclusion in search
+            reserved_room_id = room_id;
+
             // Suspend the FlowLayoutPanel
             flpReservationDetails.SuspendLayout();
 
             // Clear the FlowLayoutPanel
             flpReservationDetails.Controls.Clear();
 
-            // Add the selected AvailableRoomItem as a ReservationItem or, if it already exists, update the ReservationItem
-            reservationItem?.Dispose();
-            reservationItem = new ReservationItem(room_id);
-            flpReservationDetails.Controls.Add(reservationItem);
+            try
+            {
+                string query = $"SELECT * FROM `rooms` WHERE `room_id` = {room_id}";
+                DataTable result = DatabaseHelper.Select(query);
 
-            // Adjust the ReservationItem
-            reservationItem.Dock = DockStyle.Top;
+                if (result.Rows.Count > 0)
+                {
+                    DataRow row = result.Rows[0];
+
+                    // Set Reservation attributes
+                    SetReservationAttributes_Room(row);
+
+                    // Add the selected AvailableRoomItem as a ReservationItem or, if it already exists, update the ReservationItem
+                    reservationItem?.Dispose();
+                    reservationItem = new ReservationItem(reservation);
+                    flpReservationDetails.Controls.Add(reservationItem);
+
+                    // Adjust the ReservationItem
+                    reservationItem.Dock = DockStyle.Top;
+                }
+                else
+                {
+                    MessageBox.Show("No data found for the specified ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading content: {ex.Message}");
+            }
 
             // Resume the FlowLayoutPanel
             flpReservationDetails.ResumeLayout();
 
             // Update the FlowLayoutPanel for available rooms
             UpdateAvailableRooms();
+        }
+
+        public void SetReservationAttributes_Room(DataRow row)
+        {
+            // Set Reservation attributes
+            reservation.RoomNumber = (string)row["room_number"];
+            reservation.RoomType = (string)row["room_type"];
+            reservation.RoomDescription = (string)row["room_description"];
+            reservation.RoomPrice = (decimal)row["room_price"];
+            reservation.RoomCapacity = (int)row["room_capacity"];
+            reservation.RoomStatus = (string)row["room_status"];
+
+            reservation.ReservationPrice += (decimal)row["room_price"];
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //
@@ -177,7 +221,7 @@ namespace HotelAndResort.Views
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-            Global.OpenForm(this, Global.frmBookingServices);
+
         }
     }
 }
