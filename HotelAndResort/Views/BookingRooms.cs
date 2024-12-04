@@ -13,76 +13,81 @@ namespace HotelAndResort.Views
         // * Attributes * //
 
         public static int totalCount = 1;
-        public SelectedRoomItem selectedRoomItem = null;
+
+        public static int reservedRoomId;
+        public static ReservationItem reservationItem = null;
 
         // * Methods * //
 
-        private void LoadRoomsWhere(string condition)
+        private void UpdateAvailableRooms()
         {
             try
             {
-                flpAvailableRooms.Controls.Clear();
+                // Suspend the FlowLayoutPanel
+                flpAvailableRooms.SuspendLayout();
 
-                string query = "SELECT * FROM `rooms` WHERE " + condition;
-
+                // Fetch all available rooms that can hold the no. of guests and are currently not selected
+                string query = $"SELECT * FROM `rooms` WHERE `status` = 'available' AND `capacity` >= {totalCount} AND `room_id` != {reservedRoomId}";
                 DataTable results = DatabaseHelper.Select(query);
 
                 if (results.Rows.Count > 0)
                 {
-                    flpAvailableRooms.SuspendLayout();
+                    // Clear the FlowLayoutPanel
+                    flpAvailableRooms.Controls.Clear();
+
                     foreach (DataRow row in results.Rows)
                     {
-                        int room_id = Convert.ToInt32(row[0]);
-                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(room_id);
-
+                        // Add the available room to the FlowLayoutPanel as an AvailableRoomItem
+                        reservedRoomId = Convert.ToInt32(row[0]);
+                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(reservedRoomId);
                         flpAvailableRooms.Controls.Add(availableRoomItem);
 
-                        availableRoomItem.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
-
-                        availableRoomItem.RoomSelected += AddSelectedRoom;
+                        // Adjust and equip the AvailableRoomItem
+                        availableRoomItem.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
+                        availableRoomItem.RoomSelected += InsertAvailableRoom;
                     }
-                    flpAvailableRooms.ResumeLayout();
                 }
+
+                // Resume the FlowLayoutPanel
+                flpAvailableRooms.ResumeLayout();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading content: {ex.Message}");
+                MessageBox.Show($"{this} | UpdateAvailableRooms() | Error: {ex.Message}");
             }
         }
 
         private void UpdateTotalCount()
         {
+            // Update the total no. of guests
             totalCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
             tbxTotalCount.Text = totalCount.ToString();
-            LoadRoomsWhere($"`status` = 'available' AND `capacity` >= {totalCount}");
+
+            // Update the FlowLayoutPanel for available rooms
+            UpdateAvailableRooms();
         }
 
-        public void AddSelectedRoom(int room_id)
+        public void InsertAvailableRoom(int room_id)
         {
-            flpSelectedRooms.SuspendLayout();
+            // Suspend the FlowLayoutPanel
+            flpReservationDetails.SuspendLayout();
 
-            //SelectedRoomItem selectedRoomItem = new SelectedRoomItem(room_id);
-            //flpSelectedRooms.Controls.Add(selectedRoomItem);
+            // Clear the FlowLayoutPanel
+            flpReservationDetails.Controls.Clear();
 
-            //selectedRoomItem.Dock = DockStyle.Top;
+            // Add the selected AvailableRoomItem as a ReservationItem or, if it already exists, update the ReservationItem
+            reservationItem?.Dispose();
+            reservationItem = new ReservationItem(room_id);
+            flpReservationDetails.Controls.Add(reservationItem);
 
-            flpSelectedRooms.Controls.Clear();
+            // Adjust the ReservationItem
+            reservationItem.Dock = DockStyle.Top;
 
-            if (selectedRoomItem != null)
-            {
-                DeleteSelectedRoom(selectedRoomItem);
-            }
-            selectedRoomItem = new SelectedRoomItem(room_id);
-            flpSelectedRooms.Controls.Add(selectedRoomItem);
+            // Resume the FlowLayoutPanel
+            flpReservationDetails.ResumeLayout();
 
-            selectedRoomItem.Dock = DockStyle.Top;
-
-            flpSelectedRooms.ResumeLayout();
-        }
-
-        public static void DeleteSelectedRoom(SelectedRoomItem selectedRoomItem)
-        {
-            selectedRoomItem?.Dispose();
+            // Update the FlowLayoutPanel for available rooms
+            UpdateAvailableRooms();
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //
@@ -104,7 +109,6 @@ namespace HotelAndResort.Views
             dtpCheckOut.MinDate = dtpCheckIn.Value;
 
             UpdateTotalCount();
-            LoadRoomsWhere("`status` = 'available'");
         }
 
         // Check-in and check-out date //
@@ -131,43 +135,36 @@ namespace HotelAndResort.Views
             UpdateTotalCount();
         }
 
-        // Search Rooms //
-
-        private void btnSearchRooms_Click(object sender, EventArgs e)
-        {
-            LoadRoomsWhere($"`status` = 'available' AND `capacity` >= {totalCount}");
-        }
-
         // Navigation //
 
         private void btnNavHome_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmHome);
+            Global.OpenForm(this, Global.frmHome);
         }
 
         private void btnNavRooms_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmRooms);
+            Global.OpenForm(this, Global.frmRooms);
         }
 
         private void btnNavServices_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmServices);
+            Global.OpenForm(this, Global.frmServices);
         }
 
         private void btnNavAbout_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmAbout);
+            Global.OpenForm(this, Global.frmAbout);
         }
 
         private void btnNavContact_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmContact);
+            Global.OpenForm(this, Global.frmContact);
         }
 
         private void btnNavLogin_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmLogin);
+            Global.OpenForm(this, Global.frmLogin);
         }
 
         private void btnNavExit_Click(object sender, EventArgs e)
@@ -176,6 +173,11 @@ namespace HotelAndResort.Views
             {
                 Application.Exit();
             }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingServices);
         }
     }
 }

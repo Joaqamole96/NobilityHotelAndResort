@@ -128,7 +128,7 @@
     <Compile Include="DASHBOARD PAGE%28ADMIN%29.Designer.cs">
       <DependentUpon>DASHBOARD PAGE%28ADMIN%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="init.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="LOGIN PAGE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,17 +143,23 @@
     <Compile Include="Models\UserControls\AvailableRoomItem.Designer.cs">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserControls\SelectedRoomItem.cs">
+    <Compile Include="Models\UserControls\ReservationItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\SelectedRoomItem.Designer.cs">
-      <DependentUpon>SelectedRoomItem.cs</DependentUpon>
+    <Compile Include="Models\UserControls\ReservationItem.Designer.cs">
+      <DependentUpon>ReservationItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BookingRooms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\BookingRooms.Designer.cs">
       <DependentUpon>BookingRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookingServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BookingServices.Designer.cs">
+      <DependentUpon>BookingServices.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Services.cs">
       <SubType>Form</SubType>
@@ -185,18 +191,6 @@
     <Compile Include="CONTACT US PAGE.Designer.cs">
       <DependentUpon>CONTACT US PAGE.cs</DependentUpon>
     </Compile>
-    <Compile Include="BOOKING PAGE%28ROOMS%29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BOOKING PAGE%28ROOMS%29.Designer.cs">
-      <DependentUpon>BOOKING PAGE%28ROOMS%29.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BOOKING PAGE%28SERVICES%29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BOOKING PAGE%28SERVICES%29.Designer.cs">
-      <DependentUpon>BOOKING PAGE%28SERVICES%29.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DASHBOARD PAGE%28ADMIN%29.resx">
@@ -205,11 +199,14 @@
     <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\SelectedRoomItem.resx">
-      <DependentUpon>SelectedRoomItem.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\ReservationItem.resx">
+      <DependentUpon>ReservationItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BookingRooms.resx">
       <DependentUpon>BookingRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BookingServices.resx">
+      <DependentUpon>BookingServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -225,12 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CONTACT US PAGE.resx">
       <DependentUpon>CONTACT US PAGE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BOOKING PAGE%28ROOMS%29.resx">
-      <DependentUpon>BOOKING PAGE%28ROOMS%29.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BOOKING PAGE%28SERVICES%29.resx">
-      <DependentUpon>BOOKING PAGE%28SERVICES%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

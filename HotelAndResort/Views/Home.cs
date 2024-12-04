@@ -23,32 +23,32 @@ namespace HotelAndResort
 
         private void btnNavHome_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmHome);
+            Global.OpenForm(this, Global.frmHome);
         }
 
         private void btnNavRooms_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmRooms);
+            Global.OpenForm(this, Global.frmRooms);
         }
 
         private void btnNavServices_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmServices);
+            Global.OpenForm(this, Global.frmServices);
         }
 
         private void btnNavAbout_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmAbout);
+            Global.OpenForm(this, Global.frmAbout);
         }
 
         private void btnNavContact_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmContact);
+            Global.OpenForm(this, Global.frmContact);
         }
 
         private void btnNavLogin_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmLogin);
+            Global.OpenForm(this, Global.frmLogin);
         }
 
         private void btnNavExit_Click(object sender, EventArgs e)
@@ -61,17 +61,17 @@ namespace HotelAndResort
 
         private void btnCTA_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmBookingRooms);
+            Global.OpenForm(this, Global.frmBookingRooms);
         }
 
         private void btnContentCTA_Rooms_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmRooms);
+            Global.OpenForm(this, Global.frmRooms);
         }
 
         private void btnContentCTA_Services_Click(object sender, EventArgs e)
         {
-            init.OpenForm(this, init.frmServices);
+            Global.OpenForm(this, Global.frmServices);
         }
     }
 }

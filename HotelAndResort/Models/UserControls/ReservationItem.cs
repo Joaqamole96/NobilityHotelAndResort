@@ -5,11 +5,12 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
 {
-    public partial class SelectedRoomItem : UserControl
+    public partial class ReservationItem : UserControl
     {
         private int room_id;
+        private double total_price = 0;
 
-        public SelectedRoomItem(int room_id)
+        public ReservationItem(int room_id)
         {
             InitializeComponent();
 
@@ -28,6 +29,12 @@ namespace HotelAndResort.Models.UserControls
                     lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
                     lblRoomCapacity.Text = $"Good for {row["capacity"].ToString()}-{(Convert.ToInt32(row["capacity"]) + 1).ToString()} pax";
                     lblRoomDescription.Text = row["description"].ToString();
+
+                    total_price = Convert.ToDouble(row["price"]);
+                    lblTotalPrice.Text = total_price.ToString();
+
+                    // Set the ReservationItem as the current room reservation
+                    Global.reservedRoom = result;
                 }
                 else
                 {
@@ -40,9 +47,9 @@ namespace HotelAndResort.Models.UserControls
             }
         }
 
-        private void lblRemoveItem_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Dispose();
         }
     }
 }

@@ -68,14 +68,15 @@
             // 
             // lblRoomDisclaimer
             // 
+            this.lblRoomDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoomDisclaimer.AutoSize = true;
             this.lblRoomDisclaimer.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomDisclaimer.Location = new System.Drawing.Point(900, 43);
+            this.lblRoomDisclaimer.Location = new System.Drawing.Point(589, 40);
             this.lblRoomDisclaimer.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDisclaimer.Name = "lblRoomDisclaimer";
-            this.lblRoomDisclaimer.Size = new System.Drawing.Size(83, 42);
+            this.lblRoomDisclaimer.Size = new System.Drawing.Size(101, 28);
             this.lblRoomDisclaimer.TabIndex = 24;
-            this.lblRoomDisclaimer.Text = "per night \r\n(Including taxes \r\nand fees)";
+            this.lblRoomDisclaimer.Text = "per night (Including \r\ntaxes and fees)";
             this.lblRoomDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblRoomCapacity
@@ -92,9 +93,10 @@
             // 
             // lblRoomPrice
             // 
+            this.lblRoomPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoomPrice.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomPrice.Location = new System.Drawing.Point(773, 8);
-            this.lblRoomPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRoomPrice.Location = new System.Drawing.Point(490, 10);
+            this.lblRoomPrice.Margin = new System.Windows.Forms.Padding(5);
             this.lblRoomPrice.Name = "lblRoomPrice";
             this.lblRoomPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblRoomPrice.Size = new System.Drawing.Size(200, 25);
