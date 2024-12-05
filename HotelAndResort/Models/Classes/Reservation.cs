@@ -29,42 +29,5 @@ public class Reservation
         ReservationPrice -= ServicePrice;
     }
 
-    //public Reservation(
-    //    int reservedRoomId,
-    //    int roomId,
-    //    string roomNumber,
-    //    string roomType,
-    //    string roomDescription,
-    //    decimal roomPrice,
-    //    int roomCapacity,
-    //    string roomStatus,
-    //    int userId,
-    //    string userName,
-    //    DateTime checkInDateTime,
-    //    DateTime checkOutDateTime,
-    //    int guestCount,
-    //    decimal reservationPrice,
-    //    string reservationStatus)
-    //{
-    //    ReservedRoomId = reservedRoomId;
-    //    RoomId = roomId;
-    //    RoomNumber = roomNumber;
-    //    RoomType = roomType;
-    //    RoomDescription = roomDescription;
-    //    RoomPrice = roomPrice;
-    //    RoomCapacity = roomCapacity;
-    //    RoomStatus = roomStatus;
-    //    UserId = userId;
-    //    UserName = userName;
-    //    CheckInDateTime = checkInDateTime;
-    //    CheckOutDateTime = checkOutDateTime;
-    //    GuestCount = guestCount;
-    //    ReservationPrice = reservationPrice;
-    //    ReservationStatus = reservationStatus;
-    //}
-
-    public Reservation()
-    {
-
-    }
+    public Reservation(){}
 }

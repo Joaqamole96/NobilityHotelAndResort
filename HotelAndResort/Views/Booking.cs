@@ -22,83 +22,94 @@ namespace HotelAndResort.Views
 
         // * Methods * //
 
-        private void UpdateAvailableRooms()
+        private void UpdateAvailableItems(
+            string tableName, 
+            string statusColumn, 
+            string capacityColumn, 
+            string exclusionColumn, 
+            int guestCount, 
+            int reservedId, 
+            List<int> excludedIds, 
+            FlowLayoutPanel panel, 
+            Action<DataRow> itemCreator)
         {
             try
             {
-                // Suspend the FlowLayoutPanel
-                flpAvailableRooms.SuspendLayout();
+                panel.SuspendLayout();
 
-                // Fetch all available rooms that can hold the no. of guests and are currently not selected
-                string query = $"SELECT * FROM `rooms` WHERE `room_status` = 'available' AND `room_capacity` >= {guestCount} AND `room_id` != {reservedRoomId}";
+                string excludedIdsList = excludedIds.Count > 0 ? string.Join(",", excludedIds) : "0";
+                string query = $@"
+                    SELECT 
+                        * 
+                    FROM 
+                        `{tableName}`
+                    WHERE 
+                        `{statusColumn}` = 'available' 
+                            AND 
+                        `{capacityColumn}` >= {guestCount} 
+                            AND 
+                        `{exclusionColumn}` NOT IN ({excludedIdsList}) 
+                            AND 
+                        `{exclusionColumn}` != {reservedId}
+                ";
                 DataTable results = DatabaseHelper.Select(query);
 
-                if (results.Rows.Count > 0)
+                panel.Controls.Clear();
+                foreach (DataRow row in results.Rows)
                 {
-                    // Clear the FlowLayoutPanel
-                    flpAvailableRooms.Controls.Clear();
-
-                    foreach (DataRow row in results.Rows)
-                    {
-                        // Add the available room to the FlowLayoutPanel as an AvailableRoomItem
-                        AvailableRoomItem availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]));
-                        flpAvailableRooms.Controls.Add(availableRoomItem);
-
-                        // Adjust and equip the AvailableRoomItem
-                        availableRoomItem.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
-                        availableRoomItem.RoomSelected += InsertReservation;
-                    }
+                    itemCreator(row);
                 }
 
-                // Resume the FlowLayoutPanel
-                flpAvailableRooms.ResumeLayout();
-
-                // Update the available services as well
-                UpdateAvailableServices();
+                panel.ResumeLayout();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Booking.cs | UpdateAvailableRooms() | Error: {ex.Message}");
+                MessageBox.Show($"{nameof(UpdateAvailableItems)} Error: {ex.Message}");
             }
         }
 
         private void UpdateAvailableServices()
         {
-            try
-            {
-                // Suspend the FlowLayoutPanel
-                flpAvailableServices.SuspendLayout();
-
-                // Fetch all available services that can hold the no. of guests and are currently not selected
-                string reservedIds = reservedServiceIds.Count > 0 ? string.Join(",", reservedServiceIds) : "0";
-                MessageBox.Show("reservedRoomId: " + reservedRoomId + " | reservedServiceIds: " + reservedIds);
-                string query = $"SELECT * FROM `services` WHERE `service_status` = 'available' AND `service_id` NOT IN ({reservedIds})"; 
-                DataTable results = DatabaseHelper.Select(query);
-
-                if (results.Rows.Count > 0)
-                {
-                    // Clear the FlowLayoutPanel
-                    flpAvailableServices.Controls.Clear();
-
-                    foreach (DataRow row in results.Rows)
+            UpdateAvailableItems(
+                "services", 
+                "service_status", 
+                "service_capacity", 
+                "service_id", 
+                guestCount, 
+                0, 
+                reservedServiceIds, 
+                flpAvailableServices, 
+                row => {
+                    var availableServiceItem = new AvailableServiceItem(Convert.ToInt32(row["service_id"]))
                     {
-                        // Add the available service to the FlowLayoutPanel as an AvailableServiceItem
-                        AvailableServiceItem availableServiceItem = new AvailableServiceItem(Convert.ToInt32(row["service_id"]));
-                        flpAvailableServices.Controls.Add(availableServiceItem);
+                        Width = flpAvailableServices.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
+                    };
+                    availableServiceItem.ServiceSelected += InsertReservedService;
+                    flpAvailableServices.Controls.Add(availableServiceItem);
+                });
+        }
 
-                        // Adjust and equip the AvailableServiceItem
-                        availableServiceItem.Width = flpAvailableServices.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
-                        availableServiceItem.ServiceSelected += InsertReservedService;
-                    }
-                }
+        private void UpdateAvailableRooms()
+        {
+            UpdateAvailableItems(
+                "rooms", 
+                "room_status", 
+                "room_capacity", 
+                "room_id", 
+                guestCount, 
+                reservedRoomId, 
+                new List<int>(), 
+                flpAvailableRooms, 
+                row => {
+                    var availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]))
+                    {
+                        Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
+                    };
+                    availableRoomItem.RoomSelected += InsertReservation;
+                    flpAvailableRooms.Controls.Add(availableRoomItem);
+                });
 
-                // Resume the FlowLayoutPanel
-                flpAvailableServices.ResumeLayout();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Booking.cs | UpdateAvailableServices() | Error: {ex.Message}");
-            }
+            UpdateAvailableServices(); // Ensure services update after rooms
         }
 
         private void UpdateTotalCount()
