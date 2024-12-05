@@ -56,15 +56,6 @@ CREATE TABLE Services (
     service_status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
 );
 
--- Create Reserved_Services table
-CREATE TABLE Reserved_Services (
-    reserved_service_id INT AUTO_INCREMENT PRIMARY KEY,
-    service_id INT,
-    reserved_room_id INT,
-    FOREIGN KEY (reserved_room_id) REFERENCES Reserved_Rooms(reserved_room_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 -- Create Reservation table
 CREATE TABLE Reservation (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -76,6 +67,15 @@ CREATE TABLE Reservation (
     reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
 
     FOREIGN KEY (reserved_room_id) REFERENCES Reserved_Rooms(reserved_room_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Create Reserved_Services table
+CREATE TABLE Reserved_Services (
+    reserved_service_id INT AUTO_INCREMENT PRIMARY KEY,
+    service_id INT,
+    reservation_id INT,
+    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Insert Users

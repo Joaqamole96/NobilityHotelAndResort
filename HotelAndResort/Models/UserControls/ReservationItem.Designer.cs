@@ -33,7 +33,6 @@
             this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.lblRoomDescription = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
-            this.lblAddServices = new System.Windows.Forms.Label();
             this.tlpDates = new System.Windows.Forms.TableLayoutPanel();
             this.lblServices = new System.Windows.Forms.Label();
             this.lblLabelServices = new System.Windows.Forms.Label();
@@ -108,28 +107,14 @@
             // 
             this.pnlDetails.AutoSize = true;
             this.pnlDetails.Controls.Add(this.panel2);
-            this.pnlDetails.Controls.Add(this.lblAddServices);
             this.pnlDetails.Controls.Add(this.tlpDates);
             this.pnlDetails.Controls.Add(this.pnlDivider1);
             this.pnlDetails.Controls.Add(this.tableLayoutPanel1);
             this.pnlDetails.Controls.Add(this.panel1);
             this.pnlDetails.Location = new System.Drawing.Point(10, 118);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(322, 165);
+            this.pnlDetails.Size = new System.Drawing.Size(322, 142);
             this.pnlDetails.TabIndex = 29;
-            // 
-            // lblAddServices
-            // 
-            this.lblAddServices.AutoSize = true;
-            this.lblAddServices.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAddServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddServices.Location = new System.Drawing.Point(0, 137);
-            this.lblAddServices.Margin = new System.Windows.Forms.Padding(0);
-            this.lblAddServices.Name = "lblAddServices";
-            this.lblAddServices.Padding = new System.Windows.Forms.Padding(5);
-            this.lblAddServices.Size = new System.Drawing.Size(87, 23);
-            this.lblAddServices.TabIndex = 41;
-            this.lblAddServices.Text = "Add services...";
             // 
             // tlpDates
             // 
@@ -328,7 +313,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 160);
+            this.panel2.Location = new System.Drawing.Point(0, 137);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.MinimumSize = new System.Drawing.Size(0, 5);
             this.panel2.Name = "panel2";
@@ -350,7 +335,7 @@
             this.MinimumSize = new System.Drawing.Size(340, 0);
             this.Name = "ReservationItem";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(340, 291);
+            this.Size = new System.Drawing.Size(340, 268);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -385,7 +370,6 @@
         private System.Windows.Forms.Label lblLabelServices;
         private System.Windows.Forms.Label lblGuests;
         private System.Windows.Forms.Label lblLabelGuests;
-        private System.Windows.Forms.Label lblAddServices;
         private System.Windows.Forms.Panel panel2;
     }
 }

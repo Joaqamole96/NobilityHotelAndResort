@@ -1,6 +1,7 @@
 ﻿using HotelAndResort.Models.Data;
 using HotelAndResort.Models.UserControls;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace HotelAndResort.Views
 
         public static int guestCount = 1;
         public static int reserved_room_id;
+        public static List<int> reserved_service_id = new List<int>();
 
         public static ReservationItem reservationItem = null;
         public static Reservation reservation = new Reservation();
@@ -50,10 +52,52 @@ namespace HotelAndResort.Views
 
                 // Resume the FlowLayoutPanel
                 flpAvailableRooms.ResumeLayout();
+
+                // Update the available services as well
+                UpdateAvailableServices();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Booking.cs | UpdateAvailableRooms() | Error: {ex.Message}");
+            }
+        }
+
+        private void UpdateAvailableServices()
+        {
+            try
+            {
+                // Suspend the FlowLayoutPanel
+                flpAvailableServices.SuspendLayout();
+
+                // Fetch all available services that can hold the no. of guests and are currently not selected
+                string reservedIds = reserved_service_id.Count > 0 ? string.Join(",", reserved_service_id) : "0";
+                MessageBox.Show(reservedIds);
+                string query = $"SELECT * FROM `services` WHERE `service_status` = 'available' AND `service_id` NOT IN ({reservedIds})"; 
+                DataTable results = DatabaseHelper.Select(query);
+
+                if (results.Rows.Count > 0)
+                {
+                    // Clear the FlowLayoutPanel
+                    flpAvailableServices.Controls.Clear();
+
+                    foreach (DataRow row in results.Rows)
+                    {
+                        // Add the available service to the FlowLayoutPanel as an AvailableServiceItem
+                        AvailableServiceItem availableServiceItem = new AvailableServiceItem(Convert.ToInt32(row["service_id"]));
+                        flpAvailableServices.Controls.Add(availableServiceItem);
+
+                        // Adjust and equip the AvailableServiceItem
+                        availableServiceItem.Width = flpAvailableServices.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
+                        availableServiceItem.ServiceSelected += InsertAvailableService;
+                    }
+                }
+
+                // Resume the FlowLayoutPanel
+                flpAvailableServices.ResumeLayout();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Booking.cs | UpdateAvailableServices() | Error: {ex.Message}");
             }
         }
 
@@ -121,6 +165,52 @@ namespace HotelAndResort.Views
             UpdateAvailableRooms();
         }
 
+        public void InsertAvailableService(int service_id)
+        {
+            // Set the current service_id to the reserved_service_id for exclusion in search
+            reserved_service_id.Add(service_id);
+
+            if (reservationItem != null)
+            {
+                try
+                {
+                    string query = $"SELECT * FROM `services` WHERE `service_id` = {service_id}";
+                    DataTable result = DatabaseHelper.Select(query);
+
+                    if (result.Rows.Count > 0)
+                    {
+                        DataRow row = result.Rows[0];
+
+                        // Create and set ReservedService object and its attributes
+                        ReservedService reservedService = new ReservedService();
+                        SetReservedServiceAttributes(reservedService, row);
+
+                        // Add new ReservedService object
+                        reservationItem.AddReservedService(reservedService);
+
+                        // Invoke method in ReservationItem that adds the selected AvailableServiceItem to it
+                        ReservedServiceItem reservedServiceItem = new ReservedServiceItem(reservedService);
+                        reservationItem.InsertReservedService(reservedServiceItem);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found for the specified ID.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading content: {ex.Message}");
+                }
+
+                // Update the FlowLayoutPanel for available services
+                UpdateAvailableServices();
+            }
+            else
+            {
+                MessageBox.Show("Booking.cs | InsertAvailableService | Error: ReservationItem is null; select a room first.");
+            }
+        }
+
         public void SetReservationAttributes_Room(DataRow row)
         {
             // Set Reservation attributes
@@ -132,6 +222,17 @@ namespace HotelAndResort.Views
             reservation.RoomStatus = (string)row["room_status"];
 
             reservation.ReservationPrice += (decimal)row["room_price"];
+        }
+
+        public void SetReservedServiceAttributes(ReservedService reservedService, DataRow row)
+        {
+            // Set Reservation attributes
+            reservedService.ServiceId = (int)row["service_id"];
+            reservedService.ServiceName = (string)row["service_name"];
+            reservedService.ServiceDescription = (string)row["service_description"];
+            reservedService.ServicePrice = (decimal)row["service_price"];
+            reservedService.ServiceCapacity = (int)row["service_capacity"];
+            reservedService.ServiceStatus = (string)row["service_status"];
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //

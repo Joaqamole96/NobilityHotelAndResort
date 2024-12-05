@@ -137,7 +137,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Classes\Reservation.cs" />
-    <Compile Include="Models\Classes\Reserved_Services.cs" />
+    <Compile Include="Models\Classes\ReservedService.cs" />
     <Compile Include="Models\Helpers\DatabaseHelper.cs" />
     <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
@@ -145,11 +145,23 @@
     <Compile Include="Models\UserControls\AvailableRoomItem.Designer.cs">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserControls\AvailableServiceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\AvailableServiceItem.Designer.cs">
+      <DependentUpon>AvailableServiceItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserControls\ReservationItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Models\UserControls\ReservationItem.Designer.cs">
       <DependentUpon>ReservationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserControls\ReservedServiceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\ReservedServiceItem.Designer.cs">
+      <DependentUpon>ReservedServiceItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Booking.cs">
       <SubType>Form</SubType>
@@ -195,8 +207,14 @@
     <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\AvailableServiceItem.resx">
+      <DependentUpon>AvailableServiceItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\UserControls\ReservationItem.resx">
       <DependentUpon>ReservationItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\ReservedServiceItem.resx">
+      <DependentUpon>ReservedServiceItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>

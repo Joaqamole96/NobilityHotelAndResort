@@ -1,49 +1,27 @@
-﻿using HotelAndResort.Models.Data;
-using System;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
 {
     public partial class ReservationItem : UserControl
     {
-        //public ReservationItem(int room_id)
-        //{
-        //    InitializeComponent();
+        public List<ReservedService> reservedServices = new List<ReservedService>();
 
-        //    try
-        //    {
-        //        string query = $"SELECT * FROM `rooms` WHERE `room_id` = {room_id}";
-        //        DataTable result = DatabaseHelper.Select(query);
+        public void InsertReservedService(ReservedServiceItem reservedServiceItem)
+        {
+            reservedServiceItem.Dock = DockStyle.Top;
+            pnlDetails.Controls.Add(reservedServiceItem);
+        }
 
-        //        if (result.Rows.Count > 0)
-        //        {
-        //            DataRow row = result.Rows[0];
-
-        //            lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
-        //            lblRoomCapacity.Text = $"Good for {row["room_capacity"].ToString()}-{(Convert.ToInt32(row["room_capacity"]) + 1).ToString()} pax";
-        //            lblRoomDescription.Text = row["room_description"].ToString();
-        //            lblTotalPrice.Text = row["room_price"].ToString();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("No data found for the specified ID.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error loading content: {ex.Message}");
-        //    }
-        //}
+        public void AddReservedService(ReservedService service)
+        {
+            reservedServices.Add(service);
+        }
 
         public ReservationItem(Reservation reservation)
         {
             InitializeComponent();
-
-            //lblRoomType.Text = string.Concat(row["room_number"].ToString(), " | ", row["room_type"].ToString());
-            //lblRoomCapacity.Text = $"Good for {row["room_capacity"].ToString()}-{(Convert.ToInt32(row["room_capacity"]) + 1).ToString()} pax";
-            //lblRoomDescription.Text = row["room_description"].ToString();
-            //lblTotalPrice.Text = row["room_price"].ToString();
 
             lblRoomType.Text = reservation.RoomNumber + " | " + reservation.RoomType;
             lblRoomCapacity.Text = reservation.RoomCapacity.ToString();

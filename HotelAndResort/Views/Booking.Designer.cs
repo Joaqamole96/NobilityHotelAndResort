@@ -70,6 +70,7 @@
             this.tbpgAvailableRooms = new System.Windows.Forms.TabPage();
             this.flpAvailableRooms = new System.Windows.Forms.FlowLayoutPanel();
             this.tbpgAvailableServices = new System.Windows.Forms.TabPage();
+            this.flpAvailableServices = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSidePanel.SuspendLayout();
             this.flpSidePanelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSidePanelLogo)).BeginInit();
@@ -85,6 +86,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tbcBooking.SuspendLayout();
             this.tbpgAvailableRooms.SuspendLayout();
+            this.tbpgAvailableServices.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidePanel
@@ -623,13 +625,12 @@
             this.tbpgAvailableRooms.Padding = new System.Windows.Forms.Padding(3);
             this.tbpgAvailableRooms.Size = new System.Drawing.Size(704, 511);
             this.tbpgAvailableRooms.TabIndex = 0;
-            this.tbpgAvailableRooms.Text = "tabPage1";
+            this.tbpgAvailableRooms.Text = "Rooms";
             this.tbpgAvailableRooms.UseVisualStyleBackColor = true;
             // 
             // flpAvailableRooms
             // 
             this.flpAvailableRooms.AutoScroll = true;
-            this.flpAvailableRooms.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpAvailableRooms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpAvailableRooms.Location = new System.Drawing.Point(3, 3);
             this.flpAvailableRooms.Margin = new System.Windows.Forms.Padding(5);
@@ -640,13 +641,25 @@
             // 
             // tbpgAvailableServices
             // 
+            this.tbpgAvailableServices.Controls.Add(this.flpAvailableServices);
             this.tbpgAvailableServices.Location = new System.Drawing.Point(4, 22);
             this.tbpgAvailableServices.Name = "tbpgAvailableServices";
             this.tbpgAvailableServices.Padding = new System.Windows.Forms.Padding(3);
             this.tbpgAvailableServices.Size = new System.Drawing.Size(704, 511);
             this.tbpgAvailableServices.TabIndex = 1;
-            this.tbpgAvailableServices.Text = "tabPage2";
+            this.tbpgAvailableServices.Text = "Services";
             this.tbpgAvailableServices.UseVisualStyleBackColor = true;
+            // 
+            // flpAvailableServices
+            // 
+            this.flpAvailableServices.AutoScroll = true;
+            this.flpAvailableServices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAvailableServices.Location = new System.Drawing.Point(3, 3);
+            this.flpAvailableServices.Margin = new System.Windows.Forms.Padding(5);
+            this.flpAvailableServices.Name = "flpAvailableServices";
+            this.flpAvailableServices.Padding = new System.Windows.Forms.Padding(10);
+            this.flpAvailableServices.Size = new System.Drawing.Size(698, 505);
+            this.flpAvailableServices.TabIndex = 8;
             // 
             // frmBookingRooms
             // 
@@ -684,6 +697,7 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tbcBooking.ResumeLayout(false);
             this.tbpgAvailableRooms.ResumeLayout(false);
+            this.tbpgAvailableServices.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -733,5 +747,6 @@
         private System.Windows.Forms.TabPage tbpgAvailableRooms;
         private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
         private System.Windows.Forms.TabPage tbpgAvailableServices;
+        private System.Windows.Forms.FlowLayoutPanel flpAvailableServices;
     }
 }
