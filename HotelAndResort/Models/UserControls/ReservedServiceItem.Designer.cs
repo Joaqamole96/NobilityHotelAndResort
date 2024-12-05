@@ -70,6 +70,7 @@
             this.lblServiceCapacity.Size = new System.Drawing.Size(213, 16);
             this.lblServiceCapacity.TabIndex = 28;
             this.lblServiceCapacity.Text = "Good for [ServiceCapacity] pax";
+            this.lblServiceCapacity.Visible = false;
             // 
             // lblServiceDescription
             // 

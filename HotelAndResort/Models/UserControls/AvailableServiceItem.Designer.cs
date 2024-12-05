@@ -90,6 +90,7 @@
             this.lblServiceCapacity.Size = new System.Drawing.Size(205, 16);
             this.lblServiceCapacity.TabIndex = 32;
             this.lblServiceCapacity.Text = "Good for [ServiceCapacity] pax";
+            this.lblServiceCapacity.Visible = false;
             // 
             // lblServicePrice
             // 
@@ -131,6 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnCTABooking);
             this.Controls.Add(this.lblServiceDescription);
             this.Controls.Add(this.lblServiceDisclaimer);

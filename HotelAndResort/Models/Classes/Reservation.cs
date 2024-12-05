@@ -19,51 +19,51 @@ public class Reservation
     public decimal ReservationPrice { get; set; }
     public string ReservationStatus { get; set; } // Booking.cs | InsertAvailableRoom()
 
-    public Reservation(
-        int reservedRoomId,
-        int roomId,
-        string roomNumber,
-        string roomType,
-        string roomDescription,
-        decimal roomPrice,
-        int roomCapacity,
-        string roomStatus,
-        int userId,
-        string userName,
-        DateTime checkInDateTime,
-        DateTime checkOutDateTime,
-        int guestCount,
-        decimal reservationPrice,
-        string reservationStatus)
+    public void AddServicePrice(decimal ServicePrice)
     {
-        ReservedRoomId = reservedRoomId;
-        RoomId = roomId;
-        RoomNumber = roomNumber;
-        RoomType = roomType;
-        RoomDescription = roomDescription;
-        RoomPrice = roomPrice;
-        RoomCapacity = roomCapacity;
-        RoomStatus = roomStatus;
-        UserId = userId;
-        UserName = userName;
-        CheckInDateTime = checkInDateTime;
-        CheckOutDateTime = checkOutDateTime;
-        GuestCount = guestCount;
-        ReservationPrice = reservationPrice;
-        ReservationStatus = reservationStatus;
+        ReservationPrice += ServicePrice;
     }
+
+    public void RemoveServicePrice(decimal ServicePrice)
+    {
+        ReservationPrice -= ServicePrice;
+    }
+
+    //public Reservation(
+    //    int reservedRoomId,
+    //    int roomId,
+    //    string roomNumber,
+    //    string roomType,
+    //    string roomDescription,
+    //    decimal roomPrice,
+    //    int roomCapacity,
+    //    string roomStatus,
+    //    int userId,
+    //    string userName,
+    //    DateTime checkInDateTime,
+    //    DateTime checkOutDateTime,
+    //    int guestCount,
+    //    decimal reservationPrice,
+    //    string reservationStatus)
+    //{
+    //    ReservedRoomId = reservedRoomId;
+    //    RoomId = roomId;
+    //    RoomNumber = roomNumber;
+    //    RoomType = roomType;
+    //    RoomDescription = roomDescription;
+    //    RoomPrice = roomPrice;
+    //    RoomCapacity = roomCapacity;
+    //    RoomStatus = roomStatus;
+    //    UserId = userId;
+    //    UserName = userName;
+    //    CheckInDateTime = checkInDateTime;
+    //    CheckOutDateTime = checkOutDateTime;
+    //    GuestCount = guestCount;
+    //    ReservationPrice = reservationPrice;
+    //    ReservationStatus = reservationStatus;
+    //}
 
     public Reservation()
-    {
-
-    }
-
-    public void setRoom()
-    {
-
-    }
-
-    public void setUser()
     {
 
     }

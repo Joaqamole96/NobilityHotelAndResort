@@ -33,9 +33,8 @@
             this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.lblRoomDescription = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tlpDates = new System.Windows.Forms.TableLayoutPanel();
-            this.lblServices = new System.Windows.Forms.Label();
-            this.lblLabelServices = new System.Windows.Forms.Label();
             this.lblGuests = new System.Windows.Forms.Label();
             this.lblLabelGuests = new System.Windows.Forms.Label();
             this.lblCheckOut = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.lblLabelTotalPrice = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlServices = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.tlpDates.SuspendLayout();
@@ -113,8 +112,19 @@
             this.pnlDetails.Controls.Add(this.panel1);
             this.pnlDetails.Location = new System.Drawing.Point(10, 118);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(322, 142);
+            this.pnlDetails.Size = new System.Drawing.Size(322, 120);
             this.pnlDetails.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 115);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.MinimumSize = new System.Drawing.Size(0, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(322, 5);
+            this.panel2.TabIndex = 42;
             // 
             // tlpDates
             // 
@@ -122,8 +132,6 @@
             this.tlpDates.ColumnCount = 2;
             this.tlpDates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpDates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpDates.Controls.Add(this.lblServices, 1, 3);
-            this.tlpDates.Controls.Add(this.lblLabelServices, 0, 3);
             this.tlpDates.Controls.Add(this.lblGuests, 1, 2);
             this.tlpDates.Controls.Add(this.lblLabelGuests, 0, 2);
             this.tlpDates.Controls.Add(this.lblCheckOut, 1, 1);
@@ -134,36 +142,12 @@
             this.tlpDates.Location = new System.Drawing.Point(0, 37);
             this.tlpDates.Margin = new System.Windows.Forms.Padding(0);
             this.tlpDates.Name = "tlpDates";
-            this.tlpDates.RowCount = 4;
+            this.tlpDates.RowCount = 3;
             this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDates.Size = new System.Drawing.Size(322, 100);
+            this.tlpDates.Size = new System.Drawing.Size(322, 78);
             this.tlpDates.TabIndex = 40;
-            // 
-            // lblServices
-            // 
-            this.lblServices.AutoSize = true;
-            this.lblServices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblServices.Location = new System.Drawing.Point(103, 82);
-            this.lblServices.Margin = new System.Windows.Forms.Padding(5);
-            this.lblServices.Name = "lblServices";
-            this.lblServices.Size = new System.Drawing.Size(212, 13);
-            this.lblServices.TabIndex = 37;
-            this.lblServices.Text = "[Services[]]";
-            // 
-            // lblLabelServices
-            // 
-            this.lblLabelServices.AutoSize = true;
-            this.lblLabelServices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLabelServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabelServices.Location = new System.Drawing.Point(7, 82);
-            this.lblLabelServices.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLabelServices.Name = "lblLabelServices";
-            this.lblLabelServices.Size = new System.Drawing.Size(84, 13);
-            this.lblLabelServices.TabIndex = 36;
-            this.lblLabelServices.Text = "Services";
             // 
             // lblGuests
             // 
@@ -172,7 +156,7 @@
             this.lblGuests.Location = new System.Drawing.Point(103, 57);
             this.lblGuests.Margin = new System.Windows.Forms.Padding(5);
             this.lblGuests.Name = "lblGuests";
-            this.lblGuests.Size = new System.Drawing.Size(212, 13);
+            this.lblGuests.Size = new System.Drawing.Size(212, 14);
             this.lblGuests.TabIndex = 35;
             this.lblGuests.Text = "[Guests[]]";
             // 
@@ -184,7 +168,7 @@
             this.lblLabelGuests.Location = new System.Drawing.Point(7, 57);
             this.lblLabelGuests.Margin = new System.Windows.Forms.Padding(5);
             this.lblLabelGuests.Name = "lblLabelGuests";
-            this.lblLabelGuests.Size = new System.Drawing.Size(84, 13);
+            this.lblLabelGuests.Size = new System.Drawing.Size(84, 14);
             this.lblLabelGuests.TabIndex = 34;
             this.lblLabelGuests.Text = "Guests";
             // 
@@ -309,22 +293,20 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panel2
+            // pnlServices
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 137);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.MinimumSize = new System.Drawing.Size(0, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 5);
-            this.panel2.TabIndex = 42;
+            this.pnlServices.AutoSize = true;
+            this.pnlServices.Location = new System.Drawing.Point(10, 244);
+            this.pnlServices.Name = "pnlServices";
+            this.pnlServices.Size = new System.Drawing.Size(322, 0);
+            this.pnlServices.TabIndex = 31;
             // 
             // ReservationItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.pnlServices);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.lblRoomDescription);
@@ -335,7 +317,7 @@
             this.MinimumSize = new System.Drawing.Size(340, 0);
             this.Name = "ReservationItem";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(340, 268);
+            this.Size = new System.Drawing.Size(340, 252);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -366,10 +348,9 @@
         private System.Windows.Forms.Label lblLabelCheckOut;
         private System.Windows.Forms.Label lblLabelCheckIn;
         private System.Windows.Forms.Panel pnlDivider1;
-        private System.Windows.Forms.Label lblServices;
-        private System.Windows.Forms.Label lblLabelServices;
         private System.Windows.Forms.Label lblGuests;
         private System.Windows.Forms.Label lblLabelGuests;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlServices;
     }
 }

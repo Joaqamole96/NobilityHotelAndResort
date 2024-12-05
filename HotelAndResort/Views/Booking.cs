@@ -9,13 +9,13 @@ namespace HotelAndResort.Views
 {
     public partial class frmBookingRooms : Form
     {
-        // * ---------- User-Defined Attributes and Methods ---------- * //
+        // * ---------- User-Defined ---------- * //
 
         // * Attributes * //
 
-        public static int guestCount = 1;
-        public static int reserved_room_id;
-        public static List<int> reserved_service_id = new List<int>();
+        public int guestCount = 1;
+        public int reservedRoomId;
+        public List<int> reservedServiceIds = new List<int>();
 
         public static ReservationItem reservationItem = null;
         public static Reservation reservation = new Reservation();
@@ -30,7 +30,7 @@ namespace HotelAndResort.Views
                 flpAvailableRooms.SuspendLayout();
 
                 // Fetch all available rooms that can hold the no. of guests and are currently not selected
-                string query = $"SELECT * FROM `rooms` WHERE `room_status` = 'available' AND `room_capacity` >= {guestCount} AND `room_id` != {reserved_room_id}";
+                string query = $"SELECT * FROM `rooms` WHERE `room_status` = 'available' AND `room_capacity` >= {guestCount} AND `room_id` != {reservedRoomId}";
                 DataTable results = DatabaseHelper.Select(query);
 
                 if (results.Rows.Count > 0)
@@ -46,7 +46,7 @@ namespace HotelAndResort.Views
 
                         // Adjust and equip the AvailableRoomItem
                         availableRoomItem.Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
-                        availableRoomItem.RoomSelected += InsertAvailableRoom;
+                        availableRoomItem.RoomSelected += InsertReservation;
                     }
                 }
 
@@ -70,8 +70,8 @@ namespace HotelAndResort.Views
                 flpAvailableServices.SuspendLayout();
 
                 // Fetch all available services that can hold the no. of guests and are currently not selected
-                string reservedIds = reserved_service_id.Count > 0 ? string.Join(",", reserved_service_id) : "0";
-                MessageBox.Show(reservedIds);
+                string reservedIds = reservedServiceIds.Count > 0 ? string.Join(",", reservedServiceIds) : "0";
+                MessageBox.Show("reservedRoomId: " + reservedRoomId + " | reservedServiceIds: " + reservedIds);
                 string query = $"SELECT * FROM `services` WHERE `service_status` = 'available' AND `service_id` NOT IN ({reservedIds})"; 
                 DataTable results = DatabaseHelper.Select(query);
 
@@ -88,7 +88,7 @@ namespace HotelAndResort.Views
 
                         // Adjust and equip the AvailableServiceItem
                         availableServiceItem.Width = flpAvailableServices.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20;
-                        availableServiceItem.ServiceSelected += InsertAvailableService;
+                        availableServiceItem.ServiceSelected += InsertReservedService;
                     }
                 }
 
@@ -111,8 +111,10 @@ namespace HotelAndResort.Views
             UpdateAvailableRooms();
         }
 
-        public void InsertAvailableRoom(int room_id)
+        private void InsertReservation(int room_id)
         {
+            reservation = new Reservation();
+
             // Set Reservation attributes
             reservation.CheckInDateTime = dtpCheckIn.Value;
             reservation.CheckOutDateTime = dtpCheckOut.Value;
@@ -120,7 +122,7 @@ namespace HotelAndResort.Views
             reservation.ReservationStatus = "draft";
 
             // Set the current room_id to the reservation_id for exclusion in search
-            reserved_room_id = room_id;
+            reservedRoomId = room_id;
 
             // Suspend the FlowLayoutPanel
             flpReservationDetails.SuspendLayout();
@@ -142,8 +144,12 @@ namespace HotelAndResort.Views
 
                     // Add the selected AvailableRoomItem as a ReservationItem or, if it already exists, update the ReservationItem
                     reservationItem?.Dispose();
-                    reservationItem = new ReservationItem(reservation);
+                    reservationItem = new ReservationItem(this, reservation);
                     flpReservationDetails.Controls.Add(reservationItem);
+
+                    reservedServiceIds.Clear();
+
+                    reservationItem.ReservationRemoved += DeleteReservation;
 
                     // Adjust the ReservationItem
                     reservationItem.Dock = DockStyle.Top;
@@ -165,13 +171,13 @@ namespace HotelAndResort.Views
             UpdateAvailableRooms();
         }
 
-        public void InsertAvailableService(int service_id)
+        private void InsertReservedService(int service_id)
         {
-            // Set the current service_id to the reserved_service_id for exclusion in search
-            reserved_service_id.Add(service_id);
-
-            if (reservationItem != null)
+            if (reservedRoomId != 0)
             {
+                // Set the current service_id to the reservedServiceIds for exclusion in search
+                reservedServiceIds.Add(service_id);
+
                 try
                 {
                     string query = $"SELECT * FROM `services` WHERE `service_id` = {service_id}";
@@ -211,9 +217,10 @@ namespace HotelAndResort.Views
             }
         }
 
-        public void SetReservationAttributes_Room(DataRow row)
+        private void SetReservationAttributes_Room(DataRow row)
         {
             // Set Reservation attributes
+            reservation.RoomId = (int)row["room_id"];
             reservation.RoomNumber = (string)row["room_number"];
             reservation.RoomType = (string)row["room_type"];
             reservation.RoomDescription = (string)row["room_description"];
@@ -224,7 +231,7 @@ namespace HotelAndResort.Views
             reservation.ReservationPrice += (decimal)row["room_price"];
         }
 
-        public void SetReservedServiceAttributes(ReservedService reservedService, DataRow row)
+        private void SetReservedServiceAttributes(ReservedService reservedService, DataRow row)
         {
             // Set Reservation attributes
             reservedService.ServiceId = (int)row["service_id"];
@@ -233,6 +240,24 @@ namespace HotelAndResort.Views
             reservedService.ServicePrice = (decimal)row["service_price"];
             reservedService.ServiceCapacity = (int)row["service_capacity"];
             reservedService.ServiceStatus = (string)row["service_status"];
+
+            reservation.AddServicePrice((decimal)row["service_price"]);
+        }
+
+        public void DeleteReservedServiceId(int serviceId)
+        {
+            reservedServiceIds.Remove(serviceId);
+            UpdateAvailableRooms();
+        }
+
+        public void DeleteReservation()
+        {
+            reservedServiceIds.Clear();
+
+            reservation = null;
+
+            reservedRoomId = 0;
+            UpdateAvailableRooms();
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //

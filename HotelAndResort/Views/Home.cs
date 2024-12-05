@@ -18,7 +18,7 @@ namespace HotelAndResort
         private void frmHome_Load(object sender, EventArgs e)
         {
             // 0. Initialize database
-            DatabaseHelper.Initialize();
+            // DatabaseHelper.Initialize();
         }
 
         private void btnNavHome_Click(object sender, EventArgs e)

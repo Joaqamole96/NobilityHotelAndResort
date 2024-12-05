@@ -118,4 +118,7 @@ VALUES
 ('Public Pool', 'A pool accessible by the hotel and resort patrons.', 200.00, 8, 'available'),
 ('Private Pool', 'A private pool that can be rented hourly by the hotel and resort patrons.', 300.00, 1, 'available'),
 ('Party Area', 'A venue to hold celebrations and functions.', 3000.00, 1, 'available'),
-('Cottage', 'A small hut near the resort\'s pools.', 1500.00, 4, 'available');
+('Cottage 1', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
+('Cottage 2', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
+('Cottage 3', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
+('Cottage 4', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available');
