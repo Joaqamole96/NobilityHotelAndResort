@@ -7,30 +7,31 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Views
 {
-    public partial class frmBookingRooms : Form
+    public partial class frmBooking : Form
     {
         // * ---------- User-Defined ---------- * //
 
         // * Attributes * //
 
         public int guestCount = 1;
-        public int reservedRoomId;
-        public List<int> reservedServiceIds = new List<int>();
 
+        public List<int> reservedAmenityIds = new List<int>();
+
+        public List<int> reservedRoomIds = new List<int>();
+
+        public static Reservation reservation;
         public static ReservationItem reservationItem = null;
-        public static Reservation reservation = new Reservation();
 
         // * Methods * //
 
         private void UpdateAvailableItems(
-            string tableName, 
-            string statusColumn, 
-            string capacityColumn, 
-            string exclusionColumn, 
-            int guestCount, 
-            int reservedId, 
-            List<int> excludedIds, 
-            FlowLayoutPanel panel, 
+            string tableName,
+            string statusColumn,
+            string capacityColumn,
+            string exclusionColumn,
+            int guestCount,
+            List<int> excludedIds,
+            FlowLayoutPanel panel,
             Action<DataRow> itemCreator)
         {
             try
@@ -49,8 +50,6 @@ namespace HotelAndResort.Views
                         `{capacityColumn}` >= {guestCount} 
                             AND 
                         `{exclusionColumn}` NOT IN ({excludedIdsList}) 
-                            AND 
-                        `{exclusionColumn}` != {reservedId}
                 ";
                 DataTable results = DatabaseHelper.Select(query);
 
@@ -68,48 +67,47 @@ namespace HotelAndResort.Views
             }
         }
 
-        private void UpdateAvailableServices()
-        {
-            UpdateAvailableItems(
-                "services", 
-                "service_status", 
-                "service_capacity", 
-                "service_id", 
-                guestCount, 
-                0, 
-                reservedServiceIds, 
-                flpAvailableServices, 
-                row => {
-                    var availableServiceItem = new AvailableServiceItem(Convert.ToInt32(row["service_id"]))
-                    {
-                        Width = flpAvailableServices.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
-                    };
-                    availableServiceItem.ServiceSelected += InsertReservedService;
-                    flpAvailableServices.Controls.Add(availableServiceItem);
-                });
-        }
-
         private void UpdateAvailableRooms()
         {
             UpdateAvailableItems(
-                "rooms", 
-                "room_status", 
-                "room_capacity", 
-                "room_id", 
-                guestCount, 
-                reservedRoomId, 
-                new List<int>(), 
-                flpAvailableRooms, 
+                "rooms",
+                "room_status",
+                "room_capacity",
+                "room_id",
+                guestCount,
+                reservedRoomIds,
+                flpAvailableRooms,
                 row => {
                     var availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]))
                     {
                         Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
                     };
-                    availableRoomItem.RoomSelected += InsertReservation;
+                    availableRoomItem.RoomSelected += InsertReservedRoom;
                     flpAvailableRooms.Controls.Add(availableRoomItem);
                 });
 
-            UpdateAvailableServices(); // Ensure services update after rooms
+            UpdateAvailableAmenities(); // Ensure amenities update after rooms
+        }
+
+        private void UpdateAvailableAmenities()
+        {
+            UpdateAvailableItems(
+                "amenities", 
+                "amenity_status", 
+                "amenity_capacity", 
+                "amenity_id", 
+                guestCount, 
+                reservedAmenityIds, 
+                flpAvailableAmenities, 
+                row => {
+                    var availableAmenityItem = new AvailableAmenityItem(Convert.ToInt32(row["amenity_id"]))
+                    {
+                        Width = flpAvailableAmenities.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
+                    };
+                    availableAmenityItem.AmenitySelected += InsertReservedAmenity;
+                    flpAvailableAmenities.Controls.Add(availableAmenityItem);
+                }
+             );
         }
 
         private void UpdateTotalCount()
@@ -122,24 +120,10 @@ namespace HotelAndResort.Views
             UpdateAvailableRooms();
         }
 
-        private void InsertReservation(int room_id)
+        private void InsertReservedRoom(int room_id)
         {
-            reservation = new Reservation();
-
-            // Set Reservation attributes
-            reservation.CheckInDateTime = dtpCheckIn.Value;
-            reservation.CheckOutDateTime = dtpCheckOut.Value;
-            reservation.GuestCount = guestCount;
-            reservation.ReservationStatus = "draft";
-
-            // Set the current room_id to the reservation_id for exclusion in search
-            reservedRoomId = room_id;
-
-            // Suspend the FlowLayoutPanel
-            flpReservationDetails.SuspendLayout();
-
-            // Clear the FlowLayoutPanel
-            flpReservationDetails.Controls.Clear();
+            // Set the current room_id to the reservedRoomIds for exclusion in search
+            reservedRoomIds.Add(room_id);
 
             try
             {
@@ -150,20 +134,13 @@ namespace HotelAndResort.Views
                 {
                     DataRow row = result.Rows[0];
 
-                    // Set Reservation attributes
-                    SetReservationAttributes_Room(row);
+                    // Create an object ReservedRoom and set its attributes
+                    ReservedRoom reservedRoom = new ReservedRoom();
+                    SetReservedRoomAttributes(reservedRoom, row);
 
-                    // Add the selected AvailableRoomItem as a ReservationItem or, if it already exists, update the ReservationItem
-                    reservationItem?.Dispose();
-                    reservationItem = new ReservationItem(this, reservation);
-                    flpReservationDetails.Controls.Add(reservationItem);
-
-                    reservedServiceIds.Clear();
-
-                    reservationItem.ReservationRemoved += DeleteReservation;
-
-                    // Adjust the ReservationItem
-                    reservationItem.Dock = DockStyle.Top;
+                    // Invoke method in ReservedRoomItem that adds the selected AvailableRoomItem to it
+                    ReservedRoomItem reservedRoomItem = new ReservedRoomItem(reservedRoom);
+                    reservationItem.InsertReservedRoom(reservedRoom, reservedRoomItem);
                 }
                 else
                 {
@@ -175,39 +152,33 @@ namespace HotelAndResort.Views
                 MessageBox.Show($"Error loading content: {ex.Message}");
             }
 
-            // Resume the FlowLayoutPanel
-            flpReservationDetails.ResumeLayout();
-
-            // Update the FlowLayoutPanel for available rooms
+            // Update the FlowLayoutPanel for available amenities
             UpdateAvailableRooms();
         }
 
-        private void InsertReservedService(int service_id)
+        private void InsertReservedAmenity(int amenity_id)
         {
-            if (reservedRoomId != 0)
+            if (reservedRoomIds.Count > 0)
             {
-                // Set the current service_id to the reservedServiceIds for exclusion in search
-                reservedServiceIds.Add(service_id);
+                // Set the current amenity_id to the reservedAmenityIds for exclusion in search
+                reservedAmenityIds.Add(amenity_id);
 
                 try
                 {
-                    string query = $"SELECT * FROM `services` WHERE `service_id` = {service_id}";
+                    string query = $"SELECT * FROM `amenities` WHERE `amenity_id` = {amenity_id}";
                     DataTable result = DatabaseHelper.Select(query);
 
                     if (result.Rows.Count > 0)
                     {
                         DataRow row = result.Rows[0];
 
-                        // Create and set ReservedService object and its attributes
-                        ReservedService reservedService = new ReservedService();
-                        SetReservedServiceAttributes(reservedService, row);
+                        // Create and set ReservedAmenity object and its attributes
+                        ReservedAmenity reservedAmenity = new ReservedAmenity();
+                        SetReservedAmenityAttributes(reservedAmenity, row);
 
-                        // Add new ReservedService object
-                        reservationItem.AddReservedService(reservedService);
-
-                        // Invoke method in ReservationItem that adds the selected AvailableServiceItem to it
-                        ReservedServiceItem reservedServiceItem = new ReservedServiceItem(reservedService);
-                        reservationItem.InsertReservedService(reservedServiceItem);
+                        // Invoke method in ReservedRoomItem that adds the selected AvailableAmenityItem to it
+                        ReservedAmenityItem reservedAmenityItem = new ReservedAmenityItem(reservedAmenity);
+                        reservationItem.InsertReservedAmenity(reservedAmenity, reservedAmenityItem);
                     }
                     else
                     {
@@ -219,56 +190,86 @@ namespace HotelAndResort.Views
                     MessageBox.Show($"Error loading content: {ex.Message}");
                 }
 
-                // Update the FlowLayoutPanel for available services
-                UpdateAvailableServices();
+                // Update the FlowLayoutPanel for available amenities
+                UpdateAvailableAmenities();
             }
             else
             {
-                MessageBox.Show("Booking.cs | InsertAvailableService | Error: ReservationItem is null; select a room first.");
+                MessageBox.Show("Booking.cs | InsertReservedAmenity | Error: ReservedRoomItem is null; select a room first.");
             }
         }
 
-        private void SetReservationAttributes_Room(DataRow row)
+        private void SetReservedRoomAttributes(ReservedRoom reservedRoom, DataRow row)
         {
             // Set Reservation attributes
-            reservation.RoomId = (int)row["room_id"];
-            reservation.RoomNumber = (string)row["room_number"];
-            reservation.RoomType = (string)row["room_type"];
-            reservation.RoomDescription = (string)row["room_description"];
-            reservation.RoomPrice = (decimal)row["room_price"];
-            reservation.RoomCapacity = (int)row["room_capacity"];
-            reservation.RoomStatus = (string)row["room_status"];
+            reservedRoom.RoomId = (int)row["room_id"];
+            reservedRoom.RoomNumber = (string)row["room_number"];
+            reservedRoom.RoomType = (string)row["room_type"];
+            reservedRoom.RoomDescription = (string)row["room_description"];
+            reservedRoom.RoomPrice = (decimal)row["room_price"];
+            reservedRoom.RoomCapacity = (int)row["room_capacity"];
+            reservedRoom.RoomStatus = (string)row["room_status"];
 
-            reservation.ReservationPrice += (decimal)row["room_price"];
+            reservation.AddRoomPrice((decimal)row["room_price"]);
         }
 
-        private void SetReservedServiceAttributes(ReservedService reservedService, DataRow row)
+        private void SetReservedAmenityAttributes(ReservedAmenity reservedAmenity, DataRow row)
         {
             // Set Reservation attributes
-            reservedService.ServiceId = (int)row["service_id"];
-            reservedService.ServiceName = (string)row["service_name"];
-            reservedService.ServiceDescription = (string)row["service_description"];
-            reservedService.ServicePrice = (decimal)row["service_price"];
-            reservedService.ServiceCapacity = (int)row["service_capacity"];
-            reservedService.ServiceStatus = (string)row["service_status"];
+            reservedAmenity.AmenityId = (int)row["amenity_id"];
+            reservedAmenity.AmenityName = (string)row["amenity_name"];
+            reservedAmenity.AmenityDescription = (string)row["amenity_description"];
+            reservedAmenity.AmenityPrice = (decimal)row["amenity_price"];
+            reservedAmenity.AmenityCapacity = (int)row["amenity_capacity"];
+            reservedAmenity.AmenityStatus = (string)row["amenity_status"];
 
-            reservation.AddServicePrice((decimal)row["service_price"]);
+            reservation.AddAmenityPrice((decimal)row["amenity_price"]);
         }
 
-        public void DeleteReservedServiceId(int serviceId)
+        public void DeleteReservedRoomId(int roomId)
         {
-            reservedServiceIds.Remove(serviceId);
+            MessageBox.Show("DeleteReservedRoomId(int roomId)");
+            reservedRoomIds.Remove(roomId);
+
+            if (reservedRoomIds.Count == 0)
+            {
+                foreach(var amenityId in reservedAmenityIds)
+                {
+                    DeleteReservedAmenityId(amenityId);
+                }
+            }
             UpdateAvailableRooms();
         }
 
-        public void DeleteReservation()
+        public void DeleteReservedAmenityId(int amenityId)
         {
-            reservedServiceIds.Clear();
+            MessageBox.Show("DeleteReservedAmenityId(int amenityId)");
+            reservedAmenityIds.Remove(amenityId);
+            UpdateAvailableAmenities();
+        }
 
-            reservation = null;
+        public void DisplayAvailableRooms()
+        {
+            lblAvailableRooms.BackColor = System.Drawing.Color.NavajoWhite;
+            lblAvailableAmenities.BackColor = System.Drawing.Color.AntiqueWhite;
 
-            reservedRoomId = 0;
-            UpdateAvailableRooms();
+            lblAvailableRooms.BorderStyle = BorderStyle.None;
+            lblAvailableAmenities.BorderStyle = BorderStyle.FixedSingle;
+
+            flpAvailableRooms.Show();
+            flpAvailableAmenities.Hide();
+        }
+
+        public void DisplayAvailableAmenities()
+        {
+            lblAvailableAmenities.BackColor = System.Drawing.Color.NavajoWhite;
+            lblAvailableRooms.BackColor = System.Drawing.Color.AntiqueWhite;
+
+            lblAvailableAmenities.BorderStyle = BorderStyle.None;
+            lblAvailableRooms.BorderStyle = BorderStyle.FixedSingle;
+
+            flpAvailableAmenities.Show();
+            flpAvailableRooms.Hide();
         }
 
         // * ---------- Natural Attributes and Methods ---------- * //
@@ -277,19 +278,26 @@ namespace HotelAndResort.Views
 
         // Main //
 
-        public frmBookingRooms()
+        public frmBooking()
         {
             InitializeComponent();
         }
 
         private void BookingRooms_Load(object sender, EventArgs e)
         {
-            dtpCheckIn.Value = DateTime.Now;
             dtpCheckIn.MinDate = DateTime.Now;
-            dtpCheckOut.Value = dtpCheckIn.Value;
+            dtpCheckIn.Value = DateTime.Now;
+
             dtpCheckOut.MinDate = dtpCheckIn.Value;
+            dtpCheckOut.Value = dtpCheckIn.Value;
+
+            reservation = new Reservation(dtpCheckIn.Value, dtpCheckOut.Value);
+            reservationItem = new ReservationItem(this, reservation);
+
+            flpReservationDetails.Controls.Add(reservationItem);
 
             UpdateTotalCount();
+            DisplayAvailableRooms();
         }
 
         // Check-in and check-out date //
@@ -297,6 +305,14 @@ namespace HotelAndResort.Views
         private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
         {
             dtpCheckOut.MinDate = dtpCheckIn.Value;
+            dtpCheckOut.Value = dtpCheckIn.Value;
+
+            reservation = new Reservation(dtpCheckIn.Value, dtpCheckOut.Value);
+        }
+
+        private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+            reservation = new Reservation(dtpCheckIn.Value, dtpCheckOut.Value);
         }
 
         // Guests //
@@ -316,39 +332,39 @@ namespace HotelAndResort.Views
             UpdateTotalCount();
         }
 
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // Navigation //
 
-        private void btnNavHome_Click(object sender, EventArgs e)
+        private void lblHome_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmHome);
         }
 
-        private void btnNavRooms_Click(object sender, EventArgs e)
+        private void lblBooking_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBooking);
+        }
+
+        private void lblRooms_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmRooms);
         }
 
-        private void btnNavServices_Click(object sender, EventArgs e)
-        {
-            Global.OpenForm(this, Global.frmServices);
-        }
-
-        private void btnNavAbout_Click(object sender, EventArgs e)
+        private void lblAbout_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmAbout);
         }
 
-        private void btnNavContact_Click(object sender, EventArgs e)
+        private void lblContact_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmContact);
         }
 
-        private void btnNavLogin_Click(object sender, EventArgs e)
-        {
-            Global.OpenForm(this, Global.frmLogin);
-        }
-
-        private void btnNavExit_Click(object sender, EventArgs e)
+        private void btnExitProgram_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -356,9 +372,14 @@ namespace HotelAndResort.Views
             }
         }
 
-        private void btnNextPage_Click(object sender, EventArgs e)
+        private void lblAvailableItemsRoomTypeControl_Click(object sender, EventArgs e)
         {
+            DisplayAvailableRooms();
+        }
 
+        private void lblAvailableItemsAmenityTypeControl_Click(object sender, EventArgs e)
+        {
+            DisplayAvailableAmenities();
         }
     }
 }

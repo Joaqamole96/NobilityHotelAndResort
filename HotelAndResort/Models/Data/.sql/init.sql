@@ -10,12 +10,14 @@ USE nobilityhotelandresort_db;
 -- Drop existing tables for a clean slate
 DROP TABLE IF EXISTS HomeContent;
 DROP TABLE IF EXISTS Reserved_Services;
+DROP TABLE IF EXISTS Reserved_Amenities;
 DROP TABLE IF EXISTS Reserved_Rooms;
 DROP TABLE IF EXISTS Services;
+DROP TABLE IF EXISTS Amenities;
 DROP TABLE IF EXISTS Rooms;
 DROP TABLE IF EXISTS Users;
 
--- Create Users table
+-- Create Users tablem
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     user_name VARCHAR(50) UNIQUE NOT NULL,
@@ -46,35 +48,31 @@ CREATE TABLE Reserved_Rooms (
     FOREIGN KEY (room_id) REFERENCES Rooms(room_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Create Services table
-CREATE TABLE Services (
-    service_id INT AUTO_INCREMENT PRIMARY KEY,
-    service_name VARCHAR(50) NOT NULL,
-    service_description TEXT,
-    service_price DECIMAL(10, 2) NOT NULL,
-    service_capacity INT NOT NULL,
-    service_status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
+-- Create Amenities table
+CREATE TABLE Amenities (
+    amenity_id INT AUTO_INCREMENT PRIMARY KEY,
+    amenity_name VARCHAR(50) NOT NULL,
+    amenity_description TEXT,
+    amenity_price DECIMAL(10, 2) NOT NULL,
+    amenity_capacity INT NOT NULL,
+    amenity_status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
 );
 
 -- Create Reservation table
 CREATE TABLE Reservation (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
-    reserved_room_id INT,
     check_in_datetime DATETIME NOT NULL,
     check_out_datetime DATETIME NOT NULL,
-    guest_count INT NOT NULL,
     reservation_price DECIMAL(10, 2) NOT NULL,
-    reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
-
-    FOREIGN KEY (reserved_room_id) REFERENCES Reserved_Rooms(reserved_room_id) ON DELETE CASCADE ON UPDATE CASCADE
+    reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft"
 );
 
--- Create Reserved_Services table
-CREATE TABLE Reserved_Services (
-    reserved_service_id INT AUTO_INCREMENT PRIMARY KEY,
-    service_id INT,
+-- Create Reserved_Amenities table
+CREATE TABLE Reserved_Amenities (
+    reserved_amenity_id INT AUTO_INCREMENT PRIMARY KEY,
+    amenity_id INT,
     reservation_id INT,
-    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (amenity_id) REFERENCES Amenities(amenity_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -111,14 +109,16 @@ VALUES
 ('304', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available'),
 ('305', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available');
 
--- Insert Services
-INSERT INTO Services (service_name, service_description, service_price, service_capacity, service_status)
+-- Insert Amenities
+INSERT INTO Amenities (amenity_name, amenity_description, amenity_price, amenity_capacity, amenity_status)
 VALUES
 ('Extra Bed', 'One additional mattress, along with pillows and a blanket.', 500.00, 15, 'available'),
-('Public Pool', 'A pool accessible by the hotel and resort patrons.', 200.00, 8, 'available'),
-('Private Pool', 'A private pool that can be rented hourly by the hotel and resort patrons.', 300.00, 1, 'available'),
-('Party Area', 'A venue to hold celebrations and functions.', 3000.00, 1, 'available'),
-('Cottage 1', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
-('Cottage 2', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
-('Cottage 3', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available'),
-('Cottage 4', 'A small hut near the resort\'s pools.', 1500.00, 1, 'available');
+('Public Pool Access', 'A pool accessible by the hotel and resort patrons.', 500.00, 8, 'available'),
+('Function Hall 1', 'A venue to hold celebrations and functions.', 10000.00, 1, 'available'),
+('Function Hall 2', 'A venue to hold celebrations and functions.', 10000.00, 1, 'available'),
+('Cottage 1', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
+('Cottage 2', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
+('Cottage 3', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
+('Cottage 4', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
+('Cottage 5', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
+('Cottage 6', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available');

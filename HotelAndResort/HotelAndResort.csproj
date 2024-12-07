@@ -137,7 +137,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Classes\Reservation.cs" />
-    <Compile Include="Models\Classes\ReservedService.cs" />
+    <Compile Include="Models\Classes\ReservedAmenity.cs" />
+    <Compile Include="Models\Classes\ReservedRoom.cs" />
     <Compile Include="Models\Helpers\DatabaseHelper.cs" />
     <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
@@ -145,11 +146,11 @@
     <Compile Include="Models\UserControls\AvailableRoomItem.Designer.cs">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserControls\AvailableServiceItem.cs">
+    <Compile Include="Models\UserControls\AvailableAmenityItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\AvailableServiceItem.Designer.cs">
-      <DependentUpon>AvailableServiceItem.cs</DependentUpon>
+    <Compile Include="Models\UserControls\AvailableAmenityItem.Designer.cs">
+      <DependentUpon>AvailableAmenityItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\UserControls\ReservationItem.cs">
       <SubType>UserControl</SubType>
@@ -157,11 +158,17 @@
     <Compile Include="Models\UserControls\ReservationItem.Designer.cs">
       <DependentUpon>ReservationItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserControls\ReservedServiceItem.cs">
+    <Compile Include="Models\UserControls\ReservedAmenityItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Models\UserControls\ReservedServiceItem.Designer.cs">
-      <DependentUpon>ReservedServiceItem.cs</DependentUpon>
+    <Compile Include="Models\UserControls\ReservedAmenityItem.Designer.cs">
+      <DependentUpon>ReservedAmenityItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserControls\ReservedRoomItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\ReservedRoomItem.Designer.cs">
+      <DependentUpon>ReservedRoomItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Booking.cs">
       <SubType>Form</SubType>
@@ -169,11 +176,11 @@
     <Compile Include="Views\Booking.Designer.cs">
       <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Services.cs">
+    <Compile Include="Views\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Services.Designer.cs">
-      <DependentUpon>Services.cs</DependentUpon>
+    <Compile Include="Views\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
@@ -207,14 +214,17 @@
     <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\AvailableServiceItem.resx">
-      <DependentUpon>AvailableServiceItem.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\AvailableAmenityItem.resx">
+      <DependentUpon>AvailableAmenityItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\UserControls\ReservationItem.resx">
       <DependentUpon>ReservationItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\UserControls\ReservedServiceItem.resx">
-      <DependentUpon>ReservedServiceItem.cs</DependentUpon>
+    <EmbeddedResource Include="Models\UserControls\ReservedAmenityItem.resx">
+      <DependentUpon>ReservedAmenityItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\ReservedRoomItem.resx">
+      <DependentUpon>ReservedRoomItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
@@ -224,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN PAGE.resx">
       <DependentUpon>LOGIN PAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
@@ -243,9 +256,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Services.resx">
-      <DependentUpon>Services.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

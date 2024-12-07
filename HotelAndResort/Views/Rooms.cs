@@ -20,11 +20,6 @@ namespace HotelAndResort
             Global.OpenForm(this, Global.frmRooms);
         }
 
-        private void btnNavServices_Click(object sender, EventArgs e)
-        {
-            Global.OpenForm(this, Global.frmServices);
-        }
-
         private void btnNavAbout_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmAbout);

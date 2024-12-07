@@ -1,6 +1,7 @@
 ﻿using HotelAndResort.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
@@ -11,70 +12,126 @@ namespace HotelAndResort.Models.UserControls
 
         // * Attributes * //
 
-        public int reservedRoomId;
+        private Reservation reservation { get; set; }
 
-        public List<ReservedService> reservedServices = new List<ReservedService>();
-        private frmBookingRooms frmBookingRooms;
+        private List<ReservedAmenity> reservedAmenityList = new List<ReservedAmenity>();
+        private List<ReservedRoom> reservedRoomList = new List<ReservedRoom>();
+
+        private frmBooking frmBooking;
 
         public event Action ReservationRemoved;
 
-        public Reservation reservation;
-
         // * Methods * //
 
-        public void InsertReservedService(ReservedServiceItem reservedServiceItem)
+        private void UpdateContents()
         {
-            reservedServiceItem.Dock = DockStyle.Top;
-            reservedServiceItem.ReservedServiceRemoved += DeleteReservedService;
-
-            pnlServices.Controls.Add(reservedServiceItem);
-
-            UpdateContents(reservation);
-        }
-
-        public void AddReservedService(ReservedService service)
-        {
-            reservedServices.Add(service);
-        }
-
-        public void DeleteReservedService(ReservedService reservedService)
-        {
-            int serviceId = reservedService.ReservedServiceId;
-            reservedServices.RemoveAll(s => s.ReservedServiceId == serviceId);
-            frmBookingRooms.DeleteReservedServiceId(reservedService.ServiceId);
-
-            reservation.RemoveServicePrice(reservedService.ServicePrice);
-
-            UpdateContents(reservation);
-        }
-
-        private void UpdateContents(Reservation reservation)
-        {
-            reservedRoomId = reservation.RoomId;
-
-            lblRoomType.Text = reservation.RoomNumber + " | " + reservation.RoomType;
-            lblRoomCapacity.Text = reservation.RoomCapacity.ToString();
-            lblRoomDescription.Text = reservation.RoomDescription;
-
+            // Set labels to current attributes in object reservation
             lblReservationPrice.Text = reservation.ReservationPrice.ToString();
-
             lblCheckIn.Text = reservation.CheckInDateTime.ToString();
             lblCheckOut.Text = reservation.CheckOutDateTime.ToString();
-            lblGuests.Text = reservation.GuestCount.ToString() + " guests";
+
+            // Show or hide FlowLayoutPanel flpReservedRooms based on whether rooms have been reserved or not
+            if (reservedRoomList.Count == 0) { flpReservedRooms.Hide(); }
+            else { flpReservedRooms.Show(); }
+
+            // Show or hide FlowLayoutPanel flpReservedAmenities based on whether amenities have been reserved or not
+            if (reservedAmenityList.Count == 0) { flpReservedAmenities.Hide(); }
+            else { flpReservedAmenities.Show(); }
+        }
+
+        // Rooms //
+
+        public void InsertReservedRoom(ReservedRoom reservedRoom, ReservedRoomItem reservedRoomItem)
+        {
+            reservedRoomList.Add(reservedRoom);
+
+            reservedRoomItem.ReservedRoomRemoved += DeleteReservedRoomItem;
+            flpReservedRooms.Controls.Add(reservedRoomItem);
+
+            UpdateContents();
+        }
+
+        public void DeleteReservedRoomItem(int roomId)
+        {
+            ReservedRoom roomToRemove = null;
+
+            foreach (ReservedRoom reservedRoom in reservedRoomList)
+            {
+                if (reservedRoom.RoomId == roomId)
+                {
+                    roomToRemove = reservedRoom;
+                    break;
+                }
+            }
+
+            if (roomToRemove == null)
+            {
+                MessageBox.Show("roomId not found.");
+                return;
+            }
+
+            reservation.RemoveRoomPrice(roomToRemove.RoomPrice);
+            reservedRoomList.Remove(roomToRemove);
+
+            frmBooking.DeleteReservedRoomId(roomId);
+
+            UpdateContents();
+        }
+
+        // Amenities //
+
+        public void InsertReservedAmenity(ReservedAmenity reservedAmenity, ReservedAmenityItem reservedAmenityItem)
+        {
+            // Add the object reservedAmenity to the List reservedAmenityList
+            reservedAmenityList.Add(reservedAmenity);
+
+            // Outfit and add the user control reservedAmenityItem
+            reservedAmenityItem.ReservedAmenityRemoved += DeleteReservedAmenityItem;
+            flpReservedAmenities.Controls.Add(reservedAmenityItem);
+
+            // Refresh this
+            UpdateContents();
+        }
+
+        public void DeleteReservedAmenityItem(int amenityId)
+        {
+            ReservedAmenity amenityToRemove = null;
+
+            foreach (ReservedAmenity reservedAmenity in reservedAmenityList)
+            {
+                if (reservedAmenity.AmenityId == amenityId)
+                {
+                    amenityToRemove = reservedAmenity;
+                    break;
+                }
+            }
+
+            if (amenityToRemove == null)
+            {
+                MessageBox.Show("amenityId not found.");
+                return;
+            }
+
+            reservation.RemoveAmenityPrice(amenityToRemove.AmenityPrice);
+            reservedAmenityList.Remove(amenityToRemove);
+
+            frmBooking.DeleteReservedAmenityId(amenityId);
+
+            UpdateContents();
         }
 
         // * ---------- Natural ---------- * //
 
         // * Methods * //
 
-        public ReservationItem(frmBookingRooms frmBookingRooms, Reservation reservation)
+        public ReservationItem(frmBooking frmBooking, Reservation reservation)
         {
             InitializeComponent();
 
-            this.frmBookingRooms = frmBookingRooms;
+            this.frmBooking = frmBooking;
             this.reservation = reservation;
 
-            UpdateContents(reservation);
+            UpdateContents();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

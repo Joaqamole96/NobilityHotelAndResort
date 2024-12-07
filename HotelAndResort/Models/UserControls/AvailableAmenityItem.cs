@@ -5,25 +5,25 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
 {
-    public partial class AvailableServiceItem : UserControl
+    public partial class AvailableAmenityItem : UserControl
     {
         // * ---------- User-Defined Attributes and Methods ---------- * //
 
         // * Attributes * //
 
-        private int service_id;
+        private int amenity_id;
 
-        public event Action<int> ServiceSelected;
+        public event Action<int> AmenitySelected;
 
         // * Methods * //
 
-        public AvailableServiceItem(int service_id)
+        public AvailableAmenityItem(int amenity_id)
         {
             InitializeComponent();
 
-            this.service_id = service_id;
+            this.amenity_id = amenity_id;
 
-            string query = $"SELECT * FROM `services` WHERE `service_id` = {this.service_id}";
+            string query = $"SELECT * FROM `amenities` WHERE `amenity_id` = {this.amenity_id}";
 
             try
             {
@@ -33,10 +33,10 @@ namespace HotelAndResort.Models.UserControls
                 {
                     DataRow row = result.Rows[0];
 
-                    lblServiceName.Text = row["service_name"].ToString();
-                    lblServiceCapacity.Text = $"Good for {row["service_capacity"].ToString()} pax";
-                    lblServiceDescription.Text = row["service_description"].ToString();
-                    lblServicePrice.Text = row["service_price"].ToString();
+                    lblAmenityName.Text = row["amenity_name"].ToString();
+                    lblAmenityCapacity.Text = $"Good for {row["amenity_capacity"].ToString()} pax";
+                    lblAmenityDescription.Text = row["amenity_description"].ToString();
+                    lblAmenityPrice.Text = row["amenity_price"].ToString();
                 }
                 else
                 {
@@ -51,8 +51,8 @@ namespace HotelAndResort.Models.UserControls
 
         private void btnCTABooking_Click(object sender, EventArgs e)
         {
-            // Invoke a function in BookingForms.cs that adds this service to the selected service
-            ServiceSelected?.Invoke(service_id);
+            // Invoke a function in BookingForms.cs that adds this amenity to the selected amenity
+            AmenitySelected?.Invoke(amenity_id);
         }
     }
 }

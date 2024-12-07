@@ -139,7 +139,7 @@
             this.Controls.Add(this.lblRoomPrice);
             this.Controls.Add(this.pbxRoomThumbnail);
             this.Controls.Add(this.lblRoomType);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "AvailableRoomItem";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(700, 120);
