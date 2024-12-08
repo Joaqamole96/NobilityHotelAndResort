@@ -44,6 +44,9 @@ CREATE TABLE Reserved_Rooms (
     reserved_room_id INT AUTO_INCREMENT PRIMARY KEY,
     room_id INT,
     user_id INT,
+    guest_count INT NOT NULL,
+    is_discounted TINYINT(1) NOT NULL,
+
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (room_id) REFERENCES Rooms(room_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -72,6 +75,7 @@ CREATE TABLE Reserved_Amenities (
     reserved_amenity_id INT AUTO_INCREMENT PRIMARY KEY,
     amenity_id INT,
     reservation_id INT,
+
     FOREIGN KEY (amenity_id) REFERENCES Amenities(amenity_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -112,7 +116,6 @@ VALUES
 -- Insert Amenities
 INSERT INTO Amenities (amenity_name, amenity_description, amenity_price, amenity_capacity, amenity_status)
 VALUES
-('Extra Bed', 'One additional mattress, along with pillows and a blanket.', 500.00, 15, 'available'),
 ('Public Pool Access', 'A pool accessible by the hotel and resort patrons.', 500.00, 8, 'available'),
 ('Function Hall 1', 'A venue to hold celebrations and functions.', 10000.00, 1, 'available'),
 ('Function Hall 2', 'A venue to hold celebrations and functions.', 10000.00, 1, 'available'),

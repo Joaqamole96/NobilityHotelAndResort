@@ -16,4 +16,6 @@ public class ReservedRoom
             public string RoomStatus { get; set; } // Booking.cs | SetReservedRoomAttributes()
         public int UserId { get; set; }
             public string UserName { get; set; }
+        public int GuestCount { get; set; }
+        public decimal ReservedRoomPrice { get; set; }
 }

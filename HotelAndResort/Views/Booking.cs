@@ -141,6 +141,12 @@ namespace HotelAndResort.Views
                     // Invoke method in ReservedRoomItem that adds the selected AvailableRoomItem to it
                     ReservedRoomItem reservedRoomItem = new ReservedRoomItem(reservedRoom);
                     reservationItem.InsertReservedRoom(reservedRoom, reservedRoomItem);
+
+                    // Reset guestCount
+                    nudAdultCount.Value = 1;
+                    nudChildrenCount.Value = 0;
+                    nudSpecialCount.Value = 0;
+                    UpdateTotalCount();
                 }
                 else
                 {
@@ -209,8 +215,10 @@ namespace HotelAndResort.Views
             reservedRoom.RoomPrice = (decimal)row["room_price"];
             reservedRoom.RoomCapacity = (int)row["room_capacity"];
             reservedRoom.RoomStatus = (string)row["room_status"];
-
-            reservation.AddRoomPrice((decimal)row["room_price"]);
+            reservedRoom.GuestCount = guestCount;
+            reservedRoom.ReservedRoomPrice = (nudSpecialCount.Value > 0) ? (decimal)row["room_price"] * 0.8m : (decimal)row["room_price"];
+          
+            reservation.AddRoomPrice(reservedRoom.ReservedRoomPrice);
         }
 
         private void SetReservedAmenityAttributes(ReservedAmenity reservedAmenity, DataRow row)
@@ -228,23 +236,28 @@ namespace HotelAndResort.Views
 
         public void DeleteReservedRoomId(int roomId)
         {
-            MessageBox.Show("DeleteReservedRoomId(int roomId)");
             reservedRoomIds.Remove(roomId);
 
             if (reservedRoomIds.Count == 0)
             {
-                foreach(var amenityId in reservedAmenityIds)
-                {
-                    DeleteReservedAmenityId(amenityId);
-                }
+                // Clear all amenity items
+                reservationItem.DeleteReservedAmenityItems();
+
+                // Clear all amenity IDs
+                DeleteReservedAmenityIds();
             }
             UpdateAvailableRooms();
         }
 
         public void DeleteReservedAmenityId(int amenityId)
         {
-            MessageBox.Show("DeleteReservedAmenityId(int amenityId)");
             reservedAmenityIds.Remove(amenityId);
+            UpdateAvailableAmenities();
+        }
+
+        public void DeleteReservedAmenityIds()
+        {
+            reservedAmenityIds.Clear();
             UpdateAvailableAmenities();
         }
 
@@ -332,11 +345,6 @@ namespace HotelAndResort.Views
             UpdateTotalCount();
         }
 
-        private void btnNextPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
         // Navigation //
 
         private void lblHome_Click(object sender, EventArgs e)
@@ -380,6 +388,27 @@ namespace HotelAndResort.Views
         private void lblAvailableItemsAmenityTypeControl_Click(object sender, EventArgs e)
         {
             DisplayAvailableAmenities();
+        }
+
+        private void btnNextStep_Click(object sender, EventArgs e)
+        {
+            if (reservedRoomIds.Count > 0)
+            {
+                Confirmation confirmation = new Confirmation();
+                confirmation.ShowDialog();
+                if (confirmation.DialogResult == DialogResult.Yes)
+                {
+                    Global.OpenForm(this, Global.frmHome);
+                }
+                else if (confirmation.DialogResult == DialogResult.Cancel)
+                {
+                    confirmation.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a room first.");
+            }
         }
     }
 }

@@ -31,7 +31,7 @@
             this.pbxRoomThumbnail = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblRoomNumber = new System.Windows.Forms.Label();
-            this.lblRoomCapacity = new System.Windows.Forms.Label();
+            this.lblRoomGuestCount = new System.Windows.Forms.Label();
             this.lblRoomDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRoomThumbnail)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.lblRoomNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumber.Location = new System.Drawing.Point(85, 5);
             this.lblRoomNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomNumber.Name = "lblRoomNumber";
@@ -71,24 +71,23 @@
             this.lblRoomNumber.TabIndex = 34;
             this.lblRoomNumber.Text = "Room [RoomNumber]";
             // 
-            // lblRoomCapacity
+            // lblRoomGuestCount
             // 
-            this.lblRoomCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblRoomGuestCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomCapacity.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomCapacity.Location = new System.Drawing.Point(86, 27);
-            this.lblRoomCapacity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.lblRoomCapacity.Name = "lblRoomCapacity";
-            this.lblRoomCapacity.Size = new System.Drawing.Size(213, 16);
-            this.lblRoomCapacity.TabIndex = 35;
-            this.lblRoomCapacity.Text = "[RoomCapacity] pax";
-            this.lblRoomCapacity.Visible = false;
+            this.lblRoomGuestCount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomGuestCount.Location = new System.Drawing.Point(85, 27);
+            this.lblRoomGuestCount.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.lblRoomGuestCount.Name = "lblRoomGuestCount";
+            this.lblRoomGuestCount.Size = new System.Drawing.Size(213, 21);
+            this.lblRoomGuestCount.TabIndex = 35;
+            this.lblRoomGuestCount.Text = "[RoomGuestCount] pax";
             // 
             // lblRoomDescription
             // 
             this.lblRoomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomDescription.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomDescription.Location = new System.Drawing.Point(86, 53);
             this.lblRoomDescription.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDescription.Name = "lblRoomDescription";
@@ -103,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.Controls.Add(this.lblRoomDescription);
-            this.Controls.Add(this.lblRoomCapacity);
+            this.Controls.Add(this.lblRoomGuestCount);
             this.Controls.Add(this.lblRoomNumber);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.pbxRoomThumbnail);
@@ -120,7 +119,7 @@
         private System.Windows.Forms.PictureBox pbxRoomThumbnail;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblRoomNumber;
-        private System.Windows.Forms.Label lblRoomCapacity;
+        private System.Windows.Forms.Label lblRoomGuestCount;
         private System.Windows.Forms.Label lblRoomDescription;
     }
 }

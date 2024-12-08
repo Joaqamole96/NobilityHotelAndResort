@@ -49,14 +49,12 @@
             this.tbxLabelChildren = new System.Windows.Forms.TextBox();
             this.tbxGuestCount = new System.Windows.Forms.TextBox();
             this.lblGuests = new System.Windows.Forms.Label();
-            this.pbxSearch = new System.Windows.Forms.PictureBox();
             this.tlpAvailableItemsSortControls = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlSelectedRoom = new System.Windows.Forms.Panel();
             this.flpReservationDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNextPage = new System.Windows.Forms.Button();
             this.lblReservationDetails = new System.Windows.Forms.Label();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
@@ -88,6 +86,7 @@
             this.tlpAvailableItemsTypeControls = new System.Windows.Forms.TableLayoutPanel();
             this.lblAvailableAmenities = new System.Windows.Forms.Label();
             this.lblAvailableRooms = new System.Windows.Forms.Label();
+            this.btnNextStep = new System.Windows.Forms.Button();
             this.flpBookingDetails.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlDates.SuspendLayout();
@@ -97,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
             this.tlpAvailableItemsSortControls.SuspendLayout();
             this.pnlSelectedRoom.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -153,15 +151,15 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel4.Controls.Add(this.pnlDates, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.pnlGuests, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.pbxSearch, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(8, 43);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(691, 119);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
@@ -173,7 +171,7 @@
             this.pnlDates.Location = new System.Drawing.Point(5, 5);
             this.pnlDates.Margin = new System.Windows.Forms.Padding(5);
             this.pnlDates.Name = "pnlDates";
-            this.pnlDates.Size = new System.Drawing.Size(275, 109);
+            this.pnlDates.Size = new System.Drawing.Size(281, 109);
             this.pnlDates.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -192,7 +190,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(273, 84);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(279, 84);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // label2
@@ -216,7 +214,7 @@
             this.dtpCheckIn.Location = new System.Drawing.Point(70, 5);
             this.dtpCheckIn.Margin = new System.Windows.Forms.Padding(5);
             this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(198, 20);
+            this.dtpCheckIn.Size = new System.Drawing.Size(204, 20);
             this.dtpCheckIn.TabIndex = 8;
             this.dtpCheckIn.Value = new System.DateTime(2024, 12, 3, 16, 6, 12, 0);
             this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
@@ -229,7 +227,7 @@
             this.dtpCheckOut.Location = new System.Drawing.Point(70, 47);
             this.dtpCheckOut.Margin = new System.Windows.Forms.Padding(5);
             this.dtpCheckOut.Name = "dtpCheckOut";
-            this.dtpCheckOut.Size = new System.Drawing.Size(198, 20);
+            this.dtpCheckOut.Size = new System.Drawing.Size(204, 20);
             this.dtpCheckOut.TabIndex = 5;
             this.dtpCheckOut.ValueChanged += new System.EventHandler(this.dtpCheckOut_ValueChanged);
             // 
@@ -253,7 +251,7 @@
             this.lblDates.Location = new System.Drawing.Point(0, 0);
             this.lblDates.Margin = new System.Windows.Forms.Padding(0);
             this.lblDates.Name = "lblDates";
-            this.lblDates.Size = new System.Drawing.Size(273, 23);
+            this.lblDates.Size = new System.Drawing.Size(279, 23);
             this.lblDates.TabIndex = 1;
             this.lblDates.Text = "Reservation Dates";
             this.lblDates.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -263,20 +261,20 @@
             this.pnlGuests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGuests.Controls.Add(this.tableLayoutPanel2);
             this.pnlGuests.Controls.Add(this.lblGuests);
-            this.pnlGuests.Location = new System.Drawing.Point(290, 5);
+            this.pnlGuests.Location = new System.Drawing.Point(296, 5);
             this.pnlGuests.Margin = new System.Windows.Forms.Padding(5);
             this.pnlGuests.Name = "pnlGuests";
-            this.pnlGuests.Size = new System.Drawing.Size(339, 109);
+            this.pnlGuests.Size = new System.Drawing.Size(389, 109);
             this.pnlGuests.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelTotal, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.nudSpecialCount, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.tbxLabelSpecial, 2, 2);
@@ -292,7 +290,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(337, 84);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(387, 84);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tbxLabelTotal
@@ -302,7 +300,7 @@
             this.tbxLabelTotal.Location = new System.Drawing.Point(3, 3);
             this.tbxLabelTotal.Name = "tbxLabelTotal";
             this.tbxLabelTotal.ReadOnly = true;
-            this.tbxLabelTotal.Size = new System.Drawing.Size(78, 22);
+            this.tbxLabelTotal.Size = new System.Drawing.Size(90, 22);
             this.tbxLabelTotal.TabIndex = 14;
             this.tbxLabelTotal.Text = "Total Guests:";
             this.tbxLabelTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -311,9 +309,9 @@
             // 
             this.nudSpecialCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudSpecialCount.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSpecialCount.Location = new System.Drawing.Point(255, 59);
+            this.nudSpecialCount.Location = new System.Drawing.Point(291, 59);
             this.nudSpecialCount.Name = "nudSpecialCount";
-            this.nudSpecialCount.Size = new System.Drawing.Size(79, 20);
+            this.nudSpecialCount.Size = new System.Drawing.Size(93, 20);
             this.nudSpecialCount.TabIndex = 9;
             this.nudSpecialCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSpecialCount.ValueChanged += new System.EventHandler(this.nudSpecialCount_ValueChanged);
@@ -322,10 +320,10 @@
             // 
             this.tbxLabelSpecial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxLabelSpecial.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLabelSpecial.Location = new System.Drawing.Point(171, 59);
+            this.tbxLabelSpecial.Location = new System.Drawing.Point(195, 59);
             this.tbxLabelSpecial.Name = "tbxLabelSpecial";
             this.tbxLabelSpecial.ReadOnly = true;
-            this.tbxLabelSpecial.Size = new System.Drawing.Size(78, 22);
+            this.tbxLabelSpecial.Size = new System.Drawing.Size(90, 22);
             this.tbxLabelSpecial.TabIndex = 10;
             this.tbxLabelSpecial.Text = "Senior/PWD:";
             this.tbxLabelSpecial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -334,9 +332,9 @@
             // 
             this.nudChildrenCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudChildrenCount.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudChildrenCount.Location = new System.Drawing.Point(255, 31);
+            this.nudChildrenCount.Location = new System.Drawing.Point(291, 31);
             this.nudChildrenCount.Name = "nudChildrenCount";
-            this.nudChildrenCount.Size = new System.Drawing.Size(79, 20);
+            this.nudChildrenCount.Size = new System.Drawing.Size(93, 20);
             this.nudChildrenCount.TabIndex = 7;
             this.nudChildrenCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudChildrenCount.ValueChanged += new System.EventHandler(this.nudChildrenCount_ValueChanged);
@@ -345,10 +343,10 @@
             // 
             this.tbxLabelAdult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxLabelAdult.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLabelAdult.Location = new System.Drawing.Point(171, 3);
+            this.tbxLabelAdult.Location = new System.Drawing.Point(195, 3);
             this.tbxLabelAdult.Name = "tbxLabelAdult";
             this.tbxLabelAdult.ReadOnly = true;
-            this.tbxLabelAdult.Size = new System.Drawing.Size(78, 22);
+            this.tbxLabelAdult.Size = new System.Drawing.Size(90, 22);
             this.tbxLabelAdult.TabIndex = 6;
             this.tbxLabelAdult.Text = "Adults:";
             this.tbxLabelAdult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -357,14 +355,14 @@
             // 
             this.nudAdultCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudAdultCount.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAdultCount.Location = new System.Drawing.Point(255, 3);
+            this.nudAdultCount.Location = new System.Drawing.Point(291, 3);
             this.nudAdultCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudAdultCount.Name = "nudAdultCount";
-            this.nudAdultCount.Size = new System.Drawing.Size(79, 20);
+            this.nudAdultCount.Size = new System.Drawing.Size(93, 20);
             this.nudAdultCount.TabIndex = 5;
             this.nudAdultCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudAdultCount.Value = new decimal(new int[] {
@@ -378,10 +376,10 @@
             // 
             this.tbxLabelChildren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxLabelChildren.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLabelChildren.Location = new System.Drawing.Point(171, 31);
+            this.tbxLabelChildren.Location = new System.Drawing.Point(195, 31);
             this.tbxLabelChildren.Name = "tbxLabelChildren";
             this.tbxLabelChildren.ReadOnly = true;
-            this.tbxLabelChildren.Size = new System.Drawing.Size(78, 22);
+            this.tbxLabelChildren.Size = new System.Drawing.Size(90, 22);
             this.tbxLabelChildren.TabIndex = 8;
             this.tbxLabelChildren.Text = "Children:";
             this.tbxLabelChildren.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -390,10 +388,10 @@
             // 
             this.tbxGuestCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxGuestCount.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGuestCount.Location = new System.Drawing.Point(87, 3);
+            this.tbxGuestCount.Location = new System.Drawing.Point(99, 3);
             this.tbxGuestCount.Name = "tbxGuestCount";
             this.tbxGuestCount.ReadOnly = true;
-            this.tbxGuestCount.Size = new System.Drawing.Size(78, 20);
+            this.tbxGuestCount.Size = new System.Drawing.Size(90, 20);
             this.tbxGuestCount.TabIndex = 15;
             this.tbxGuestCount.Text = "1";
             this.tbxGuestCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -405,19 +403,10 @@
             this.lblGuests.Location = new System.Drawing.Point(0, 0);
             this.lblGuests.Margin = new System.Windows.Forms.Padding(0);
             this.lblGuests.Name = "lblGuests";
-            this.lblGuests.Size = new System.Drawing.Size(337, 23);
+            this.lblGuests.Size = new System.Drawing.Size(387, 23);
             this.lblGuests.TabIndex = 1;
             this.lblGuests.Text = "No. of Guests";
             this.lblGuests.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pbxSearch
-            // 
-            this.pbxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbxSearch.Location = new System.Drawing.Point(637, 3);
-            this.pbxSearch.Name = "pbxSearch";
-            this.pbxSearch.Size = new System.Drawing.Size(51, 113);
-            this.pbxSearch.TabIndex = 5;
-            this.pbxSearch.TabStop = false;
             // 
             // tlpAvailableItemsSortControls
             // 
@@ -468,10 +457,10 @@
             // 
             this.flpReservationDetails.AutoScroll = true;
             this.flpReservationDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpReservationDetails.Location = new System.Drawing.Point(5, 35);
+            this.flpReservationDetails.Location = new System.Drawing.Point(5, 49);
             this.flpReservationDetails.Margin = new System.Windows.Forms.Padding(0);
             this.flpReservationDetails.Name = "flpReservationDetails";
-            this.flpReservationDetails.Size = new System.Drawing.Size(354, 596);
+            this.flpReservationDetails.Size = new System.Drawing.Size(354, 573);
             this.flpReservationDetails.TabIndex = 4;
             // 
             // tableLayoutPanel3
@@ -479,28 +468,14 @@
             this.tableLayoutPanel3.AutoSize = true;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.btnNextPage, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnNextStep, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 631);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 622);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(354, 32);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(354, 41);
             this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.AutoSize = true;
-            this.btnNextPage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNextPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNextPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPage.Location = new System.Drawing.Point(3, 3);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(348, 26);
-            this.btnNextPage.TabIndex = 4;
-            this.btnNextPage.Text = "Confirm Reservation Details";
-            this.btnNextPage.UseVisualStyleBackColor = true;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // lblReservationDetails
             // 
@@ -510,7 +485,8 @@
             this.lblReservationDetails.Location = new System.Drawing.Point(5, 5);
             this.lblReservationDetails.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.lblReservationDetails.Name = "lblReservationDetails";
-            this.lblReservationDetails.Size = new System.Drawing.Size(354, 30);
+            this.lblReservationDetails.Padding = new System.Windows.Forms.Padding(5);
+            this.lblReservationDetails.Size = new System.Drawing.Size(354, 44);
             this.lblReservationDetails.TabIndex = 1;
             this.lblReservationDetails.Text = "Reservation Details";
             this.lblReservationDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -878,6 +854,20 @@
             this.lblAvailableRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAvailableRooms.Click += new System.EventHandler(this.lblAvailableItemsRoomTypeControl_Click);
             // 
+            // btnNextStep
+            // 
+            this.btnNextStep.AutoSize = true;
+            this.btnNextStep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNextStep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNextStep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextStep.Location = new System.Drawing.Point(3, 3);
+            this.btnNextStep.Name = "btnNextStep";
+            this.btnNextStep.Size = new System.Drawing.Size(348, 35);
+            this.btnNextStep.TabIndex = 5;
+            this.btnNextStep.Text = "Next Step";
+            this.btnNextStep.UseVisualStyleBackColor = true;
+            this.btnNextStep.Click += new System.EventHandler(this.btnNextStep_Click);
+            // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -906,7 +896,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSpecialCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildrenCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).EndInit();
             this.tlpAvailableItemsSortControls.ResumeLayout(false);
             this.pnlSelectedRoom.ResumeLayout(false);
             this.pnlSelectedRoom.PerformLayout();
@@ -951,7 +940,6 @@
         private System.Windows.Forms.TextBox tbxGuestCount;
         private System.Windows.Forms.Panel pnlSelectedRoom;
         private System.Windows.Forms.Label lblReservationDetails;
-        private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flpReservationDetails;
         private System.Windows.Forms.TableLayoutPanel tlpAvailableItemsSortControls;
@@ -989,12 +977,12 @@
         private System.Windows.Forms.DateTimePicker dtpCheckOut;
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.Label lblDates;
-        private System.Windows.Forms.PictureBox pbxSearch;
         private System.Windows.Forms.Panel pnlAvailableItems;
         private System.Windows.Forms.TableLayoutPanel tlpAvailableItemsTypeControls;
         private System.Windows.Forms.FlowLayoutPanel flpAvailableRooms;
         private System.Windows.Forms.FlowLayoutPanel flpAvailableAmenities;
         private System.Windows.Forms.Label lblAvailableRooms;
         private System.Windows.Forms.Label lblAvailableAmenities;
+        private System.Windows.Forms.Button btnNextStep;
     }
 }

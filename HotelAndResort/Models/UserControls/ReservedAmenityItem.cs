@@ -22,6 +22,19 @@ namespace HotelAndResort.Models.UserControls
             lblAmenityDescription.Text = reservedAmenity.AmenityDescription;
         }
 
+        public ReservedAmenityItem(ReservedAmenity reservedAmenity, bool displayOnly)
+        {
+            InitializeComponent();
+
+            amenityId = reservedAmenity.AmenityId;
+
+            lblAmenityName.Text = reservedAmenity.AmenityName;
+            lblAmenityCapacity.Text = reservedAmenity.AmenityCapacity.ToString();
+            lblAmenityDescription.Text = reservedAmenity.AmenityDescription;
+
+            btnDelete.Dispose();
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ReservedAmenityRemoved?.Invoke(amenityId);

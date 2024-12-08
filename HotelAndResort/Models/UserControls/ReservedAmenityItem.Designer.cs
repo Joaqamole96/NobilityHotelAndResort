@@ -53,7 +53,7 @@
             // 
             this.lblAmenityCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityCapacity.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityCapacity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityCapacity.Location = new System.Drawing.Point(86, 30);
             this.lblAmenityCapacity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.lblAmenityCapacity.Name = "lblAmenityCapacity";
@@ -66,7 +66,7 @@
             // 
             this.lblAmenityName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityName.Location = new System.Drawing.Point(85, 5);
             this.lblAmenityName.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityName.Name = "lblAmenityName";
@@ -101,7 +101,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.Controls.Add(this.lblAmenityDescription);
             this.Controls.Add(this.lblAmenityCapacity);

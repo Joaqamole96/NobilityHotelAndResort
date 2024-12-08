@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Models.UserControls
@@ -25,8 +18,20 @@ namespace HotelAndResort.Models.UserControls
             roomId = reservedRoom.RoomId;
 
             lblRoomNumber.Text = "Room " + reservedRoom.RoomNumber;
-            lblRoomCapacity.Text = reservedRoom.RoomCapacity.ToString();
+            lblRoomGuestCount.Text = "Reserved for " + reservedRoom.GuestCount.ToString() + " guest/s";
             lblRoomDescription.Text = reservedRoom.RoomDescription;
+        }
+
+        public ReservedRoomItem(ReservedRoom reservedRoom, bool displayOnly)
+        {
+            InitializeComponent();
+
+            roomId = reservedRoom.RoomId;
+
+            lblRoomNumber.Text = "Room " + reservedRoom.RoomNumber;
+            lblRoomGuestCount.Text = "Reserved for " + reservedRoom.GuestCount.ToString() + " guest/s";
+            lblRoomDescription.Text = reservedRoom.RoomDescription;
+            btnDelete.Dispose();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

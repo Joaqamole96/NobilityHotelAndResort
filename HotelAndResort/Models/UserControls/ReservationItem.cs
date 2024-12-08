@@ -14,8 +14,10 @@ namespace HotelAndResort.Models.UserControls
 
         private Reservation reservation { get; set; }
 
-        private List<ReservedAmenity> reservedAmenityList = new List<ReservedAmenity>();
-        private List<ReservedRoom> reservedRoomList = new List<ReservedRoom>();
+        public List<ReservedRoom> reservedRoomList = new List<ReservedRoom>();
+        public List<ReservedAmenity> reservedAmenityList = new List<ReservedAmenity>();
+
+        private List<ReservedAmenityItem> reservedAmenityItems = new List<ReservedAmenityItem>();
 
         private frmBooking frmBooking;
 
@@ -70,7 +72,7 @@ namespace HotelAndResort.Models.UserControls
                 return;
             }
 
-            reservation.RemoveRoomPrice(roomToRemove.RoomPrice);
+            reservation.RemoveRoomPrice(roomToRemove.ReservedRoomPrice);
             reservedRoomList.Remove(roomToRemove);
 
             frmBooking.DeleteReservedRoomId(roomId);
@@ -88,6 +90,7 @@ namespace HotelAndResort.Models.UserControls
             // Outfit and add the user control reservedAmenityItem
             reservedAmenityItem.ReservedAmenityRemoved += DeleteReservedAmenityItem;
             flpReservedAmenities.Controls.Add(reservedAmenityItem);
+            reservedAmenityItems.Add(reservedAmenityItem);
 
             // Refresh this
             UpdateContents();
@@ -116,6 +119,23 @@ namespace HotelAndResort.Models.UserControls
             reservedAmenityList.Remove(amenityToRemove);
 
             frmBooking.DeleteReservedAmenityId(amenityId);
+
+            UpdateContents();
+        }
+
+        public void DeleteReservedAmenityItems()
+        {
+            foreach (ReservedAmenity reservedAmenity in reservedAmenityList)
+            {
+                reservation.RemoveAmenityPrice(reservedAmenity.AmenityPrice);
+            }
+
+            foreach (ReservedAmenityItem reservedAmenityItem in reservedAmenityItems)
+            {
+                reservedAmenityItem.Dispose();
+            }
+
+            reservedAmenityList.Clear();
 
             UpdateContents();
         }
