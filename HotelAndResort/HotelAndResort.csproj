@@ -129,13 +129,6 @@
       <DependentUpon>DASHBOARD PAGE%28ADMIN%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="LOGIN PAGE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>LOGIN PAGE.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Models\Classes\Reservation.cs" />
     <Compile Include="Models\Classes\ReservedAmenity.cs" />
     <Compile Include="Models\Classes\ReservedRoom.cs" />
@@ -181,6 +174,18 @@
     </Compile>
     <Compile Include="Views\Confirmation.Designer.cs">
       <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Payment.cs">
       <SubType>Form</SubType>
@@ -247,8 +252,11 @@
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGIN PAGE.resx">
-      <DependentUpon>LOGIN PAGE.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
@@ -306,6 +314,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Data\.sql\init.sql" />
+    <None Include="Resources\home_services_img.png" />
+    <None Include="Resources\home_rooms_img.png" />
+    <None Include="Resources\home_banner_img.png" />
     <None Include="Resources\search_36dp_000000_FILL0_wght400_GRAD0_opsz40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

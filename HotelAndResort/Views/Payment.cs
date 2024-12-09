@@ -30,15 +30,14 @@ namespace HotelAndResort.Views
         public frmPayment()
         {
             InitializeComponent();
-
-            lblReservationPrice.Text = frmBooking.reservation.ReservationPrice.ToString();
-            lblCheckIn.Text = frmBooking.reservation.CheckInDateTime.ToString();
-            lblCheckOut.Text = frmBooking.reservation.CheckOutDateTime.ToString();
         }
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
 
+            lblReservationPrice.Text = frmBooking.reservation.ReservationPrice.ToString();
+            lblCheckIn.Text = frmBooking.reservation.CheckInDateTime.ToString();
+            lblCheckOut.Text = frmBooking.reservation.CheckOutDateTime.ToString();
         }
 
         private void btnNextStep_Click(object sender, EventArgs e)

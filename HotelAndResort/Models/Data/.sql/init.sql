@@ -49,6 +49,13 @@ CREATE TABLE Amenities (
     amenity_status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
 );
 
+CREATE TABLE Services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    service_name VARCHAR(50) NOT NULL,
+    service_description TEXT NOT NULL,
+    service_price DECIMAL(10, 2) NOT NULL
+);
+
 -- Create Reservation table
 CREATE TABLE Reservation (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,7 +63,7 @@ CREATE TABLE Reservation (
     check_in_datetime DATETIME NOT NULL,
     check_out_datetime DATETIME NOT NULL,
     reservation_price DECIMAL(10, 2) NOT NULL,
-    reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
+    reservation_status ENUM("draft", "pending", "cancelled", "approved", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
 
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -91,30 +98,46 @@ VALUES
 
 -- Insert Standard Rooms
 INSERT INTO Rooms (room_number, room_type, room_description, room_price, room_capacity, room_status)
-VALUES 
-('101', 'Standard Room', 'A basic room with essential amenities.', 2000.00, 2, 'available'),
-('102', 'Standard Room', 'A basic room with essential amenities.', 2000.00, 2, 'available'),
-('103', 'Standard Room', 'A basic room with essential amenities.', 2000.00, 2, 'available'),
-('104', 'Standard Room', 'A basic room with essential amenities.', 2000.00, 2, 'available'),
-('105', 'Standard Room', 'A basic room with essential amenities.', 2000.00, 2, 'available');
+VALUES
+('101', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('102', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('103', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('104', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('105', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('106', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('107', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('108', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('109', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('110', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('111', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('112', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('113', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('114', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available'),
+('115', 'Standard Room', 'A cozy room with basic amenities.', 2500.00, 2, 'available');
 
 -- Insert Premium Rooms
 INSERT INTO Rooms (room_number, room_type, room_description, room_price, room_capacity, room_status)
-VALUES 
-('201', 'Premium Room', 'A more spacious room with additional features.', 3500.00, 3, 'available'),
-('202', 'Premium Room', 'A more spacious room with additional features.', 3500.00, 3, 'available'),
-('203', 'Premium Room', 'A more spacious room with additional features.', 3500.00, 3, 'available'),
-('204', 'Premium Room', 'A more spacious room with additional features.', 3500.00, 3, 'available'),
-('205', 'Premium Room', 'A more spacious room with additional features.', 3500.00, 3, 'available');
+VALUES
+('201', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('202', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('203', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('204', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('205', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('206', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('207', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('208', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('209', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available'),
+('210', 'Premium Room', 'A spacious room with added comforts.', 4500.00, 3, 'available');
 
 -- Insert Deluxe Rooms
 INSERT INTO Rooms (room_number, room_type, room_description, room_price, room_capacity, room_status)
-VALUES 
-('301', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available'),
-('302', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available'),
-('303', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available'),
-('304', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available'),
-('305', 'Deluxe Room', 'A luxurious room with top-notch facilities.', 5000.00, 4, 'available');
+VALUES
+('301', 'Deluxe Room', 'A luxurious suite with high-end facilities.', 7500.00, 4, 'available'),
+('302', 'Deluxe Room', 'A luxurious suite with high-end facilities.', 7500.00, 4, 'available'),
+('303', 'Deluxe Room', 'A luxurious suite with high-end facilities.', 7500.00, 4, 'available'),
+('304', 'Deluxe Room', 'A luxurious suite with high-end facilities.', 7500.00, 4, 'available'),
+('305', 'Deluxe Room', 'A luxurious suite with high-end facilities.', 7500.00, 4, 'available');
+
 
 -- Insert Amenities
 INSERT INTO Amenities (amenity_name, amenity_description, amenity_price, amenity_capacity, amenity_status)

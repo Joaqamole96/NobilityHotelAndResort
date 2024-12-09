@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelAndResort.Views;
+using System;
 using System.Windows.Forms;
 
 namespace HotelAndResort
@@ -10,7 +11,7 @@ namespace HotelAndResort
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHome());
+            Application.Run(new frmHomePage());
         }
     }
 }

@@ -8,12 +8,15 @@ namespace HotelAndResort
         public static Reservation reservation;
 
         public static Form frmHome = new frmHome();
+        public static Form frmHomePage = new frmHomePage();
         public static Form frmRooms = new frmRooms();
         public static Form frmBooking = new frmBooking();
         public static Form frmAbout = new frmAboutUsPage();
         public static Form frmContact = new frmContactUsPage();
-        public static Form frmLogin = new frmLoginPage();
+        public static Form frmLogin = new frmLogin();
         public static Form frmPayment = new frmPayment();
+
+        public static string UserName;
 
         public static void OpenForm(Form currentForm, Form targetForm)
         {

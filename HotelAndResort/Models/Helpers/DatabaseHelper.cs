@@ -41,7 +41,8 @@ namespace HotelAndResort.Models.Data
             }
             catch (Exception ex)
             {
-                throw new Exception($"DatabaseHelper.cs | Initialize() | ERROR: {ex.Message}", ex);
+                MessageBox.Show($"Error: {ex.Message}", "Initialization of Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -65,7 +66,8 @@ namespace HotelAndResort.Models.Data
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error selecting records: {ex.Message}", ex);
+                MessageBox.Show($"Error: {ex.Message}", "Selection of Database Records", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception(ex.Message);
             }
 
             return resultTable;
@@ -86,7 +88,8 @@ namespace HotelAndResort.Models.Data
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error executing non-query: {ex.Message}", ex);
+                MessageBox.Show($"Error: {ex.Message}", "Execution of Database Non-query", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception(ex.Message);
             }
         }
 
