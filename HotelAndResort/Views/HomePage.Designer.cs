@@ -32,15 +32,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNavLogin = new System.Windows.Forms.Button();
-            this.lblNavContact = new System.Windows.Forms.Label();
-            this.lblNavAbout = new System.Windows.Forms.Label();
-            this.lblNavBooking = new System.Windows.Forms.Label();
-            this.lblNavServices = new System.Windows.Forms.Label();
-            this.lblNavRooms = new System.Windows.Forms.Label();
+            this.lblExitProgram = new System.Windows.Forms.Label();
             this.lblNavHome = new System.Windows.Forms.Label();
+            this.lblNavRooms = new System.Windows.Forms.Label();
+            this.lblNavAmenities = new System.Windows.Forms.Label();
+            this.lblNavBooking = new System.Windows.Forms.Label();
+            this.lblNavAbout = new System.Windows.Forms.Label();
+            this.lblNavContact = new System.Windows.Forms.Label();
+            this.btnNavLogin = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCTABooking = new System.Windows.Forms.Button();
@@ -50,25 +52,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCTAServices = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCTARooms = new System.Windows.Forms.Button();
-            this.btnCTAServices = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbxLogo = new System.Windows.Forms.PictureBox();
-            this.lblExitProgram = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnlTopBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,7 +92,7 @@
             this.pnlTopBar.Controls.Add(this.lblExitProgram);
             this.pnlTopBar.Controls.Add(this.lblNavHome);
             this.pnlTopBar.Controls.Add(this.lblNavRooms);
-            this.pnlTopBar.Controls.Add(this.lblNavServices);
+            this.pnlTopBar.Controls.Add(this.lblNavAmenities);
             this.pnlTopBar.Controls.Add(this.lblNavBooking);
             this.pnlTopBar.Controls.Add(this.lblNavAbout);
             this.pnlTopBar.Controls.Add(this.lblNavContact);
@@ -106,27 +106,87 @@
             this.pnlTopBar.Size = new System.Drawing.Size(1280, 100);
             this.pnlTopBar.TabIndex = 10;
             // 
-            // label2
+            // lblExitProgram
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 26);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "by Resortify";
+            this.lblExitProgram.AutoSize = true;
+            this.lblExitProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExitProgram.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExitProgram.Location = new System.Drawing.Point(1250, 6);
+            this.lblExitProgram.Name = "lblExitProgram";
+            this.lblExitProgram.Size = new System.Drawing.Size(24, 26);
+            this.lblExitProgram.TabIndex = 18;
+            this.lblExitProgram.Text = "X";
+            this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
-            // label1
+            // lblNavHome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 26);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nobility Hotel and Resort";
+            this.lblNavHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavHome.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavHome.Location = new System.Drawing.Point(345, 40);
+            this.lblNavHome.Name = "lblNavHome";
+            this.lblNavHome.Size = new System.Drawing.Size(100, 40);
+            this.lblNavHome.TabIndex = 17;
+            this.lblNavHome.Text = "Home";
+            this.lblNavHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNavHome.Click += new System.EventHandler(this.lblNavHome_Click);
+            // 
+            // lblNavRooms
+            // 
+            this.lblNavRooms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavRooms.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavRooms.Location = new System.Drawing.Point(470, 40);
+            this.lblNavRooms.Name = "lblNavRooms";
+            this.lblNavRooms.Size = new System.Drawing.Size(100, 40);
+            this.lblNavRooms.TabIndex = 16;
+            this.lblNavRooms.Text = "Rooms";
+            this.lblNavRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNavRooms.Click += new System.EventHandler(this.lblNavRooms_Click);
+            // 
+            // lblNavAmenities
+            // 
+            this.lblNavAmenities.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavAmenities.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavAmenities.Location = new System.Drawing.Point(595, 40);
+            this.lblNavAmenities.Name = "lblNavAmenities";
+            this.lblNavAmenities.Size = new System.Drawing.Size(100, 40);
+            this.lblNavAmenities.TabIndex = 15;
+            this.lblNavAmenities.Text = "Amenities";
+            this.lblNavAmenities.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNavAmenities.Click += new System.EventHandler(this.lblNavAmenities_Click);
+            // 
+            // lblNavBooking
+            // 
+            this.lblNavBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavBooking.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavBooking.Location = new System.Drawing.Point(720, 40);
+            this.lblNavBooking.Name = "lblNavBooking";
+            this.lblNavBooking.Size = new System.Drawing.Size(100, 40);
+            this.lblNavBooking.TabIndex = 14;
+            this.lblNavBooking.Text = "Book Now";
+            this.lblNavBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNavAbout
+            // 
+            this.lblNavAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavAbout.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavAbout.Location = new System.Drawing.Point(845, 40);
+            this.lblNavAbout.Name = "lblNavAbout";
+            this.lblNavAbout.Size = new System.Drawing.Size(100, 40);
+            this.lblNavAbout.TabIndex = 13;
+            this.lblNavAbout.Text = "About Us";
+            this.lblNavAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNavContact
+            // 
+            this.lblNavContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNavContact.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNavContact.Location = new System.Drawing.Point(970, 40);
+            this.lblNavContact.Name = "lblNavContact";
+            this.lblNavContact.Size = new System.Drawing.Size(100, 40);
+            this.lblNavContact.TabIndex = 12;
+            this.lblNavContact.Text = "Contact Us";
+            this.lblNavContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNavLogin
             // 
@@ -140,72 +200,36 @@
             this.btnNavLogin.Text = "Login";
             this.btnNavLogin.UseVisualStyleBackColor = false;
             // 
-            // lblNavContact
+            // label2
             // 
-            this.lblNavContact.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavContact.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavContact.Location = new System.Drawing.Point(970, 40);
-            this.lblNavContact.Name = "lblNavContact";
-            this.lblNavContact.Size = new System.Drawing.Size(100, 40);
-            this.lblNavContact.TabIndex = 12;
-            this.lblNavContact.Text = "Contact Us";
-            this.lblNavContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(110, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 26);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "by Resortify";
             // 
-            // lblNavAbout
+            // pbxLogo
             // 
-            this.lblNavAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavAbout.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavAbout.Location = new System.Drawing.Point(845, 40);
-            this.lblNavAbout.Name = "lblNavAbout";
-            this.lblNavAbout.Size = new System.Drawing.Size(100, 40);
-            this.lblNavAbout.TabIndex = 13;
-            this.lblNavAbout.Text = "About Us";
-            this.lblNavAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pbxLogo.Location = new System.Drawing.Point(45, 30);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(0);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(50, 50);
+            this.pbxLogo.TabIndex = 8;
+            this.pbxLogo.TabStop = false;
             // 
-            // lblNavBooking
+            // label1
             // 
-            this.lblNavBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavBooking.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavBooking.Location = new System.Drawing.Point(720, 40);
-            this.lblNavBooking.Name = "lblNavBooking";
-            this.lblNavBooking.Size = new System.Drawing.Size(100, 40);
-            this.lblNavBooking.TabIndex = 14;
-            this.lblNavBooking.Text = "Book Now";
-            this.lblNavBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNavServices
-            // 
-            this.lblNavServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavServices.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavServices.Location = new System.Drawing.Point(595, 40);
-            this.lblNavServices.Name = "lblNavServices";
-            this.lblNavServices.Size = new System.Drawing.Size(100, 40);
-            this.lblNavServices.TabIndex = 15;
-            this.lblNavServices.Text = "Services";
-            this.lblNavServices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNavRooms
-            // 
-            this.lblNavRooms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavRooms.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavRooms.Location = new System.Drawing.Point(470, 40);
-            this.lblNavRooms.Name = "lblNavRooms";
-            this.lblNavRooms.Size = new System.Drawing.Size(100, 40);
-            this.lblNavRooms.TabIndex = 16;
-            this.lblNavRooms.Text = "Rooms";
-            this.lblNavRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNavHome
-            // 
-            this.lblNavHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNavHome.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNavHome.Location = new System.Drawing.Point(345, 40);
-            this.lblNavHome.Name = "lblNavHome";
-            this.lblNavHome.Size = new System.Drawing.Size(100, 40);
-            this.lblNavHome.TabIndex = 17;
-            this.lblNavHome.Text = "Home";
-            this.lblNavHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNavHome.Click += new System.EventHandler(this.lblNavHome_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(110, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(230, 26);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nobility Hotel and Resort";
             // 
             // label3
             // 
@@ -287,6 +311,7 @@
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
@@ -297,6 +322,7 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.btnCTAServices);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
@@ -305,6 +331,19 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(492, 230);
             this.panel5.TabIndex = 21;
+            // 
+            // btnCTAServices
+            // 
+            this.btnCTAServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.btnCTAServices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCTAServices.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCTAServices.ForeColor = System.Drawing.Color.White;
+            this.btnCTAServices.Location = new System.Drawing.Point(289, 188);
+            this.btnCTAServices.Name = "btnCTAServices";
+            this.btnCTAServices.Size = new System.Drawing.Size(100, 30);
+            this.btnCTAServices.TabIndex = 23;
+            this.btnCTAServices.Text = "Inquire Now";
+            this.btnCTAServices.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -352,19 +391,6 @@
             this.btnCTARooms.Text = "Reservation";
             this.btnCTARooms.UseVisualStyleBackColor = false;
             // 
-            // btnCTAServices
-            // 
-            this.btnCTAServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.btnCTAServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCTAServices.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTAServices.ForeColor = System.Drawing.Color.White;
-            this.btnCTAServices.Location = new System.Drawing.Point(289, 188);
-            this.btnCTAServices.Name = "btnCTAServices";
-            this.btnCTAServices.Size = new System.Drawing.Size(100, 30);
-            this.btnCTAServices.TabIndex = 23;
-            this.btnCTAServices.Text = "Inquire Now";
-            this.btnCTAServices.UseVisualStyleBackColor = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::HotelAndResort.Properties.Resources.home_services_img;
@@ -392,28 +418,6 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // pbxLogo
-            // 
-            this.pbxLogo.Location = new System.Drawing.Point(45, 30);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(0);
-            this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(50, 50);
-            this.pbxLogo.TabIndex = 8;
-            this.pbxLogo.TabStop = false;
-            // 
-            // lblExitProgram
-            // 
-            this.lblExitProgram.AutoSize = true;
-            this.lblExitProgram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblExitProgram.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExitProgram.Location = new System.Drawing.Point(1250, 6);
-            this.lblExitProgram.Name = "lblExitProgram";
-            this.lblExitProgram.Size = new System.Drawing.Size(24, 26);
-            this.lblExitProgram.TabIndex = 18;
-            this.lblExitProgram.Text = "X";
-            this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
-            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -434,6 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -456,6 +461,7 @@
             this.Text = " Home | Nobility Hotel and Resort";
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -463,7 +469,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +484,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNavLogin;
         private System.Windows.Forms.Label lblNavContact;
-        private System.Windows.Forms.Label lblNavServices;
+        private System.Windows.Forms.Label lblNavAmenities;
         private System.Windows.Forms.Label lblNavBooking;
         private System.Windows.Forms.Label lblNavAbout;
         private System.Windows.Forms.Label lblNavHome;

@@ -10,6 +10,8 @@ namespace HotelAndResort
         public static Form frmHome = new frmHome();
         public static Form frmHomePage = new frmHomePage();
         public static Form frmRooms = new frmRooms();
+        public static Form frmRoomsPage = new frmRoomsPage();
+        public static Form frmAmenitiesPage = new frmAmenitiesPage();
         public static Form frmBooking = new frmBooking();
         public static Form frmAbout = new frmAboutUsPage();
         public static Form frmContact = new frmContactUsPage();
