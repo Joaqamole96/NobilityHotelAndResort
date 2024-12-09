@@ -117,46 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label15.Text" xml:space="preserve">
-    <value>This is a PBL (project-based learning) project undertaken by Resortify Group, a dynamic team under 
-the Hotel and Resort Group. This project demonstrates a collaborative effort to design and develop a 
-high-quality system tailored to enhance hotel and resort management efficiency and simplicity. The 
+  <data name="label21.Text" xml:space="preserve">
+    <value>This is a PBL (project-based learning) project undertaken by Resortify Group, a dynamic team under
+the Hotel and Resort Group. This project demonstrates a collaborative effort to design and develop a
+high-quality system tailored to enhance hotel and resort management efficiency and simplicity. The
 Resortify Group consists of 3 members: Guevarra, Joaquin Luis as the main programmer/
-backend,Picao, Mark Kevin as the second programmer/quality assurance, and lastly, Ricafranca, John 
+backend,Picao, Mark Kevin as the second programmer/quality assurance, and lastly, Ricafranca, John
 Cleford as the third programmer/frontend.
  
  
  </value>
   </data>
-  <data name="label13.Text" xml:space="preserve">
+  <data name="label20.Text" xml:space="preserve">
     <value>At Nobility Hotel and Resort, we are committed to sustainability and community engagement. We proudly support eco-friendly practices and
 collaborate with local artisans and businesses to celebrate the rich culture and heritage of Makati.
 
-Come and discover the perfect harmony of elegance, comfort, and adventure at Nobility Hotel and Resort. Your dream vacation awaits!
- 
- 
- </value>
+Come and discover the perfect harmony of elegance, comfort, and adventure at Nobility Hotel and Resort. Your dream vacation awaits!</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
+  <data name="label19.Text" xml:space="preserve">
     <value>- Prime Location: Surrounded by breathtaking landscapes, pristine beaches, and lush greenery, our resort is a gateway to natural wonders.
 
 - Luxurious Accommodations: From elegant suites to private villas, every room is designed with comfort and style in mind.
 
 - Exceptional Dining: Savor a variety of culinary delights, crafted by our expert chefs using the freshest local ingredients.
 
-- Unparalleled Amenities: Indulge in our spa treatments, infinity pool, fitness center, and recreational activities tailored to all ages.
- 
- </value>
+- Unparalleled Amenities: Indulge in our spa treatments, infinity pool, fitness center, and recreational activities tailored to all ages.</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="label18.Text" xml:space="preserve">
     <value>We aim to provide world-class hospitality with personalized services that cater to your unique needs. By combining
 exquisite accommodations, outstanding amenities, and the natural beauty of our surroundings, we strive to deliver an
-experience that lingers in your memories.
- 
- 
- </value>
+experience that lingers in your memories.</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="label17.Text" xml:space="preserve">
     <value>MABUHAY! Welcome to Nobility Hotel and Resort, where luxury meets comfort and nature embraces you. Nestled in the heart of Makati City our
 resort offers a serene escape from the hustle and bustle of everyday life, providing a perfect blend of relaxation, adventure, and unforgettable
 experiences.
