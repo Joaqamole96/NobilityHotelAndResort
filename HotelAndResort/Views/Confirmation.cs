@@ -1,7 +1,5 @@
-﻿using HotelAndResort.Models.Data;
-using HotelAndResort.Models.UserControls;
+﻿using HotelAndResort.Models.UserControls;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Views
