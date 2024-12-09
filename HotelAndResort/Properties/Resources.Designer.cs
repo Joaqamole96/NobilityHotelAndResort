@@ -63,6 +63,16 @@ namespace HotelAndResort.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap amenities_cottage_img {
+            get {
+                object obj = ResourceManager.GetObject("amenities_cottage_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap amenities_functionhall_img {
             get {
                 object obj = ResourceManager.GetObject("amenities_functionhall_img", resourceCulture);
@@ -86,6 +96,16 @@ namespace HotelAndResort.Properties {
         internal static System.Drawing.Bitmap amenities_publicpool_img {
             get {
                 object obj = ResourceManager.GetObject("amenities_publicpool_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap amenities_videoke_img {
+            get {
+                object obj = ResourceManager.GetObject("amenities_videoke_img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

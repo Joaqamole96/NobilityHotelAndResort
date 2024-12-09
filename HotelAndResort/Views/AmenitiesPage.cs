@@ -15,6 +15,24 @@ namespace HotelAndResort.Views
         public frmAmenitiesPage()
         {
             InitializeComponent();
+
+            btnNavLogin.FlatStyle = FlatStyle.Flat;
+            btnNavLogin.FlatAppearance.BorderSize = 0;
+
+            btnCTABooking1.FlatStyle = FlatStyle.Flat;
+            btnCTABooking1.FlatAppearance.BorderSize = 0;
+
+            btnCTABooking2.FlatStyle = FlatStyle.Flat;
+            btnCTABooking2.FlatAppearance.BorderSize = 0;
+
+            btnCTABooking3.FlatStyle = FlatStyle.Flat;
+            btnCTABooking3.FlatAppearance.BorderSize = 0;
+
+            btnCTABooking4.FlatStyle = FlatStyle.Flat;
+            btnCTABooking4.FlatAppearance.BorderSize = 0;
+
+            btnCTABooking5.FlatStyle = FlatStyle.Flat;
+            btnCTABooking5.FlatAppearance.BorderSize = 0;
         }
 
         private void lblNavHome_Click(object sender, EventArgs e)
