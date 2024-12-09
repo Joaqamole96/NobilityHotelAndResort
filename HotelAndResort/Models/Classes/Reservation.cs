@@ -3,6 +3,8 @@
 public class Reservation
 {
     public int ReservationId { get; set; }
+    public int UserId { get; set; }
+        public string UserName { get; set; }
     public DateTime CheckInDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
     public DateTime CheckOutDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
     public decimal ReservationPrice { get; set; }

@@ -39,18 +39,6 @@ CREATE TABLE Rooms (
     room_status ENUM('available', 'reserved', 'maintenance') DEFAULT 'available'
 );
 
--- Create Reserved_Rooms table
-CREATE TABLE Reserved_Rooms (
-    reserved_room_id INT AUTO_INCREMENT PRIMARY KEY,
-    room_id INT,
-    user_id INT,
-    guest_count INT NOT NULL,
-    is_discounted TINYINT(1) NOT NULL,
-
-    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (room_id) REFERENCES Rooms(room_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 -- Create Amenities table
 CREATE TABLE Amenities (
     amenity_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -64,10 +52,25 @@ CREATE TABLE Amenities (
 -- Create Reservation table
 CREATE TABLE Reservation (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
     check_in_datetime DATETIME NOT NULL,
     check_out_datetime DATETIME NOT NULL,
     reservation_price DECIMAL(10, 2) NOT NULL,
-    reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft"
+    reservation_status ENUM("draft", "booked", "cancelled", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
+
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Create Reserved_Rooms table
+CREATE TABLE Reserved_Rooms (
+    reserved_room_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_id INT,
+    reservation_id INT,
+    guest_count INT NOT NULL,
+    reserved_room_price DECIMAL(10, 2) NOT NULL,
+
+    FOREIGN KEY (room_id) REFERENCES Rooms(room_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Create Reserved_Amenities table

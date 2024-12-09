@@ -394,16 +394,7 @@ namespace HotelAndResort.Views
         {
             if (reservedRoomIds.Count > 0)
             {
-                Confirmation confirmation = new Confirmation();
-                confirmation.ShowDialog();
-                if (confirmation.DialogResult == DialogResult.Yes)
-                {
-                    Global.OpenForm(this, Global.frmHome);
-                }
-                else if (confirmation.DialogResult == DialogResult.Cancel)
-                {
-                    confirmation.Close();
-                }
+                Global.OpenForm(this, Global.frmPayment);
             }
             else
             {

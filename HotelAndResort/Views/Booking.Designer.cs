@@ -55,6 +55,7 @@
             this.pnlSelectedRoom = new System.Windows.Forms.Panel();
             this.flpReservationDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNextStep = new System.Windows.Forms.Button();
             this.lblReservationDetails = new System.Windows.Forms.Label();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             this.tlpAvailableItemsTypeControls = new System.Windows.Forms.TableLayoutPanel();
             this.lblAvailableAmenities = new System.Windows.Forms.Label();
             this.lblAvailableRooms = new System.Windows.Forms.Label();
-            this.btnNextStep = new System.Windows.Forms.Button();
             this.flpBookingDetails.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlDates.SuspendLayout();
@@ -474,8 +474,23 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(354, 41);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // btnNextStep
+            // 
+            this.btnNextStep.AutoSize = true;
+            this.btnNextStep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNextStep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNextStep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextStep.Location = new System.Drawing.Point(3, 3);
+            this.btnNextStep.Name = "btnNextStep";
+            this.btnNextStep.Size = new System.Drawing.Size(348, 35);
+            this.btnNextStep.TabIndex = 5;
+            this.btnNextStep.Text = "Next Step";
+            this.btnNextStep.UseVisualStyleBackColor = true;
+            this.btnNextStep.Click += new System.EventHandler(this.btnNextStep_Click);
             // 
             // lblReservationDetails
             // 
@@ -854,20 +869,6 @@
             this.lblAvailableRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAvailableRooms.Click += new System.EventHandler(this.lblAvailableItemsRoomTypeControl_Click);
             // 
-            // btnNextStep
-            // 
-            this.btnNextStep.AutoSize = true;
-            this.btnNextStep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNextStep.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNextStep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextStep.Location = new System.Drawing.Point(3, 3);
-            this.btnNextStep.Name = "btnNextStep";
-            this.btnNextStep.Size = new System.Drawing.Size(348, 35);
-            this.btnNextStep.TabIndex = 5;
-            this.btnNextStep.Text = "Next Step";
-            this.btnNextStep.UseVisualStyleBackColor = true;
-            this.btnNextStep.Click += new System.EventHandler(this.btnNextStep_Click);
-            // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -941,7 +942,6 @@
         private System.Windows.Forms.Panel pnlSelectedRoom;
         private System.Windows.Forms.Label lblReservationDetails;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flpReservationDetails;
         private System.Windows.Forms.TableLayoutPanel tlpAvailableItemsSortControls;
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Label lblUser;
@@ -984,5 +984,6 @@
         private System.Windows.Forms.Label lblAvailableRooms;
         private System.Windows.Forms.Label lblAvailableAmenities;
         private System.Windows.Forms.Button btnNextStep;
+        private System.Windows.Forms.FlowLayoutPanel flpReservationDetails;
     }
 }
