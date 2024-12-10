@@ -28,7 +28,7 @@ namespace HotelAndResort.Models.Data
         {
             try
             {
-                string query = File.ReadAllText(@"..\..\Models\Data\.sql\init.sql");
+                string query = File.ReadAllText(@"..\..\Models\Data\.sql\init.txt");
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {

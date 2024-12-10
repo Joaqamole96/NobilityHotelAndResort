@@ -297,8 +297,6 @@ namespace HotelAndResort.Views
 
             btnNavLogin.FlatStyle = FlatStyle.Flat;
             btnNavLogin.FlatAppearance.BorderSize = 0;
-
-
         }
 
         private void lblNavHome_Click(object sender, EventArgs e)
@@ -308,7 +306,23 @@ namespace HotelAndResort.Views
 
         private void lblExitProgram_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void frmBookingPage_Load(object sender, EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+                Global.OpenForm(this, Global.frmLoginPage);
+            }
         }
     }
 }

@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flpAdminAvailableRoomItems = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +83,7 @@
             this.lblExitProgram.TabIndex = 18;
             this.lblExitProgram.Text = "X";
             this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
             // btnNavLogin
             // 
@@ -124,12 +128,42 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Nobility Hotel and Resort";
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(140, 228);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1000, 1);
+            this.panel3.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(416, 150);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(448, 48);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Available Rooms";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flpAdminAvailableRoomItems
+            // 
+            this.flpAdminAvailableRoomItems.AutoScroll = true;
+            this.flpAdminAvailableRoomItems.Location = new System.Drawing.Point(265, 246);
+            this.flpAdminAvailableRoomItems.Name = "flpAdminAvailableRoomItems";
+            this.flpAdminAvailableRoomItems.Size = new System.Drawing.Size(750, 462);
+            this.flpAdminAvailableRoomItems.TabIndex = 25;
+            // 
             // frmAdminRoomsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.flpAdminAvailableRoomItems);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTopBar);
@@ -137,6 +171,7 @@
             this.Name = "frmAdminRoomsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminRoomsPage";
+            this.Load += new System.EventHandler(this.frmAdminRoomsPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
@@ -154,5 +189,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flpAdminAvailableRoomItems;
     }
 }

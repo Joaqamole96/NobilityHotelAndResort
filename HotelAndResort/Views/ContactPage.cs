@@ -13,6 +13,18 @@ namespace HotelAndResort.Views
             btnNavLogin.FlatAppearance.BorderSize = 0;
         }
 
+        private void frmContactPage_Load(object sender, EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+            }
+        }
+
         private void lblNavHome_Click(object sender, EventArgs e)
         {
             Global.OpenForm(this, Global.frmHomePage);
@@ -45,18 +57,9 @@ namespace HotelAndResort.Views
 
         private void lblExitProgram_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void frmContactPage_Load(object sender, EventArgs e)
-        {
-            if (Global.IsLoggedIn)
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                btnNavLogin.Text = "Welcome, " + Global.UserName;
-            }
-            else
-            {
-                btnNavLogin.Text = "Login";
+                Application.Exit();
             }
         }
     }

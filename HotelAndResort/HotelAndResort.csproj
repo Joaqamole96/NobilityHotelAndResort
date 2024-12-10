@@ -133,6 +133,12 @@
     <Compile Include="Models\Classes\ReservedAmenity.cs" />
     <Compile Include="Models\Classes\ReservedRoom.cs" />
     <Compile Include="Models\Helpers\DatabaseHelper.cs" />
+    <Compile Include="Models\UserControls\AdminAvailableRoomItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminAvailableRoomItem.Designer.cs">
+      <DependentUpon>AdminAvailableRoomItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +180,12 @@
     </Compile>
     <Compile Include="Views\AdminDashboardPage.Designer.cs">
       <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminRoomsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminRoomsPage.Designer.cs">
+      <DependentUpon>AdminRoomsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AmenitiesPage.cs">
       <SubType>Form</SubType>
@@ -294,6 +306,9 @@
     <EmbeddedResource Include="DASHBOARD PAGE%28ADMIN%29.resx">
       <DependentUpon>DASHBOARD PAGE%28ADMIN%29.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\AdminAvailableRoomItem.resx">
+      <DependentUpon>AdminAvailableRoomItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboardPage.resx">
       <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminRoomsPage.resx">
+      <DependentUpon>AdminRoomsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AmenitiesPage.resx">
       <DependentUpon>AmenitiesPage.cs</DependentUpon>
@@ -412,7 +430,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Data\.sql\init.sql" />
+    <None Include="Resources\admindashboard_reservations_img.png" />
+    <None Include="Resources\admindashboard_rooms_img.png" />
     <None Include="Resources\contact_number_img.png" />
     <None Include="Resources\contact_instagram_img.png" />
     <None Include="Resources\contact_facebook_img.png" />
@@ -426,6 +445,9 @@
     <None Include="Resources\home_rooms_img.png" />
     <None Include="Resources\home_banner_img.png" />
     <None Include="Resources\search_36dp_000000_FILL0_wght400_GRAD0_opsz40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\Data\.sql\init.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

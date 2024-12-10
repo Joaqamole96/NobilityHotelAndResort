@@ -35,12 +35,21 @@ namespace HotelAndResort.Views
             else
             {
                 btnNavLogin.Text = "Login";
+                Global.OpenForm(this, Global.frmLoginPage);
             }
         }
 
         private void btnNavAdminRooms_Click(object sender, EventArgs e)
         {
-            Global.OpenForm(this, Global);
+            Global.OpenForm(this, Global.frmAdminRoomsPage);
+        }
+
+        private void lblExitProgram_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

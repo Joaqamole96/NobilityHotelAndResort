@@ -47,6 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel5.SuspendLayout();
@@ -95,6 +96,7 @@
             this.lblExitProgram.TabIndex = 18;
             this.lblExitProgram.Text = "X";
             this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
             // btnNavLogin
             // 
@@ -249,12 +251,21 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(240, 695);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(800, 1);
+            this.panel7.TabIndex = 26;
+            // 
             // frmAdminDashboardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -302,5 +313,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnNavAdminReservations;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel7;
     }
 }

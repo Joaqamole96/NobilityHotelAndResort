@@ -21,7 +21,7 @@ namespace HotelAndResort.Views
             btnCTAAmenities.FlatStyle = FlatStyle.Flat;
             btnCTAAmenities.FlatAppearance.BorderSize = 0;
 
-            // DatabaseHelper.Initialize();
+            DatabaseHelper.Initialize();
         }
 
         private void frmHomePage_Load(object sender, System.EventArgs e)
@@ -67,9 +67,24 @@ namespace HotelAndResort.Views
             Global.OpenForm(this, Global.frmContactPage);
         }
 
+        private void btnNavLogin_Click(object sender, System.EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+
+            }
+            else
+            {
+                Global.OpenForm(this, Global.frmLoginPage);
+            }
+        }
+
         private void lblExitProgram_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         // CTAs

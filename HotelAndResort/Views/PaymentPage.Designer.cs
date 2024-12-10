@@ -81,6 +81,7 @@
             this.lblExitProgram.TabIndex = 18;
             this.lblExitProgram.Text = "X";
             this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
             // btnNavLogin
             // 
@@ -152,6 +153,7 @@
             this.Name = "frmPaymentPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment | Nobility Hotel and Resort";
+            this.Load += new System.EventHandler(this.frmPaymentPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();

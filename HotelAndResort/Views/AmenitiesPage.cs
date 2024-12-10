@@ -60,7 +60,10 @@ namespace HotelAndResort.Views
 
         private void lblExitProgram_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnCTABooking1_Click(object sender, EventArgs e)

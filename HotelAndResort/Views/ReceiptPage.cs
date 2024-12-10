@@ -44,7 +44,10 @@ namespace HotelAndResort.Views
 
         private void lblExitProgram_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void frmReceiptPage_Load(object sender, System.EventArgs e)
