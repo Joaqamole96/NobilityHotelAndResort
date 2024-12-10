@@ -39,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.flpAdminAvailableRoomItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblBackDashboard = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
@@ -155,12 +156,25 @@
             this.flpAdminAvailableRoomItems.Size = new System.Drawing.Size(750, 462);
             this.flpAdminAvailableRoomItems.TabIndex = 25;
             // 
+            // lblBackDashboard
+            // 
+            this.lblBackDashboard.AutoSize = true;
+            this.lblBackDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackDashboard.Location = new System.Drawing.Point(45, 668);
+            this.lblBackDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.lblBackDashboard.Name = "lblBackDashboard";
+            this.lblBackDashboard.Size = new System.Drawing.Size(168, 23);
+            this.lblBackDashboard.TabIndex = 26;
+            this.lblBackDashboard.Text = "< Back to Dashboard";
+            this.lblBackDashboard.Click += new System.EventHandler(this.lblBackDashboard_Click);
+            // 
             // frmAdminRoomsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.lblBackDashboard);
             this.Controls.Add(this.flpAdminAvailableRoomItems);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label3);
@@ -170,12 +184,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminRoomsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminRoomsPage";
+            this.Text = "(Admin) Rooms | Nobility Hotel and Resort";
             this.Load += new System.EventHandler(this.frmAdminRoomsPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flpAdminAvailableRoomItems;
+        private System.Windows.Forms.Label lblBackDashboard;
     }
 }

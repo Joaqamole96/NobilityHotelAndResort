@@ -279,7 +279,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminDashboardPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrator Dashboard | Nobility Hotel and Resort";
+            this.Text = "(Admin) Dashboard | Nobility Hotel and Resort";
             this.Load += new System.EventHandler(this.frmAdminDashboardPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();

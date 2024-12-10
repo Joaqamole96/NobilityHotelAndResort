@@ -28,39 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.lblExitProgram = new System.Windows.Forms.Label();
-            this.btnNavLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBackBooking = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(45, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 150);
-            this.panel2.TabIndex = 16;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(25, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 300);
-            this.panel1.TabIndex = 15;
-            // 
             // pnlTopBar
             // 
+            this.pnlTopBar.BackColor = System.Drawing.Color.Black;
             this.pnlTopBar.Controls.Add(this.lblExitProgram);
-            this.pnlTopBar.Controls.Add(this.btnNavLogin);
             this.pnlTopBar.Controls.Add(this.label2);
             this.pnlTopBar.Controls.Add(this.pbxLogo);
             this.pnlTopBar.Controls.Add(this.label1);
@@ -75,6 +58,7 @@
             this.lblExitProgram.AutoSize = true;
             this.lblExitProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblExitProgram.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExitProgram.ForeColor = System.Drawing.Color.White;
             this.lblExitProgram.Location = new System.Drawing.Point(1250, 6);
             this.lblExitProgram.Name = "lblExitProgram";
             this.lblExitProgram.Size = new System.Drawing.Size(24, 26);
@@ -83,22 +67,11 @@
             this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
-            // btnNavLogin
-            // 
-            this.btnNavLogin.BackColor = System.Drawing.Color.Black;
-            this.btnNavLogin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNavLogin.ForeColor = System.Drawing.Color.White;
-            this.btnNavLogin.Location = new System.Drawing.Point(1095, 40);
-            this.btnNavLogin.Name = "btnNavLogin";
-            this.btnNavLogin.Size = new System.Drawing.Size(100, 40);
-            this.btnNavLogin.TabIndex = 11;
-            this.btnNavLogin.Text = "Login";
-            this.btnNavLogin.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(110, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
@@ -119,6 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(110, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
@@ -139,15 +113,31 @@
             this.lblBackBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblBackBooking.Click += new System.EventHandler(this.lblBackBooking_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(45, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 150);
+            this.panel2.TabIndex = 21;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(25, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 300);
+            this.panel1.TabIndex = 20;
+            // 
             // frmPaymentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.lblBackBooking);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblBackBooking);
             this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPaymentPage";
@@ -163,15 +153,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Label lblExitProgram;
-        private System.Windows.Forms.Button btnNavLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBackBooking;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

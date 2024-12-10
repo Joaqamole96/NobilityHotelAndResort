@@ -81,5 +81,17 @@ namespace HotelAndResort.Views
         {
             Global.OpenForm(this, Global.frmBookingPage);
         }
+
+        private void btnNavLogin_Click(object sender, EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+                // Reservations.cs
+            }
+            else
+            {
+                Global.OpenForm(this, Global.frmLoginPage);
+            }
+        }
     }
 }

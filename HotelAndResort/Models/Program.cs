@@ -11,7 +11,7 @@ namespace HotelAndResort
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdminDashboardPage());
+            Application.Run(new frmHomePage());
         }
     }
 }

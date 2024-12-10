@@ -195,6 +195,7 @@
             this.btnNavLogin.TabIndex = 11;
             this.btnNavLogin.Text = "Login";
             this.btnNavLogin.UseVisualStyleBackColor = false;
+            this.btnNavLogin.Click += new System.EventHandler(this.btnNavLogin_Click);
             // 
             // label2
             // 

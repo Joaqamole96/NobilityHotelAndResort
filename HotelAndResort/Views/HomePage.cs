@@ -71,7 +71,7 @@ namespace HotelAndResort.Views
         {
             if (Global.IsLoggedIn)
             {
-
+                // Reservations.cs
             }
             else
             {

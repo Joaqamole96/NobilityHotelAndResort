@@ -17,9 +17,9 @@ namespace HotelAndResort.Views
         {
             foreach (string input in inputs)
             {
-                if (!string.IsNullOrEmpty(input.Trim()))
+                if (string.IsNullOrEmpty(input))
                 {
-                    MessageBox.Show("Error: one or more fields is empty.", type, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: one or more fields is empty. {input}", type, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -58,15 +58,27 @@ namespace HotelAndResort.Views
             {
                 try
                 {
-                    string query = $"SELECT * FROM `users` WHERE `user_name` = {username} and `password` = {password}";
+                    string query = $"SELECT * FROM `users` WHERE `user_name` = '{username}' AND `password` = '{password}'";
                     DataTable results = DatabaseHelper.Select(query);
 
                     if (results.Rows.Count > 0)
                     {
-                        Global.UserName = username;
-                        MessageBox.Show("Login successful.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataRow row = results.Rows[0];
+
+                        Global.UserName = (string)row["user_name"];
+                        string role = (string)row["role"];
+                        if (role == "admin")
+                        {
+                            Global.OpenForm(this, Global.frmAdminDashboardPage);
+                        }
+                        else
+                        {
+                            Global.OpenForm(this, Global.frmHomePage);
+                        }
+
                         ClearAllFields();
-                        Global.OpenForm(this, Global.frmHomePage);
+
+                        MessageBox.Show("Login successful.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)

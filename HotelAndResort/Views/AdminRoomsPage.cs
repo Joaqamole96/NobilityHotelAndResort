@@ -61,5 +61,10 @@ namespace HotelAndResort.Views
                 Application.Exit();
             }
         }
+
+        private void lblBackDashboard_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmAdminDashboardPage);
+        }
     }
 }

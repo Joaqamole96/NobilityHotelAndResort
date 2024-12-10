@@ -139,6 +139,24 @@
     <Compile Include="Models\UserControls\AdminAvailableRoomItem.Designer.cs">
       <DependentUpon>AdminAvailableRoomItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserControls\AdminReservationItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminReservationItem.Designer.cs">
+      <DependentUpon>AdminReservationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminReservedAmenityItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminReservedAmenityItem.Designer.cs">
+      <DependentUpon>AdminReservedAmenityItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminReservedRoomItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControls\AdminReservedRoomItem.Designer.cs">
+      <DependentUpon>AdminReservedRoomItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserControls\AvailableRoomItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +198,12 @@
     </Compile>
     <Compile Include="Views\AdminDashboardPage.Designer.cs">
       <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminReservationsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminReservationsPage.Designer.cs">
+      <DependentUpon>AdminReservationsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminRoomsPage.cs">
       <SubType>Form</SubType>
@@ -309,6 +333,15 @@
     <EmbeddedResource Include="Models\UserControls\AdminAvailableRoomItem.resx">
       <DependentUpon>AdminAvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\AdminReservationItem.resx">
+      <DependentUpon>AdminReservationItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\AdminReservedAmenityItem.resx">
+      <DependentUpon>AdminReservedAmenityItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControls\AdminReservedRoomItem.resx">
+      <DependentUpon>AdminReservedRoomItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\UserControls\AvailableRoomItem.resx">
       <DependentUpon>AvailableRoomItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboardPage.resx">
       <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminReservationsPage.resx">
+      <DependentUpon>AdminReservationsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminRoomsPage.resx">
       <DependentUpon>AdminRoomsPage.cs</DependentUpon>

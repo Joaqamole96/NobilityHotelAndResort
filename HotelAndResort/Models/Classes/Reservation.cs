@@ -7,6 +7,7 @@ public class Reservation
         public string UserName { get; set; }
     public DateTime CheckInDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
     public DateTime CheckOutDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
+    public int NightCount { get; set; }
     public decimal ReservationPrice { get; set; }
     public string ReservationStatus { get; set; } // Booking.cs | InsertAvailableRoom()
 
