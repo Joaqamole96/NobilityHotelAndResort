@@ -18,12 +18,25 @@ namespace HotelAndResort.Views
             btnCTARooms.FlatStyle = FlatStyle.Flat;
             btnCTARooms.FlatAppearance.BorderSize = 0;
 
-            btnCTAServices.FlatStyle = FlatStyle.Flat;
-            btnCTAServices.FlatAppearance.BorderSize = 0;
+            btnCTAAmenities.FlatStyle = FlatStyle.Flat;
+            btnCTAAmenities.FlatAppearance.BorderSize = 0;
 
             // DatabaseHelper.Initialize();
         }
 
+        private void frmHomePage_Load(object sender, System.EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+            }
+        }
+
+        // Navbar
         private void lblNavHome_Click(object sender, System.EventArgs e)
         {
             Global.OpenForm(this, Global.frmHomePage);
@@ -39,9 +52,40 @@ namespace HotelAndResort.Views
             Global.OpenForm(this, Global.frmAmenitiesPage);
         }
 
+        private void lblNavBooking_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void lblNavAbout_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmAboutPage);
+        }
+
+        private void lblNavContact_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmContactPage);
+        }
+
         private void lblExitProgram_Click(object sender, System.EventArgs e)
         {
             Application.Exit();
+        }
+
+        // CTAs
+        private void btnCTABooking_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void btnCTARooms_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmRoomsPage);
+        }
+
+        private void btnCTAAmenities_Click(object sender, System.EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmAmenitiesPage);
         }
     }
 }

@@ -3,29 +3,14 @@ using System.Windows.Forms;
 
 namespace HotelAndResort.Views
 {
-    public partial class frmRoomsPage : Form
+    public partial class frmContactPage : Form
     {
-        public frmRoomsPage()
+        public frmContactPage()
         {
             InitializeComponent();
 
             btnNavLogin.FlatStyle = FlatStyle.Flat;
             btnNavLogin.FlatAppearance.BorderSize = 0;
-
-            btnCTABooking1.FlatStyle = FlatStyle.Flat;
-            btnCTABooking1.FlatAppearance.BorderSize = 0;
-        }
-
-        private void frmRoomsPage_Load(object sender, EventArgs e)
-        {
-            if (Global.IsLoggedIn)
-            {
-                btnNavLogin.Text = "Welcome, " + Global.UserName;
-            }
-            else
-            {
-                btnNavLogin.Text = "Login";
-            }
         }
 
         private void lblNavHome_Click(object sender, EventArgs e)
@@ -63,20 +48,16 @@ namespace HotelAndResort.Views
             Application.Exit();
         }
 
-        private void btnCTABooking1_Click(object sender, EventArgs e)
+        private void frmContactPage_Load(object sender, EventArgs e)
         {
-
-            Global.OpenForm(this, Global.frmBookingPage);
-        }
-
-        private void btnCTABooking2_Click(object sender, EventArgs e)
-        {
-            Global.OpenForm(this, Global.frmBookingPage);
-        }
-
-        private void btnCTABooking3_Click(object sender, EventArgs e)
-        {
-            Global.OpenForm(this, Global.frmBookingPage);
+            if (Global.IsLoggedIn)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+            }
         }
     }
 }

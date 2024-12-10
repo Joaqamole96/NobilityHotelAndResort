@@ -163,6 +163,18 @@
     <Compile Include="Models\UserControls\ReservedRoomItem.Designer.cs">
       <DependentUpon>ReservedRoomItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AboutPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutPage.Designer.cs">
+      <DependentUpon>AboutPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDashboardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminDashboardPage.Designer.cs">
+      <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AmenitiesPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,11 +187,29 @@
     <Compile Include="Views\Booking.Designer.cs">
       <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\BookingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BookingPage.Designer.cs">
+      <DependentUpon>BookingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Confirmation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Confirmation.Designer.cs">
       <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmationModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfirmationModal.Designer.cs">
+      <DependentUpon>ConfirmationModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ContactPage.Designer.cs">
+      <DependentUpon>ContactPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.cs">
       <SubType>Form</SubType>
@@ -193,6 +223,12 @@
     <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,11 +241,29 @@
     <Compile Include="Views\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PaymentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentPage.Designer.cs">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceiptPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReceiptPage.Designer.cs">
+      <DependentUpon>ReceiptPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReservationsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReservationsPage.Designer.cs">
+      <DependentUpon>ReservationsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Rooms.cs">
       <SubType>Form</SubType>
@@ -255,14 +309,29 @@
     <EmbeddedResource Include="Models\UserControls\ReservedRoomItem.resx">
       <DependentUpon>ReservedRoomItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AboutPage.resx">
+      <DependentUpon>AboutPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminDashboardPage.resx">
+      <DependentUpon>AdminDashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AmenitiesPage.resx">
       <DependentUpon>AmenitiesPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BookingPage.resx">
+      <DependentUpon>BookingPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Confirmation.resx">
       <DependentUpon>Confirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfirmationModal.resx">
+      <DependentUpon>ConfirmationModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ContactPage.resx">
+      <DependentUpon>ContactPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -273,11 +342,23 @@
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentPage.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReceiptPage.resx">
+      <DependentUpon>ReceiptPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReservationsPage.resx">
+      <DependentUpon>ReservationsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
@@ -332,6 +413,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Data\.sql\init.sql" />
+    <None Include="Resources\contact_number_img.png" />
+    <None Include="Resources\contact_instagram_img.png" />
+    <None Include="Resources\contact_facebook_img.png" />
     <None Include="Resources\amenities_functionhall_img.png" />
     <None Include="Resources\amenities_privatepool_img.png" />
     <None Include="Resources\amenities_publicpool_img.png" />

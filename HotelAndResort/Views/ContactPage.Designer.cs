@@ -1,6 +1,6 @@
 ﻿namespace HotelAndResort.Views
 {
-    partial class frmHomePage
+    partial class frmContactPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHomePage));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.lblExitProgram = new System.Windows.Forms.Label();
             this.lblNavHome = new System.Windows.Forms.Label();
@@ -43,49 +40,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCTABooking = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCTAAmenities = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnCTARooms = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(25, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 300);
-            this.panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(45, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 150);
-            this.panel2.TabIndex = 9;
             // 
             // pnlTopBar
             // 
@@ -104,7 +75,7 @@
             this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(1280, 100);
-            this.pnlTopBar.TabIndex = 10;
+            this.pnlTopBar.TabIndex = 28;
             // 
             // lblExitProgram
             // 
@@ -193,7 +164,6 @@
             // 
             // btnNavLogin
             // 
-            this.btnNavLogin.AutoSize = true;
             this.btnNavLogin.BackColor = System.Drawing.Color.Black;
             this.btnNavLogin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavLogin.ForeColor = System.Drawing.Color.White;
@@ -235,245 +205,148 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Nobility Hotel and Resort";
             // 
-            // label3
+            // panel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(95, 148);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(556, 118);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Welcome to Nobility Hotel\r\nand Resort!";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(45, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 150);
+            this.panel2.TabIndex = 32;
             // 
-            // label4
+            // panel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(102, 276);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(464, 54);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Experience unparalleled comfort and relaxation with us. Book your stay\r\ntoday and" +
-    " make memories to treasure. For inquiries or reservations, reach\r\nout to us at: " +
-    "+99999999999 or +88888888888";
-            // 
-            // btnCTABooking
-            // 
-            this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.btnCTABooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCTABooking.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTABooking.ForeColor = System.Drawing.Color.White;
-            this.btnCTABooking.Location = new System.Drawing.Point(105, 349);
-            this.btnCTABooking.Name = "btnCTABooking";
-            this.btnCTABooking.Size = new System.Drawing.Size(150, 50);
-            this.btnCTABooking.TabIndex = 14;
-            this.btnCTABooking.Text = "Book Now";
-            this.btnCTABooking.UseVisualStyleBackColor = false;
-            this.btnCTABooking.Click += new System.EventHandler(this.btnCTABooking_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(140, 425);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 1);
-            this.panel3.TabIndex = 15;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(25, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 300);
+            this.panel1.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(203, 14);
+            this.label5.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(411, 160);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 42);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Rooms";
+            this.label5.Size = new System.Drawing.Size(193, 53);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Facebook";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(205, 54);
+            this.label6.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(416, 248);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 26);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Experience the Comfort";
+            this.label6.Size = new System.Drawing.Size(628, 42);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Follow Nobility Hotel && Resort on Facebook for the latest updates, exclusive off" +
+    "ers, and a\r\npeek into your next unforgettable stay.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(416, 421);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(624, 42);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Connect with us on Instagram to explore stunning photos, behind-the-scenes moment" +
+    "s, \r\nand inspiration for your next luxurious getaway.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(411, 333);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 53);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Instagram";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(207, 99);
+            this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(416, 597);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(277, 70);
-            this.label7.TabIndex = 18;
-            this.label7.Text = resources.GetString("label7.Text");
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(140, 450);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(492, 230);
-            this.panel4.TabIndex = 19;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.btnCTAAmenities);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(724, 450);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(492, 230);
-            this.panel5.TabIndex = 21;
-            // 
-            // btnCTAAmenities
-            // 
-            this.btnCTAAmenities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.btnCTAAmenities.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCTAAmenities.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTAAmenities.ForeColor = System.Drawing.Color.White;
-            this.btnCTAAmenities.Location = new System.Drawing.Point(289, 188);
-            this.btnCTAAmenities.Name = "btnCTAAmenities";
-            this.btnCTAAmenities.Size = new System.Drawing.Size(100, 30);
-            this.btnCTAAmenities.TabIndex = 23;
-            this.btnCTAAmenities.Text = "Inquire Now";
-            this.btnCTAAmenities.UseVisualStyleBackColor = false;
-            this.btnCTAAmenities.Click += new System.EventHandler(this.btnCTAAmenities_Click);
+            this.label7.Size = new System.Drawing.Size(527, 42);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "For bookings and inquiries, reach us at +99999999999 or +88888888888. \r\nExperienc" +
+    "e the best in luxury, comfort, and service!";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(203, 14);
+            this.label8.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(411, 509);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 42);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Amenities";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(207, 99);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(277, 70);
-            this.label9.TabIndex = 18;
-            this.label9.Text = resources.GetString("label9.Text");
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(205, 54);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(174, 26);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Experience the Fun";
-            // 
-            // btnCTARooms
-            // 
-            this.btnCTARooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.btnCTARooms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCTARooms.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTARooms.ForeColor = System.Drawing.Color.White;
-            this.btnCTARooms.Location = new System.Drawing.Point(429, 638);
-            this.btnCTARooms.Name = "btnCTARooms";
-            this.btnCTARooms.Size = new System.Drawing.Size(100, 30);
-            this.btnCTARooms.TabIndex = 22;
-            this.btnCTARooms.Text = "Reservation";
-            this.btnCTARooms.UseVisualStyleBackColor = false;
-            this.btnCTARooms.Click += new System.EventHandler(this.btnCTARooms_Click);
+            this.label8.Size = new System.Drawing.Size(317, 53);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Contact Number";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::HotelAndResort.Properties.Resources.home_services_img;
-            this.pictureBox3.Location = new System.Drawing.Point(644, 483);
+            this.pictureBox3.Image = global::HotelAndResort.Properties.Resources.contact_number_img;
+            this.pictureBox3.Location = new System.Drawing.Point(224, 503);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(250, 150);
-            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 47;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::HotelAndResort.Properties.Resources.home_rooms_img;
-            this.pictureBox2.Location = new System.Drawing.Point(60, 483);
+            this.pictureBox2.Image = global::HotelAndResort.Properties.Resources.contact_instagram_img;
+            this.pictureBox2.Location = new System.Drawing.Point(230, 333);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 150);
-            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.Size = new System.Drawing.Size(130, 130);
+            this.pictureBox2.TabIndex = 44;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HotelAndResort.Properties.Resources.home_banner_img;
-            this.pictureBox1.Location = new System.Drawing.Point(694, 140);
+            this.pictureBox1.Image = global::HotelAndResort.Properties.Resources.contact_facebook_img;
+            this.pictureBox1.Location = new System.Drawing.Point(230, 160);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 259);
-            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.Size = new System.Drawing.Size(130, 130);
+            this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(1262, 520);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 194);
-            this.panel6.TabIndex = 23;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(1242, 563);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 150);
-            this.panel7.TabIndex = 24;
-            // 
-            // frmHomePage
+            // frmContactPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.btnCTARooms);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.btnCTABooking);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTopBar);
-            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmHomePage";
+            this.Name = "frmContactPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " Home | Nobility Hotel and Resort";
-            this.Load += new System.EventHandler(this.frmHomePage_Load);
+            this.Text = "Contact Us | Nobility Hotel and Resort";
+            this.Load += new System.EventHandler(this.frmContactPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -484,38 +357,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlTopBar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbxLogo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNavLogin;
-        private System.Windows.Forms.Label lblNavContact;
+        private System.Windows.Forms.Label lblExitProgram;
+        private System.Windows.Forms.Label lblNavHome;
+        private System.Windows.Forms.Label lblNavRooms;
         private System.Windows.Forms.Label lblNavAmenities;
         private System.Windows.Forms.Label lblNavBooking;
         private System.Windows.Forms.Label lblNavAbout;
-        private System.Windows.Forms.Label lblNavHome;
-        private System.Windows.Forms.Label lblNavRooms;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNavContact;
+        private System.Windows.Forms.Button btnNavLogin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbxLogo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCTABooking;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnCTARooms;
-        private System.Windows.Forms.Button btnCTAAmenities;
-        private System.Windows.Forms.Label lblExitProgram;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

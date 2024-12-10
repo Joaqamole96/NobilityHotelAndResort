@@ -34,6 +34,6 @@ public class Reservation
     {
         this.CheckInDateTime = CheckInDateTime;
         this.CheckOutDateTime = CheckOutDateTime;
-        this.ReservationStatus = "draft";
+        ReservationStatus = "draft";
     }
 }

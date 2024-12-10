@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelAndResort.Views
@@ -50,9 +43,61 @@ namespace HotelAndResort.Views
             Global.OpenForm(this, Global.frmAmenitiesPage);
         }
 
+        private void lblNavBooking_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void lblNavAbout_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmAboutPage);
+        }
+
+        private void lblNavContact_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmContactPage);
+        }
+
         private void lblExitProgram_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCTABooking1_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void btnCTABooking2_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void btnCTABooking3_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void btnCTABooking4_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void btnCTABooking5_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmBookingPage);
+        }
+
+        private void frmAmenitiesPage_Load(object sender, EventArgs e)
+        {
+            if (Global.IsLoggedIn)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+            }
         }
     }
 }

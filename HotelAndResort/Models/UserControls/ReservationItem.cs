@@ -119,6 +119,7 @@ namespace HotelAndResort.Models.UserControls
             reservedAmenityList.Remove(amenityToRemove);
 
             frmBooking.DeleteReservedAmenityId(amenityId);
+            //frmBookingPage.RemoveReservedAmenityId(amenityId);
 
             UpdateContents();
         }
