@@ -18,6 +18,7 @@ namespace HotelAndResort
         public static Form frmReceiptPage = new frmReceiptPage();
         public static Form frmAdminDashboardPage = new frmAdminDashboardPage();
         public static Form frmAdminRoomsPage = new frmAdminRoomsPage();
+        public static Form frmAdminReservationsPage = new frmAdminReservationsPage();
         public static Form frmLoginPage = new frmLoginPage();
 
         public static Form frmHome = new frmHome();
@@ -29,6 +30,7 @@ namespace HotelAndResort
         public static Form frmPayment = new frmPayment();
 
         public static bool IsLoggedIn {  get; set; }
+        public static int UserId { get; set; }
         public static string UserName { get; set; }
         public static string Role { get; set; }
 

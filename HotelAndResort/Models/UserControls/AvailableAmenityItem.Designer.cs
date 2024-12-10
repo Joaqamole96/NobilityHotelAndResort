@@ -41,13 +41,14 @@
             // btnCTABooking
             // 
             this.btnCTABooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(201)))), ((int)(((byte)(136)))));
+            this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
             this.btnCTABooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCTABooking.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTABooking.Location = new System.Drawing.Point(590, 85);
+            this.btnCTABooking.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCTABooking.ForeColor = System.Drawing.Color.White;
+            this.btnCTABooking.Location = new System.Drawing.Point(580, 85);
             this.btnCTABooking.Margin = new System.Windows.Forms.Padding(0);
             this.btnCTABooking.Name = "btnCTABooking";
-            this.btnCTABooking.Size = new System.Drawing.Size(100, 25);
+            this.btnCTABooking.Size = new System.Drawing.Size(110, 25);
             this.btnCTABooking.TabIndex = 34;
             this.btnCTABooking.Text = "Select Amenity";
             this.btnCTABooking.UseVisualStyleBackColor = false;
@@ -57,7 +58,7 @@
             // 
             this.lblAmenityDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityDescription.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityDescription.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityDescription.Location = new System.Drawing.Point(166, 80);
             this.lblAmenityDescription.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityDescription.Name = "lblAmenityDescription";
@@ -70,11 +71,11 @@
             // 
             this.lblAmenityDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAmenityDisclaimer.AutoSize = true;
-            this.lblAmenityDisclaimer.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityDisclaimer.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityDisclaimer.Location = new System.Drawing.Point(589, 40);
             this.lblAmenityDisclaimer.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityDisclaimer.Name = "lblAmenityDisclaimer";
-            this.lblAmenityDisclaimer.Size = new System.Drawing.Size(101, 28);
+            this.lblAmenityDisclaimer.Size = new System.Drawing.Size(99, 26);
             this.lblAmenityDisclaimer.TabIndex = 31;
             this.lblAmenityDisclaimer.Text = "per night (Including \r\ntaxes and fees)";
             this.lblAmenityDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -83,7 +84,7 @@
             // 
             this.lblAmenityCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityCapacity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityCapacity.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityCapacity.Location = new System.Drawing.Point(166, 32);
             this.lblAmenityCapacity.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityCapacity.Name = "lblAmenityCapacity";
@@ -95,7 +96,7 @@
             // lblAmenityPrice
             // 
             this.lblAmenityPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityPrice.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityPrice.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityPrice.Location = new System.Drawing.Point(490, 10);
             this.lblAmenityPrice.Margin = new System.Windows.Forms.Padding(5);
             this.lblAmenityPrice.Name = "lblAmenityPrice";
@@ -107,7 +108,7 @@
             // 
             // pbxAmenityThumbnail
             // 
-            this.pbxAmenityThumbnail.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pbxAmenityThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pbxAmenityThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxAmenityThumbnail.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbxAmenityThumbnail.Location = new System.Drawing.Point(10, 10);
@@ -119,7 +120,8 @@
             // 
             // lblAmenityName
             // 
-            this.lblAmenityName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
             this.lblAmenityName.Location = new System.Drawing.Point(165, 10);
             this.lblAmenityName.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityName.Name = "lblAmenityName";
@@ -132,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnCTABooking);
             this.Controls.Add(this.lblAmenityDescription);

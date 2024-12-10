@@ -17,24 +17,21 @@ namespace HotelAndResort.Views
 
         // ----- Objects ----- //
 
-        public static Reservation reservation;
+        public static Reservation reservation = new Reservation();
         public static ReservationItem reservationItem = null;
 
         // ----- Attributes ----- //
 
 
         public int guestCount = 1;
+        public int adultCount = 1;
+        public int childCount = 0;
+        public int specialCount = 0;
 
         public List<int> reservedRoomIds = new List<int>();
         public List<int> reservedAmenityIds = new List<int>();
 
         // ----- Methods ----- //
-
-        public void SetReservationAttributes()
-        {
-            // reservation = new Reservation(dtpCheckIn.Value, dtpCheckOut.Value);
-            // needs dateTimePicker controls for check-in and check-out
-        }
 
         public void SetReservedRoomAttributes(ReservedRoom reservedRoom, DataRow row)
         {
@@ -46,9 +43,8 @@ namespace HotelAndResort.Views
             reservedRoom.RoomCapacity = (int)row["room_capacity"];
             reservedRoom.RoomStatus = (string)row["room_status"];
             reservedRoom.GuestCount = guestCount;
-            // reservedRoom.ReservedRoomPrice = (nudSpecialCount.Value > 0) ? (decimal)row["room_price"] * 0.8m : (decimal)row["room_price"];
-            // Needs numericUpDown control for seniors/PWDs
-
+            reservedRoom.ReservedRoomPrice = (Convert.ToInt32(tbxSpecialCount.Text) > 0) ? (decimal)row["room_price"] * 0.8m : (decimal)row["room_price"];
+            
             reservation.AddRoomPrice(reservedRoom.ReservedRoomPrice);
         }
 
@@ -63,13 +59,6 @@ namespace HotelAndResort.Views
             reservedAmenity.AmenityStatus = (string)row["amenity_status"];
 
             reservation.AddAmenityPrice((decimal)row["amenity_price"]);
-        }
-
-        public void InitializeReservation()
-        {
-            SetReservationAttributes();
-            // reservationItem = new ReservationItem(this, reservation);
-            // needs refactoring of ReservationItem constructor
         }
 
         private void UpdateAvailableItems(
@@ -117,67 +106,71 @@ namespace HotelAndResort.Views
 
         private void UpdateAvailableAmenities()
         {
-            //UpdateAvailableItems(
-            //    "amenities",
-            //    "amenity_status",
-            //    "amenity_capacity",
-            //    "amenity_id",
-            //    guestCount,
-            //    reservedAmenityIds,
-            //    flpAvailableAmenities,
-            //    row => {
-            //        var availableAmenityItem = new AvailableAmenityItem(Convert.ToInt32(row["amenity_id"]))
-            //        {
-            //            Width = flpAvailableAmenities.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
-            //        };
-            //        availableAmenityItem.AmenitySelected += InsertReservedAmenity;
-            //        flpAvailableAmenities.Controls.Add(availableAmenityItem);
-            //    }
-            //);
-            // Need FlowLayoutPanel of available amenities
+            UpdateAvailableItems(
+                "amenities",
+                "amenity_status",
+                "amenity_capacity",
+                "amenity_id",
+                guestCount,
+                reservedAmenityIds,
+                flpAvailableAmenities,
+                row =>
+                {
+                    var availableAmenityItem = new AvailableAmenityItem(Convert.ToInt32(row["amenity_id"]))
+                    {
+                        Width = flpAvailableAmenities.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
+                    };
+                    availableAmenityItem.AmenitySelected += AddReservedAmenity;
+                    flpAvailableAmenities.Controls.Add(availableAmenityItem);
+                }
+            );
         }
 
         private void UpdateAvailableRooms()
         {
-            //UpdateAvailableItems(
-            //    "rooms",
-            //    "room_status",
-            //    "room_capacity",
-            //    "room_id",
-            //    guestCount,
-            //    reservedRoomIds,
-            //    flpAvailableRooms,
-            //    row => {
-            //        var availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]))
-            //        {
-            //            Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
-            //        };
-            //        availableRoomItem.RoomSelected += InsertReservedRoom;
-            //        flpAvailableRooms.Controls.Add(availableRoomItem);
-            //    }
-            //);
-            // Need FlowLayoutPanel of available rooms
+            UpdateAvailableItems(
+                "rooms",
+                "room_status",
+                "room_capacity",
+                "room_id",
+                guestCount,
+                reservedRoomIds,
+                flpAvailableRooms,
+                row =>
+                {
+                    var availableRoomItem = new AvailableRoomItem(Convert.ToInt32(row["room_id"]))
+                    {
+                        Width = flpAvailableRooms.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 20
+                    };
+                    availableRoomItem.RoomSelected += AddReservedRoom;
+                    flpAvailableRooms.Controls.Add(availableRoomItem);
+                }
+            );
+            UpdateAvailableAmenities();
         }
 
         private void UpdateGuestCount()
         {
             // Update the total no. of guests
-            //guestCount = Convert.ToInt32(nudAdultCount.Value + nudChildrenCount.Value + nudSpecialCount.Value);
-            //tbxGuestCount.Text = guestCount.ToString();
+            guestCount = Convert.ToInt32(tbxAdultCount.Text) + Convert.ToInt32(tbxChildCount.Text) + Convert.ToInt32(tbxSpecialCount.Text);
+          
+            tbxAdultCount.Text = adultCount.ToString();
+            tbxChildCount.Text = childCount.ToString();
+            tbxSpecialCount.Text = specialCount.ToString();
+            tbxGuestCount.Text = guestCount.ToString();
             // need numericUpDown and textBox controls for the 3 guest counts and total guest count
 
             // Update the FlowLayoutPanel for available rooms
-            //UpdateAvailableRooms();
+            UpdateAvailableRooms();
         }
 
         public void ResetGuestCount()
         {
             // Reset guestCount
-            //nudAdultCount.Value = 1;
-            //nudChildrenCount.Value = 0;
-            //nudSpecialCount.Value = 0;
-            //UpdateTotalCount();
-            // Need numericUpDown controls 
+            tbxAdultCount.Text = "1";
+            tbxChildCount.Text = "0";
+            tbxSpecialCount.Text = "0";
+            UpdateGuestCount();
         }
 
         // + ReservedRoom object, reservedRoomItem user control, reservedRoomId int in reservedRoomIds
@@ -188,13 +181,15 @@ namespace HotelAndResort.Views
                 string query = $"SELECT * FROM `rooms` WHERE `room_id` = {roomId}";
                 DataTable results = DatabaseHelper.Select(query);
 
-                if(results.Rows.Count > 0 )
+                if(results.Rows.Count > 0)
                 {
                     DataRow row = results.Rows[0];
 
+                    // Create an object ReservedRoom and set its attributes
                     ReservedRoom reservedRoom = new ReservedRoom();
                     SetReservedRoomAttributes(reservedRoom, row);
 
+                    // Invoke method in ReservedRoomItem that adds the selected AvailableRoomItem to it
                     ReservedRoomItem reservedRoomItem = new ReservedRoomItem(reservedRoom);
                     reservationItem.InsertReservedRoom(reservedRoom, reservedRoomItem);
 
@@ -269,31 +264,47 @@ namespace HotelAndResort.Views
 
         public void DisplayAvailableRooms()
         {
-            //lblAvailableRooms.BackColor = System.Drawing.Color.NavajoWhite;
-            //lblAvailableAmenities.BackColor = System.Drawing.Color.AntiqueWhite;
+            lblAvailableRoomsControl.BackColor = System.Drawing.Color.White;
+            lblAvailableAmenitiesControl.BackColor = System.Drawing.Color.Black;
 
-            //lblAvailableRooms.BorderStyle = BorderStyle.None;
-            //lblAvailableAmenities.BorderStyle = BorderStyle.FixedSingle;
+            lblAvailableRoomsControl.ForeColor = System.Drawing.Color.Black;
+            lblAvailableAmenitiesControl.ForeColor = System.Drawing.Color.White;
 
-            //flpAvailableRooms.Show();
-            //flpAvailableAmenities.Hide();
+            flpAvailableRooms.Show();
+            flpAvailableAmenities.Hide();
         }
 
         public void DisplayAvailableAmenities()
         {
-            //lblAvailableAmenities.BackColor = System.Drawing.Color.NavajoWhite;
-            //lblAvailableRooms.BackColor = System.Drawing.Color.AntiqueWhite;
+            lblAvailableAmenitiesControl.BackColor = System.Drawing.Color.White;
+            lblAvailableRoomsControl.BackColor = System.Drawing.Color.Black;
 
-            //lblAvailableAmenities.BorderStyle = BorderStyle.None;
-            //lblAvailableRooms.BorderStyle = BorderStyle.FixedSingle;
+            lblAvailableAmenitiesControl.ForeColor = System.Drawing.Color.Black;
+            lblAvailableRoomsControl.ForeColor = System.Drawing.Color.White;
 
-            //flpAvailableAmenities.Show();
-            //flpAvailableRooms.Hide();
+            flpAvailableAmenities.Show();
+            flpAvailableRooms.Hide();
         }
 
         public frmBookingPage()
         {
             InitializeComponent();
+        }
+
+        private void frmBookingPage_Load(object sender, EventArgs e)
+        {
+            dtpCheckInDate.MinDate = DateTime.Now;
+            dtpCheckInDate.Value = DateTime.Now;
+
+            dtpCheckOutDate.MinDate = dtpCheckInDate.Value;
+            dtpCheckOutDate.Value = dtpCheckInDate.Value;
+
+            reservationItem = new ReservationItem(this, reservation);
+           
+            pnlReservationDetails.Controls.Add(reservationItem);
+
+            UpdateGuestCount();
+            DisplayAvailableRooms();
         }
 
         private void lblNavHome_Click(object sender, EventArgs e)
@@ -309,9 +320,92 @@ namespace HotelAndResort.Views
             }
         }
 
-        private void frmBookingPage_Load(object sender, EventArgs e)
+        private void pbxSubtractAdultCount_Click(object sender, EventArgs e)
         {
+            if (adultCount > 1)
+            {
+                adultCount -= 1;
+                tbxAdultCount.Text = adultCount.ToString();
+                UpdateGuestCount();
+            }
+        }
 
+        private void pbxAddAdultCount_Click(object sender, EventArgs e)
+        {
+            adultCount += 1;
+            tbxAdultCount.Text = adultCount.ToString();
+            UpdateGuestCount();
+        }
+
+        private void pbxSubtractChildCount_Click(object sender, EventArgs e)
+        {
+            if (childCount > 0)
+            {
+                childCount -= 1;
+                tbxChildCount.Text = childCount.ToString();
+                UpdateGuestCount();
+            }
+        }
+
+        private void pbxAddChildCount_Click(object sender, EventArgs e)
+        {
+            childCount += 1;
+            tbxChildCount.Text = childCount.ToString();
+            UpdateGuestCount();
+        }
+
+        private void pbxSubtractSpecialCount_Click(object sender, EventArgs e)
+        {
+            if (specialCount > 0)
+            {
+                specialCount -= 1;
+                tbxSpecialCount.Text = specialCount.ToString();
+                UpdateGuestCount();
+            }
+        }
+
+        private void pbxAddSpecialCount_Click(object sender, EventArgs e)
+        {
+            specialCount += 1;
+            tbxSpecialCount.Text = specialCount.ToString();
+            UpdateGuestCount();
+        }
+
+        private void lblAvailableRoomsControl_Click(object sender, EventArgs e)
+        {
+            DisplayAvailableRooms();
+        }
+
+        private void lblAvailableAmenitiesControl_Click(object sender, EventArgs e)
+        {
+            DisplayAvailableAmenities();
+        }
+
+        private void btnCTABooking_Click(object sender, EventArgs e)
+        {
+            if (reservedRoomIds.Count > 0)
+            {
+                Global.OpenForm(this, Global.frmPaymentPage);
+            }
+            else
+            {
+                MessageBox.Show("Select a room first.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCheckOutDate.MinDate = dtpCheckInDate.Value;
+            dtpCheckOutDate.Value = dtpCheckInDate.Value;
+
+            reservation.CheckInDateTime = dtpCheckInDate.Value;
+            reservation.CheckOutDateTime = dtpCheckOutDate.Value;
+        }
+
+        private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+            reservation.CheckInDateTime = dtpCheckInDate.Value;
+            reservation.CheckOutDateTime = dtpCheckOutDate.Value;
         }
     }
 }

@@ -65,6 +65,7 @@ namespace HotelAndResort.Views
                     {
                         DataRow row = results.Rows[0];
 
+                        Global.UserId = (int)row["user_id"];
                         Global.UserName = (string)row["user_name"];
                         string role = (string)row["role"];
                         if (role == "admin")

@@ -19,7 +19,7 @@ namespace HotelAndResort.Models.UserControls
 
         private List<ReservedAmenityItem> reservedAmenityItems = new List<ReservedAmenityItem>();
 
-        private frmBooking frmBooking;
+        private frmBookingPage frmBookingPage;
 
         public event Action ReservationRemoved;
 
@@ -28,9 +28,9 @@ namespace HotelAndResort.Models.UserControls
         private void UpdateContents()
         {
             // Set labels to current attributes in object reservation
-            lblReservationPrice.Text = reservation.ReservationPrice.ToString();
-            lblCheckIn.Text = reservation.CheckInDateTime.ToString();
-            lblCheckOut.Text = reservation.CheckOutDateTime.ToString();
+            lblDetailsReservationPrice.Text = reservation.ReservationPrice.ToString();
+            lblDetailsCheckInDate.Text = reservation.CheckInDateTime.ToString();
+            lblDetailsCheckOutDate.Text = reservation.CheckOutDateTime.ToString();
 
             // Show or hide FlowLayoutPanel flpReservedRooms based on whether rooms have been reserved or not
             if (reservedRoomList.Count == 0) { flpReservedRooms.Hide(); }
@@ -75,7 +75,7 @@ namespace HotelAndResort.Models.UserControls
             reservation.RemoveRoomPrice(roomToRemove.ReservedRoomPrice);
             reservedRoomList.Remove(roomToRemove);
 
-            frmBooking.DeleteReservedRoomId(roomId);
+            frmBookingPage.RemoveReservedRoomId(roomId);
 
             UpdateContents();
         }
@@ -118,7 +118,7 @@ namespace HotelAndResort.Models.UserControls
             reservation.RemoveAmenityPrice(amenityToRemove.AmenityPrice);
             reservedAmenityList.Remove(amenityToRemove);
 
-            frmBooking.DeleteReservedAmenityId(amenityId);
+            frmBookingPage.RemoveReservedAmenityId(amenityId);
             //frmBookingPage.RemoveReservedAmenityId(amenityId);
 
             UpdateContents();
@@ -145,11 +145,11 @@ namespace HotelAndResort.Models.UserControls
 
         // * Methods * //
 
-        public ReservationItem(frmBooking frmBooking, Reservation reservation)
+        public ReservationItem(frmBookingPage frmBookingPage, Reservation reservation)
         {
             InitializeComponent();
 
-            this.frmBooking = frmBooking;
+            this.frmBookingPage = frmBookingPage;
             this.reservation = reservation;
 
             UpdateContents();

@@ -130,6 +130,9 @@
   <data name="home_banner_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_banner_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rooms_deluxe_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rooms_deluxe_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="admindashboard_rooms_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admindashboard_rooms_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +148,9 @@
   <data name="amenities_videoke_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\amenities_videoke_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="booking_removeguest_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\booking_removeguest_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="amenities_privatepool_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\amenities_privatepool_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +163,8 @@
   <data name="home_services_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_services_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rooms_deluxe_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rooms_deluxe_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="admindashboard_reservations_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admindashboard_reservations_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_36dp_000000_FILL0_wght400_GRAD0_opsz40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_36dp_000000_FILL0_wght400_GRAD0_opsz40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +172,7 @@
   <data name="rooms_standard_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rooms_standard_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admindashboard_reservations_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admindashboard_reservations_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="booking_addguest_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\booking_addguest_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

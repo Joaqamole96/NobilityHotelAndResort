@@ -18,8 +18,8 @@ namespace HotelAndResort.Models.UserControls
             amenityId = reservedAmenity.AmenityId;
 
             lblAmenityName.Text = reservedAmenity.AmenityName;
-            lblAmenityCapacity.Text = reservedAmenity.AmenityCapacity.ToString();
-            lblAmenityDescription.Text = reservedAmenity.AmenityDescription;
+            lblAmenityCapacity.Text = "Good for " + reservedAmenity.AmenityCapacity.ToString() + "people";
+            lblAmenityPrice.Text = "₱ " + reservedAmenity.AmenityPrice;
         }
 
         public ReservedAmenityItem(ReservedAmenity reservedAmenity, bool displayOnly)
@@ -30,7 +30,7 @@ namespace HotelAndResort.Models.UserControls
 
             lblAmenityName.Text = reservedAmenity.AmenityName;
             lblAmenityCapacity.Text = reservedAmenity.AmenityCapacity.ToString();
-            lblAmenityDescription.Text = reservedAmenity.AmenityDescription;
+            lblAmenityPrice.Text = "₱ " + reservedAmenity.AmenityPrice;
 
             btnDelete.Dispose();
         }

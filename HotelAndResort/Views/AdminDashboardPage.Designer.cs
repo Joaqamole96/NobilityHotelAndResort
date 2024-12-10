@@ -222,6 +222,7 @@
             this.btnNavAdminReservations.TabIndex = 26;
             this.btnNavAdminReservations.Text = "View";
             this.btnNavAdminReservations.UseVisualStyleBackColor = false;
+            this.btnNavAdminReservations.Click += new System.EventHandler(this.btnNavAdminReservations_Click);
             // 
             // label5
             // 

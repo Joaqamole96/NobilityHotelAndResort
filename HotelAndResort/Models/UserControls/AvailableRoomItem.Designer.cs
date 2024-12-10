@@ -41,13 +41,14 @@
             // btnCTABooking
             // 
             this.btnCTABooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(201)))), ((int)(((byte)(136)))));
+            this.btnCTABooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
             this.btnCTABooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCTABooking.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTABooking.Location = new System.Drawing.Point(590, 85);
+            this.btnCTABooking.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCTABooking.ForeColor = System.Drawing.Color.White;
+            this.btnCTABooking.Location = new System.Drawing.Point(580, 85);
             this.btnCTABooking.Margin = new System.Windows.Forms.Padding(0);
             this.btnCTABooking.Name = "btnCTABooking";
-            this.btnCTABooking.Size = new System.Drawing.Size(100, 25);
+            this.btnCTABooking.Size = new System.Drawing.Size(110, 25);
             this.btnCTABooking.TabIndex = 27;
             this.btnCTABooking.Text = "Select Room";
             this.btnCTABooking.UseVisualStyleBackColor = false;
@@ -57,7 +58,7 @@
             // 
             this.lblRoomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomDescription.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomDescription.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomDescription.Location = new System.Drawing.Point(166, 80);
             this.lblRoomDescription.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDescription.Name = "lblRoomDescription";
@@ -70,11 +71,11 @@
             // 
             this.lblRoomDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoomDisclaimer.AutoSize = true;
-            this.lblRoomDisclaimer.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomDisclaimer.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomDisclaimer.Location = new System.Drawing.Point(589, 40);
             this.lblRoomDisclaimer.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomDisclaimer.Name = "lblRoomDisclaimer";
-            this.lblRoomDisclaimer.Size = new System.Drawing.Size(101, 28);
+            this.lblRoomDisclaimer.Size = new System.Drawing.Size(99, 26);
             this.lblRoomDisclaimer.TabIndex = 24;
             this.lblRoomDisclaimer.Text = "per night (Including \r\ntaxes and fees)";
             this.lblRoomDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -83,7 +84,7 @@
             // 
             this.lblRoomCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomCapacity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomCapacity.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomCapacity.Location = new System.Drawing.Point(166, 32);
             this.lblRoomCapacity.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomCapacity.Name = "lblRoomCapacity";
@@ -94,7 +95,7 @@
             // lblRoomPrice
             // 
             this.lblRoomPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoomPrice.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomPrice.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomPrice.Location = new System.Drawing.Point(490, 10);
             this.lblRoomPrice.Margin = new System.Windows.Forms.Padding(5);
             this.lblRoomPrice.Name = "lblRoomPrice";
@@ -106,7 +107,7 @@
             // 
             // pbxRoomThumbnail
             // 
-            this.pbxRoomThumbnail.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pbxRoomThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pbxRoomThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxRoomThumbnail.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbxRoomThumbnail.Location = new System.Drawing.Point(10, 10);
@@ -118,7 +119,8 @@
             // 
             // lblRoomType
             // 
-            this.lblRoomType.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomType.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
             this.lblRoomType.Location = new System.Drawing.Point(165, 10);
             this.lblRoomType.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoomType.Name = "lblRoomType";
@@ -131,6 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnCTABooking);
             this.Controls.Add(this.lblRoomDescription);

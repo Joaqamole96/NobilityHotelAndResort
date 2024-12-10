@@ -1,9 +1,11 @@
-﻿using System;
+﻿using HotelAndResort.Models.Data;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 public class ReservedRoom
 {
@@ -18,4 +20,29 @@ public class ReservedRoom
         public int ReservationId { get; set; }
         public int GuestCount { get; set; }
         public decimal ReservedRoomPrice { get; set; }
+
+    public void InsertToDatabase()
+    {
+        try
+        {
+            // Construct the SQL INSERT query
+            string query = $@"
+            INSERT INTO Reserved_Rooms (room_id, reservation_id, guest_count, reserved_room_price)
+            VALUES (
+                {RoomId}, 
+                {ReservationId}, 
+                {GuestCount}, 
+                {ReservedRoomPrice.ToString("F2")}
+            );";
+
+            // Execute the query
+            DatabaseHelper.Execute(query);
+            MessageBox.Show("Inserted reserved room");
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error inserting reserved room into the database: {ex.Message}");
+        }
+    }
+
 }

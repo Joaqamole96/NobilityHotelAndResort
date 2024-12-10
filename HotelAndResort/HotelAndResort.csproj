@@ -484,6 +484,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Data\.sql\init.txt" />
+    <None Include="Resources\booking_addguest_png.png" />
+    <None Include="Resources\booking_removeguest_png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

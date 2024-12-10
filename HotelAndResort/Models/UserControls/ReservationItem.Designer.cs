@@ -28,309 +28,226 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlReservation = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tlpDates = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCheckOut = new System.Windows.Forms.Label();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.lblLabelCheckOut = new System.Windows.Forms.Label();
-            this.lblLabelCheckIn = new System.Windows.Forms.Label();
-            this.pnlDivider1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblReservationPrice = new System.Windows.Forms.Label();
-            this.lblLabelTotalPrice = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblReservationDetails = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flpReservedAmenities = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblReservedAmenities = new System.Windows.Forms.Label();
+            this.flpReservedItems = new System.Windows.Forms.FlowLayoutPanel();
             this.flpReservedRooms = new System.Windows.Forms.FlowLayoutPanel();
             this.lblReservedRooms = new System.Windows.Forms.Label();
-            this.pnlReservation.SuspendLayout();
-            this.tlpDates.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.flpReservedAmenities.SuspendLayout();
+            this.flpReservedAmenities = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblReservedAmenities = new System.Windows.Forms.Label();
+            this.lblDetailsReservationPrice = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblDetailsCheckOutDate = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblDetailsCheckInDate = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.flpReservedItems.SuspendLayout();
             this.flpReservedRooms.SuspendLayout();
+            this.flpReservedAmenities.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlReservation
+            // flpReservedItems
             // 
-            this.pnlReservation.AutoSize = true;
-            this.pnlReservation.Controls.Add(this.panel2);
-            this.pnlReservation.Controls.Add(this.tlpDates);
-            this.pnlReservation.Controls.Add(this.pnlDivider1);
-            this.pnlReservation.Controls.Add(this.tableLayoutPanel1);
-            this.pnlReservation.Controls.Add(this.panel1);
-            this.pnlReservation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReservation.Location = new System.Drawing.Point(10, 39);
-            this.pnlReservation.Name = "pnlReservation";
-            this.pnlReservation.Size = new System.Drawing.Size(318, 89);
-            this.pnlReservation.TabIndex = 29;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Tomato;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 84);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.MinimumSize = new System.Drawing.Size(0, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 5);
-            this.panel2.TabIndex = 42;
-            // 
-            // tlpDates
-            // 
-            this.tlpDates.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tlpDates.ColumnCount = 2;
-            this.tlpDates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpDates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpDates.Controls.Add(this.lblCheckOut, 1, 1);
-            this.tlpDates.Controls.Add(this.lblCheckIn, 1, 0);
-            this.tlpDates.Controls.Add(this.lblLabelCheckOut, 0, 1);
-            this.tlpDates.Controls.Add(this.lblLabelCheckIn, 0, 0);
-            this.tlpDates.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpDates.Location = new System.Drawing.Point(0, 35);
-            this.tlpDates.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpDates.Name = "tlpDates";
-            this.tlpDates.RowCount = 2;
-            this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDates.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDates.Size = new System.Drawing.Size(318, 49);
-            this.tlpDates.TabIndex = 40;
-            // 
-            // lblCheckOut
-            // 
-            this.lblCheckOut.AutoSize = true;
-            this.lblCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCheckOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOut.Location = new System.Drawing.Point(103, 30);
-            this.lblCheckOut.Margin = new System.Windows.Forms.Padding(5);
-            this.lblCheckOut.Name = "lblCheckOut";
-            this.lblCheckOut.Size = new System.Drawing.Size(209, 13);
-            this.lblCheckOut.TabIndex = 33;
-            this.lblCheckOut.Text = "[CheckOutDate]";
-            // 
-            // lblCheckIn
-            // 
-            this.lblCheckIn.AutoSize = true;
-            this.lblCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckIn.Location = new System.Drawing.Point(103, 6);
-            this.lblCheckIn.Margin = new System.Windows.Forms.Padding(5);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(209, 13);
-            this.lblCheckIn.TabIndex = 32;
-            this.lblCheckIn.Text = "[CheckInDate]";
-            // 
-            // lblLabelCheckOut
-            // 
-            this.lblLabelCheckOut.AutoSize = true;
-            this.lblLabelCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLabelCheckOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabelCheckOut.Location = new System.Drawing.Point(6, 30);
-            this.lblLabelCheckOut.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLabelCheckOut.Name = "lblLabelCheckOut";
-            this.lblLabelCheckOut.Size = new System.Drawing.Size(86, 13);
-            this.lblLabelCheckOut.TabIndex = 31;
-            this.lblLabelCheckOut.Text = "Check-out Date";
-            // 
-            // lblLabelCheckIn
-            // 
-            this.lblLabelCheckIn.AutoSize = true;
-            this.lblLabelCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLabelCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabelCheckIn.Location = new System.Drawing.Point(6, 6);
-            this.lblLabelCheckIn.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLabelCheckIn.Name = "lblLabelCheckIn";
-            this.lblLabelCheckIn.Size = new System.Drawing.Size(86, 13);
-            this.lblLabelCheckIn.TabIndex = 29;
-            this.lblLabelCheckIn.Text = "Check-in Date";
-            // 
-            // pnlDivider1
-            // 
-            this.pnlDivider1.BackColor = System.Drawing.Color.Tomato;
-            this.pnlDivider1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDivider1.Location = new System.Drawing.Point(0, 30);
-            this.pnlDivider1.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlDivider1.MinimumSize = new System.Drawing.Size(0, 5);
-            this.pnlDivider1.Name = "pnlDivider1";
-            this.pnlDivider1.Size = new System.Drawing.Size(318, 5);
-            this.pnlDivider1.TabIndex = 39;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.lblReservationPrice, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblLabelTotalPrice, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 5);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(318, 25);
-            this.tableLayoutPanel1.TabIndex = 38;
-            // 
-            // lblReservationPrice
-            // 
-            this.lblReservationPrice.AutoSize = true;
-            this.lblReservationPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReservationPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationPrice.Location = new System.Drawing.Point(77, 6);
-            this.lblReservationPrice.Margin = new System.Windows.Forms.Padding(5);
-            this.lblReservationPrice.Name = "lblReservationPrice";
-            this.lblReservationPrice.Size = new System.Drawing.Size(235, 13);
-            this.lblReservationPrice.TabIndex = 32;
-            this.lblReservationPrice.Text = "[ReservationPrice]";
-            // 
-            // lblLabelTotalPrice
-            // 
-            this.lblLabelTotalPrice.AutoSize = true;
-            this.lblLabelTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLabelTotalPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabelTotalPrice.Location = new System.Drawing.Point(6, 6);
-            this.lblLabelTotalPrice.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLabelTotalPrice.Name = "lblLabelTotalPrice";
-            this.lblLabelTotalPrice.Size = new System.Drawing.Size(60, 13);
-            this.lblLabelTotalPrice.TabIndex = 29;
-            this.lblLabelTotalPrice.Text = "Total Price";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.MinimumSize = new System.Drawing.Size(0, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(318, 5);
-            this.panel1.TabIndex = 37;
-            // 
-            // lblReservationDetails
-            // 
-            this.lblReservationDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblReservationDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationDetails.Location = new System.Drawing.Point(10, 10);
-            this.lblReservationDetails.Name = "lblReservationDetails";
-            this.lblReservationDetails.Size = new System.Drawing.Size(318, 29);
-            this.lblReservationDetails.TabIndex = 32;
-            this.lblReservationDetails.Text = "Reservation Details\r\n";
-            this.lblReservationDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.flpReservedAmenities);
-            this.panel3.Controls.Add(this.flpReservedRooms);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(10, 128);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(318, 46);
-            this.panel3.TabIndex = 33;
-            // 
-            // flpReservedAmenities
-            // 
-            this.flpReservedAmenities.AutoSize = true;
-            this.flpReservedAmenities.Controls.Add(this.lblReservedAmenities);
-            this.flpReservedAmenities.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpReservedAmenities.Location = new System.Drawing.Point(0, 23);
-            this.flpReservedAmenities.MaximumSize = new System.Drawing.Size(320, 0);
-            this.flpReservedAmenities.MinimumSize = new System.Drawing.Size(0, 10);
-            this.flpReservedAmenities.Name = "flpReservedAmenities";
-            this.flpReservedAmenities.Padding = new System.Windows.Forms.Padding(5);
-            this.flpReservedAmenities.Size = new System.Drawing.Size(318, 23);
-            this.flpReservedAmenities.TabIndex = 33;
-            // 
-            // lblReservedAmenities
-            // 
-            this.lblReservedAmenities.AutoSize = true;
-            this.lblReservedAmenities.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservedAmenities.Location = new System.Drawing.Point(5, 5);
-            this.lblReservedAmenities.Margin = new System.Windows.Forms.Padding(0);
-            this.lblReservedAmenities.Name = "lblReservedAmenities";
-            this.lblReservedAmenities.Size = new System.Drawing.Size(106, 13);
-            this.lblReservedAmenities.TabIndex = 1;
-            this.lblReservedAmenities.Text = "Reserved Amenities";
+            this.flpReservedItems.AutoScroll = true;
+            this.flpReservedItems.Controls.Add(this.flpReservedRooms);
+            this.flpReservedItems.Controls.Add(this.flpReservedAmenities);
+            this.flpReservedItems.Location = new System.Drawing.Point(18, 231);
+            this.flpReservedItems.Name = "flpReservedItems";
+            this.flpReservedItems.Size = new System.Drawing.Size(324, 216);
+            this.flpReservedItems.TabIndex = 69;
             // 
             // flpReservedRooms
             // 
             this.flpReservedRooms.AutoSize = true;
             this.flpReservedRooms.Controls.Add(this.lblReservedRooms);
-            this.flpReservedRooms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpReservedRooms.Location = new System.Drawing.Point(0, 0);
+            this.flpReservedRooms.Location = new System.Drawing.Point(3, 3);
             this.flpReservedRooms.MaximumSize = new System.Drawing.Size(320, 0);
-            this.flpReservedRooms.MinimumSize = new System.Drawing.Size(0, 10);
+            this.flpReservedRooms.MinimumSize = new System.Drawing.Size(300, 10);
             this.flpReservedRooms.Name = "flpReservedRooms";
             this.flpReservedRooms.Padding = new System.Windows.Forms.Padding(5);
-            this.flpReservedRooms.Size = new System.Drawing.Size(318, 23);
-            this.flpReservedRooms.TabIndex = 32;
+            this.flpReservedRooms.Size = new System.Drawing.Size(300, 29);
+            this.flpReservedRooms.TabIndex = 46;
             // 
             // lblReservedRooms
             // 
             this.lblReservedRooms.AutoSize = true;
-            this.lblReservedRooms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservedRooms.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReservedRooms.Location = new System.Drawing.Point(5, 5);
             this.lblReservedRooms.Margin = new System.Windows.Forms.Padding(0);
             this.lblReservedRooms.Name = "lblReservedRooms";
-            this.lblReservedRooms.Size = new System.Drawing.Size(91, 13);
+            this.lblReservedRooms.Size = new System.Drawing.Size(121, 19);
             this.lblReservedRooms.TabIndex = 1;
             this.lblReservedRooms.Text = "Reserved Rooms";
+            // 
+            // flpReservedAmenities
+            // 
+            this.flpReservedAmenities.AutoSize = true;
+            this.flpReservedAmenities.Controls.Add(this.lblReservedAmenities);
+            this.flpReservedAmenities.Location = new System.Drawing.Point(3, 38);
+            this.flpReservedAmenities.MaximumSize = new System.Drawing.Size(320, 0);
+            this.flpReservedAmenities.MinimumSize = new System.Drawing.Size(300, 10);
+            this.flpReservedAmenities.Name = "flpReservedAmenities";
+            this.flpReservedAmenities.Padding = new System.Windows.Forms.Padding(5);
+            this.flpReservedAmenities.Size = new System.Drawing.Size(300, 29);
+            this.flpReservedAmenities.TabIndex = 47;
+            // 
+            // lblReservedAmenities
+            // 
+            this.lblReservedAmenities.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservedAmenities.Location = new System.Drawing.Point(5, 5);
+            this.lblReservedAmenities.Margin = new System.Windows.Forms.Padding(0);
+            this.lblReservedAmenities.Name = "lblReservedAmenities";
+            this.lblReservedAmenities.Size = new System.Drawing.Size(142, 19);
+            this.lblReservedAmenities.TabIndex = 1;
+            this.lblReservedAmenities.Text = "Reserved Amenities";
+            // 
+            // lblDetailsReservationPrice
+            // 
+            this.lblDetailsReservationPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetailsReservationPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblDetailsReservationPrice.Location = new System.Drawing.Point(137, 74);
+            this.lblDetailsReservationPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDetailsReservationPrice.Name = "lblDetailsReservationPrice";
+            this.lblDetailsReservationPrice.Size = new System.Drawing.Size(158, 19);
+            this.lblDetailsReservationPrice.TabIndex = 62;
+            this.lblDetailsReservationPrice.Text = "[ReservationPrice]";
+            this.lblDetailsReservationPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(52, 74);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 19);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "Total Price:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(25, 25);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(150, 33);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "Reservation";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(41, 224);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(274, 1);
+            this.panel7.TabIndex = 68;
+            // 
+            // lblDetailsCheckOutDate
+            // 
+            this.lblDetailsCheckOutDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetailsCheckOutDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDetailsCheckOutDate.Location = new System.Drawing.Point(169, 175);
+            this.lblDetailsCheckOutDate.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDetailsCheckOutDate.Name = "lblDetailsCheckOutDate";
+            this.lblDetailsCheckOutDate.Size = new System.Drawing.Size(126, 19);
+            this.lblDetailsCheckOutDate.TabIndex = 67;
+            this.lblDetailsCheckOutDate.Text = "[CheckOutDate]";
+            this.lblDetailsCheckOutDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(52, 175);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(117, 19);
+            this.label16.TabIndex = 66;
+            this.label16.Text = "Check-out Date:";
+            // 
+            // lblDetailsCheckInDate
+            // 
+            this.lblDetailsCheckInDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetailsCheckInDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDetailsCheckInDate.Location = new System.Drawing.Point(158, 135);
+            this.lblDetailsCheckInDate.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDetailsCheckInDate.Name = "lblDetailsCheckInDate";
+            this.lblDetailsCheckInDate.Size = new System.Drawing.Size(137, 19);
+            this.lblDetailsCheckInDate.TabIndex = 65;
+            this.lblDetailsCheckInDate.Text = "[CheckInDate]";
+            this.lblDetailsCheckInDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(52, 135);
+            this.label17.Margin = new System.Windows.Forms.Padding(0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 19);
+            this.label17.TabIndex = 64;
+            this.label17.Text = "Check-in Date:";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Location = new System.Drawing.Point(41, 112);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(274, 1);
+            this.panel6.TabIndex = 63;
             // 
             // ReservationItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pnlReservation);
-            this.Controls.Add(this.lblReservationDetails);
+            this.Controls.Add(this.flpReservedItems);
+            this.Controls.Add(this.lblDetailsReservationPrice);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.lblDetailsCheckOutDate);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblDetailsCheckInDate);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.panel6);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(340, 2);
             this.Name = "ReservationItem";
-            this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(338, 184);
-            this.pnlReservation.ResumeLayout(false);
-            this.pnlReservation.PerformLayout();
-            this.tlpDates.ResumeLayout(false);
-            this.tlpDates.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.flpReservedAmenities.ResumeLayout(false);
-            this.flpReservedAmenities.PerformLayout();
+            this.Padding = new System.Windows.Forms.Padding(15);
+            this.Size = new System.Drawing.Size(360, 465);
+            this.flpReservedItems.ResumeLayout(false);
+            this.flpReservedItems.PerformLayout();
             this.flpReservedRooms.ResumeLayout(false);
             this.flpReservedRooms.PerformLayout();
+            this.flpReservedAmenities.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlReservation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblReservationPrice;
-        private System.Windows.Forms.Label lblLabelTotalPrice;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tlpDates;
-        private System.Windows.Forms.Label lblCheckOut;
-        private System.Windows.Forms.Label lblCheckIn;
-        private System.Windows.Forms.Label lblLabelCheckOut;
-        private System.Windows.Forms.Label lblLabelCheckIn;
-        private System.Windows.Forms.Panel pnlDivider1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblReservationDetails;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.FlowLayoutPanel flpReservedAmenities;
-        private System.Windows.Forms.Label lblReservedAmenities;
+        private System.Windows.Forms.FlowLayoutPanel flpReservedItems;
         private System.Windows.Forms.FlowLayoutPanel flpReservedRooms;
         private System.Windows.Forms.Label lblReservedRooms;
+        private System.Windows.Forms.FlowLayoutPanel flpReservedAmenities;
+        private System.Windows.Forms.Label lblReservedAmenities;
+        private System.Windows.Forms.Label lblDetailsReservationPrice;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblDetailsCheckOutDate;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblDetailsCheckInDate;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel6;
     }
 }

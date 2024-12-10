@@ -16,10 +16,11 @@ namespace HotelAndResort.Models.UserControls
             InitializeComponent();
 
             roomId = reservedRoom.RoomId;
+            this.reservedRoom = reservedRoom;
 
             lblRoomNumber.Text = "Room " + reservedRoom.RoomNumber;
             lblRoomGuestCount.Text = "Reserved for " + reservedRoom.GuestCount.ToString() + " guest/s";
-            lblRoomDescription.Text = reservedRoom.RoomDescription;
+            lblRoomPrice.Text = "₱ " + reservedRoom.RoomPrice.ToString();
         }
 
         public ReservedRoomItem(ReservedRoom reservedRoom, bool displayOnly)
@@ -30,7 +31,7 @@ namespace HotelAndResort.Models.UserControls
 
             lblRoomNumber.Text = "Room " + reservedRoom.RoomNumber;
             lblRoomGuestCount.Text = "Reserved for " + reservedRoom.GuestCount.ToString() + " guest/s";
-            lblRoomDescription.Text = reservedRoom.RoomDescription;
+            lblRoomPrice.Text = "₱ " + reservedRoom.RoomPrice.ToString();
             btnDelete.Dispose();
         }
 

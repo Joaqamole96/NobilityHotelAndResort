@@ -305,7 +305,7 @@ namespace HotelAndResort.Views
             dtpCheckOut.Value = dtpCheckIn.Value;
 
             reservation = new Reservation(dtpCheckIn.Value, dtpCheckOut.Value);
-            reservationItem = new ReservationItem(this, reservation);
+            //reservationItem = new ReservationItem(this, reservation);
 
             flpReservationDetails.Controls.Add(reservationItem);
 

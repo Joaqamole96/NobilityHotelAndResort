@@ -44,6 +44,11 @@ namespace HotelAndResort.Views
             Global.OpenForm(this, Global.frmAdminRoomsPage);
         }
 
+        private void btnNavAdminReservations_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global.frmAdminReservationsPage);
+        }
+
         private void lblExitProgram_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to exit the program?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

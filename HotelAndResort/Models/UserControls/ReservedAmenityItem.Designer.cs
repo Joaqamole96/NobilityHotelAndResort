@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAmenityDescription = new System.Windows.Forms.Label();
+            this.lblAmenityPrice = new System.Windows.Forms.Label();
             this.lblAmenityCapacity = new System.Windows.Forms.Label();
             this.lblAmenityName = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -36,25 +36,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxAmenityThumbnail)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAmenityDescription
+            // lblAmenityPrice
             // 
-            this.lblAmenityDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblAmenityPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmenityDescription.Location = new System.Drawing.Point(86, 53);
-            this.lblAmenityDescription.Margin = new System.Windows.Forms.Padding(0);
-            this.lblAmenityDescription.Name = "lblAmenityDescription";
-            this.lblAmenityDescription.Size = new System.Drawing.Size(222, 27);
-            this.lblAmenityDescription.TabIndex = 41;
-            this.lblAmenityDescription.Text = "[AmenityDescription]";
-            this.lblAmenityDescription.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblAmenityPrice.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityPrice.Location = new System.Drawing.Point(86, 53);
+            this.lblAmenityPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAmenityPrice.Name = "lblAmenityPrice";
+            this.lblAmenityPrice.Size = new System.Drawing.Size(222, 27);
+            this.lblAmenityPrice.TabIndex = 41;
+            this.lblAmenityPrice.Text = "[AmenityPrice]";
+            this.lblAmenityPrice.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblAmenityCapacity
             // 
             this.lblAmenityCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityCapacity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmenityCapacity.Location = new System.Drawing.Point(86, 30);
+            this.lblAmenityCapacity.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityCapacity.Location = new System.Drawing.Point(86, 27);
             this.lblAmenityCapacity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.lblAmenityCapacity.Name = "lblAmenityCapacity";
             this.lblAmenityCapacity.Size = new System.Drawing.Size(210, 16);
@@ -66,7 +66,7 @@
             // 
             this.lblAmenityName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAmenityName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmenityName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenityName.Location = new System.Drawing.Point(85, 5);
             this.lblAmenityName.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmenityName.Name = "lblAmenityName";
@@ -76,18 +76,20 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.btnDelete.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(284, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(21, 22);
             this.btnDelete.TabIndex = 38;
             this.btnDelete.Text = "X";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // pbxAmenityThumbnail
             // 
-            this.pbxAmenityThumbnail.BackColor = System.Drawing.Color.Linen;
+            this.pbxAmenityThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pbxAmenityThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxAmenityThumbnail.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbxAmenityThumbnail.Location = new System.Drawing.Point(5, 5);
@@ -101,8 +103,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.Controls.Add(this.lblAmenityDescription);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblAmenityPrice);
             this.Controls.Add(this.lblAmenityCapacity);
             this.Controls.Add(this.lblAmenityName);
             this.Controls.Add(this.btnDelete);
@@ -118,7 +120,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblAmenityDescription;
+        private System.Windows.Forms.Label lblAmenityPrice;
         private System.Windows.Forms.Label lblAmenityCapacity;
         private System.Windows.Forms.Label lblAmenityName;
         private System.Windows.Forms.Button btnDelete;

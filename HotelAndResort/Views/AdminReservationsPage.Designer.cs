@@ -39,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblBackDashboard = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             this.lblExitProgram.TabIndex = 18;
             this.lblExitProgram.Text = "X";
             this.lblExitProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExitProgram.Click += new System.EventHandler(this.lblExitProgram_Click);
             // 
             // btnNavLogin
             // 
@@ -153,12 +155,25 @@
             this.panel4.Size = new System.Drawing.Size(1168, 482);
             this.panel4.TabIndex = 23;
             // 
+            // lblBackDashboard
+            // 
+            this.lblBackDashboard.AutoSize = true;
+            this.lblBackDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackDashboard.Location = new System.Drawing.Point(45, 668);
+            this.lblBackDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.lblBackDashboard.Name = "lblBackDashboard";
+            this.lblBackDashboard.Size = new System.Drawing.Size(168, 23);
+            this.lblBackDashboard.TabIndex = 27;
+            this.lblBackDashboard.Text = "< Back to Dashboard";
+            this.lblBackDashboard.Click += new System.EventHandler(this.lblBackDashboard_Click);
+            // 
             // frmAdminReservationsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.lblBackDashboard);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label3);
@@ -169,10 +184,12 @@
             this.Name = "frmAdminReservationsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "(Admin) Reservations | Nobility Hotel and Resort";
+            this.Load += new System.EventHandler(this.frmAdminReservationsPage_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,5 +206,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblBackDashboard;
     }
 }

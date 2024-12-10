@@ -133,6 +133,26 @@ namespace HotelAndResort.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap booking_addguest_png {
+            get {
+                object obj = ResourceManager.GetObject("booking_addguest_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap booking_removeguest_png {
+            get {
+                object obj = ResourceManager.GetObject("booking_removeguest_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contact_facebook_img {
             get {
                 object obj = ResourceManager.GetObject("contact_facebook_img", resourceCulture);
