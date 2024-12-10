@@ -63,6 +63,26 @@ namespace HotelAndResort.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admindashboard_reservations_img {
+            get {
+                object obj = ResourceManager.GetObject("admindashboard_reservations_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap admindashboard_rooms_img {
+            get {
+                object obj = ResourceManager.GetObject("admindashboard_rooms_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap amenities_cottage_img {
             get {
                 object obj = ResourceManager.GetObject("amenities_cottage_img", resourceCulture);

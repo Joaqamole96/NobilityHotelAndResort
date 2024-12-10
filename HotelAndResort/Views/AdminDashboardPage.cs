@@ -15,6 +15,15 @@ namespace HotelAndResort.Views
         public frmAdminDashboardPage()
         {
             InitializeComponent();
+
+            btnNavLogin.FlatStyle = FlatStyle.Flat;
+            btnNavLogin.FlatAppearance.BorderSize = 0;
+
+            btnNavAdminRooms.FlatStyle = FlatStyle.Flat;
+            btnNavAdminRooms.FlatAppearance.BorderSize = 0;
+
+            btnNavAdminReservations.FlatStyle = FlatStyle.Flat;
+            btnNavAdminReservations.FlatAppearance.BorderSize = 0;
         }
 
         private void frmAdminDashboardPage_Load(object sender, EventArgs e)
@@ -27,6 +36,11 @@ namespace HotelAndResort.Views
             {
                 btnNavLogin.Text = "Login";
             }
+        }
+
+        private void btnNavAdminRooms_Click(object sender, EventArgs e)
+        {
+            Global.OpenForm(this, Global);
         }
     }
 }
