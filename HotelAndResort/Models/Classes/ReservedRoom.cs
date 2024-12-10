@@ -37,7 +37,6 @@ public class ReservedRoom
 
             // Execute the query
             DatabaseHelper.Execute(query);
-            MessageBox.Show("Inserted reserved room");
         }
         catch (Exception ex)
         {

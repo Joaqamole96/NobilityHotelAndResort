@@ -31,7 +31,6 @@ public class ReservedAmenity
 
             // Execute the query
             DatabaseHelper.Execute(query);
-            MessageBox.Show("Inserted reserved amenity");
         }
         catch (Exception ex)
         {

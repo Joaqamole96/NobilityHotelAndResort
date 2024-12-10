@@ -9,9 +9,9 @@ USE nobilityhotelandresort_db;
 
 -- Drop existing tables for a clean slate
 DROP TABLE IF EXISTS HomeContent;
-DROP TABLE IF EXISTS Reserved_Services;
 DROP TABLE IF EXISTS Reserved_Amenities;
 DROP TABLE IF EXISTS Reserved_Rooms;
+DROP TABLE IF EXISTS Reservations;
 DROP TABLE IF EXISTS Services;
 DROP TABLE IF EXISTS Amenities;
 DROP TABLE IF EXISTS Rooms;
@@ -154,24 +154,3 @@ VALUES
 ('Cottage 4', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
 ('Cottage 5', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available'),
 ('Cottage 6', 'A small hut near the resort\'s pools.', 2000.00, 1, 'available');
-
--- Insert reservations for testing
-INSERT INTO Reservation (user_id, check_in_datetime, check_out_datetime, night_count, reservation_price, reservation_status)
-VALUES
-(1, '2024-12-15 14:00:00', '2024-12-20 12:00:00', 5, 12500.00, 'approved'),
-(2, '2024-12-18 15:00:00', '2024-12-22 11:00:00', 4, 18000.00, 'pending'),
-(2, '2024-12-25 14:00:00', '2024-12-30 12:00:00', 5, 22500.00, 'draft');
-
--- Associate reserved rooms with reservations
-INSERT INTO Reserved_Rooms (room_id, reservation_id, guest_count, reserved_room_price)
-VALUES
-(1, 1, 2, 2500.00),
-(11, 2, 3, 7500.00),
-(21, 3, 4, 10000.00);
-
--- Associate reserved amenities with reservations
-INSERT INTO Reserved_Amenities (amenity_id, reservation_id)
-VALUES
-(1, 1),
-(2, 2),
-(3, 3);

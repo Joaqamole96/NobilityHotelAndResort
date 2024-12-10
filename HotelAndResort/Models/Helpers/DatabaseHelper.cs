@@ -75,6 +75,7 @@ namespace HotelAndResort.Models.Data
 
         public static void Execute(string query)
         {
+            MessageBox.Show("Executing query: " + query);
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))

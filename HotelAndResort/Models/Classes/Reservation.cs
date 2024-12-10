@@ -66,7 +66,6 @@ public class Reservation
 
             // Execute the insert query using DatabaseHelper.Execute
             DatabaseHelper.Execute(query);
-            MessageBox.Show("Inserted reservation");
 
             // After inserting, get the last inserted ID
             string lastInsertIdQuery = "SELECT LAST_INSERT_ID();";
