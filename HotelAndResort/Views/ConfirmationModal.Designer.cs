@@ -123,7 +123,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(142, 135);
+            this.label3.Location = new System.Drawing.Point(87, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 117);
@@ -145,9 +145,9 @@
             this.pnlReservationDetails.Controls.Add(this.lblDetailsCheckInDate);
             this.pnlReservationDetails.Controls.Add(this.label17);
             this.pnlReservationDetails.Controls.Add(this.panel6);
-            this.pnlReservationDetails.Location = new System.Drawing.Point(552, 82);
+            this.pnlReservationDetails.Location = new System.Drawing.Point(445, 82);
             this.pnlReservationDetails.Name = "pnlReservationDetails";
-            this.pnlReservationDetails.Size = new System.Drawing.Size(380, 407);
+            this.pnlReservationDetails.Size = new System.Drawing.Size(487, 407);
             this.pnlReservationDetails.TabIndex = 17;
             // 
             // flpReservedItems
@@ -155,7 +155,7 @@
             this.flpReservedItems.AutoScroll = true;
             this.flpReservedItems.Controls.Add(this.flpReservedRooms);
             this.flpReservedItems.Controls.Add(this.flpReservedAmenities);
-            this.flpReservedItems.Location = new System.Drawing.Point(18, 231);
+            this.flpReservedItems.Location = new System.Drawing.Point(74, 236);
             this.flpReservedItems.Name = "flpReservedItems";
             this.flpReservedItems.Size = new System.Drawing.Size(324, 216);
             this.flpReservedItems.TabIndex = 79;
@@ -209,7 +209,7 @@
             // 
             this.lblDetailsReservationPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetailsReservationPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblDetailsReservationPrice.Location = new System.Drawing.Point(137, 74);
+            this.lblDetailsReservationPrice.Location = new System.Drawing.Point(193, 79);
             this.lblDetailsReservationPrice.Margin = new System.Windows.Forms.Padding(0);
             this.lblDetailsReservationPrice.Name = "lblDetailsReservationPrice";
             this.lblDetailsReservationPrice.Size = new System.Drawing.Size(158, 19);
@@ -222,7 +222,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(52, 74);
+            this.label14.Location = new System.Drawing.Point(108, 79);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 19);
@@ -234,7 +234,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(25, 25);
+            this.label13.Location = new System.Drawing.Point(81, 30);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 33);
@@ -244,7 +244,7 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(41, 224);
+            this.panel7.Location = new System.Drawing.Point(97, 229);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(274, 1);
             this.panel7.TabIndex = 78;
@@ -253,7 +253,7 @@
             // 
             this.lblDetailsCheckOutDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetailsCheckOutDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDetailsCheckOutDate.Location = new System.Drawing.Point(169, 175);
+            this.lblDetailsCheckOutDate.Location = new System.Drawing.Point(225, 180);
             this.lblDetailsCheckOutDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDetailsCheckOutDate.Name = "lblDetailsCheckOutDate";
             this.lblDetailsCheckOutDate.Size = new System.Drawing.Size(126, 19);
@@ -266,7 +266,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(52, 175);
+            this.label16.Location = new System.Drawing.Point(108, 180);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(117, 19);
@@ -277,7 +277,7 @@
             // 
             this.lblDetailsCheckInDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetailsCheckInDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDetailsCheckInDate.Location = new System.Drawing.Point(158, 135);
+            this.lblDetailsCheckInDate.Location = new System.Drawing.Point(214, 140);
             this.lblDetailsCheckInDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDetailsCheckInDate.Name = "lblDetailsCheckInDate";
             this.lblDetailsCheckInDate.Size = new System.Drawing.Size(137, 19);
@@ -290,7 +290,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(52, 135);
+            this.label17.Location = new System.Drawing.Point(108, 140);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(106, 19);
@@ -300,7 +300,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(41, 112);
+            this.panel6.Location = new System.Drawing.Point(97, 117);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(274, 1);
             this.panel6.TabIndex = 73;
@@ -311,7 +311,7 @@
             this.btnCTAReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCTAReceipt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCTAReceipt.ForeColor = System.Drawing.Color.White;
-            this.btnCTAReceipt.Location = new System.Drawing.Point(149, 342);
+            this.btnCTAReceipt.Location = new System.Drawing.Point(94, 345);
             this.btnCTAReceipt.Name = "btnCTAReceipt";
             this.btnCTAReceipt.Size = new System.Drawing.Size(240, 51);
             this.btnCTAReceipt.TabIndex = 49;
@@ -325,7 +325,7 @@
             this.btnBackBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackBooking.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackBooking.ForeColor = System.Drawing.Color.White;
-            this.btnBackBooking.Location = new System.Drawing.Point(149, 399);
+            this.btnBackBooking.Location = new System.Drawing.Point(94, 402);
             this.btnBackBooking.Name = "btnBackBooking";
             this.btnBackBooking.Size = new System.Drawing.Size(240, 35);
             this.btnBackBooking.TabIndex = 50;
