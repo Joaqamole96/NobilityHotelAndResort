@@ -1,9 +1,7 @@
 ﻿using HotelAndResort;
 using HotelAndResort.Models.Data;
-using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Windows.Forms;
 
 public class Reservation
 {
@@ -12,7 +10,6 @@ public class Reservation
         public string UserName { get; set; }
     public DateTime CheckInDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
     public DateTime CheckOutDateTime { get; set; } // Booking.cs | InsertAvailableRoom()
-    public int NightCount { get; set; }
     public decimal ReservationPrice { get; set; }
     public string ReservationStatus { get; set; } // Booking.cs | InsertAvailableRoom()
 
@@ -53,16 +50,7 @@ public class Reservation
         try
         {
             // Construct the SQL INSERT query
-            string query = $@"
-                INSERT INTO Reservation (user_id, check_in_datetime, check_out_datetime, night_count, reservation_price, reservation_status) 
-                VALUES (
-                    {Global.UserId}, 
-                    '{CheckInDateTime}', 
-                    '{CheckOutDateTime}', 
-                    {NightCount}, 
-                    {ReservationPrice}, 
-                    '{ReservationStatus}'
-                );";
+            string query = $"INSERT INTO Reservation (user_id, check_in_datetime, check_out_datetime, reservation_price, reservation_status) VALUES ({Global.UserId}, '{CheckInDateTime:yyyy-MM-dd HH:mm:ss}', '{CheckOutDateTime:yyyy-MM-dd HH:mm:ss}', {ReservationPrice}, '{ReservationStatus}');";
 
             // Execute the insert query using DatabaseHelper.Execute
             DatabaseHelper.Execute(query);

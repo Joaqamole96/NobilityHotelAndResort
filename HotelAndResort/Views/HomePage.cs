@@ -26,7 +26,19 @@ namespace HotelAndResort.Views
 
         private void frmHomePage_Load(object sender, System.EventArgs e)
         {
-            if (Global.IsLoggedIn)
+            if (Global.IsLoggedIn == true)
+            {
+                btnNavLogin.Text = "Welcome, " + Global.UserName;
+            }
+            else
+            {
+                btnNavLogin.Text = "Login";
+            }
+        }
+
+        private void frmHomePage_Show(object sender, System.EventArgs e)
+        {
+            if (Global.IsLoggedIn == true)
             {
                 btnNavLogin.Text = "Welcome, " + Global.UserName;
             }
@@ -71,7 +83,7 @@ namespace HotelAndResort.Views
         {
             if (Global.IsLoggedIn)
             {
-                // Reservations.cs
+
             }
             else
             {

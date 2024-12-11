@@ -64,7 +64,6 @@ CREATE TABLE Reservation (
     user_id INT,
     check_in_datetime DATETIME NOT NULL,
     check_out_datetime DATETIME NOT NULL,
-    night_count INT NOT NULL,
     reservation_price DECIMAL(10, 2) NOT NULL,
     reservation_status ENUM("draft", "pending", "cancelled", "approved", "checked_in", "checked_out") NOT NULL DEFAULT "draft",
 

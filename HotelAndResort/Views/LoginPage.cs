@@ -19,7 +19,7 @@ namespace HotelAndResort.Views
             {
                 if (string.IsNullOrEmpty(input))
                 {
-                    MessageBox.Show($"Error: one or more fields is empty. {input}", type, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: one or more fields is empty. {input} is empty", type, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -51,14 +51,14 @@ namespace HotelAndResort.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbxLoginUsername.Text;
-            string password = tbxLoginPassword.Text;
+            string login_username = tbxLoginUsername.Text;
+            string login_password = tbxLoginPassword.Text;
 
-            if (ValidateInput("Login", username, password))
+            if (ValidateInput("Login", login_username, login_password))
             {
                 try
                 {
-                    string query = $"SELECT * FROM `users` WHERE `user_name` = '{username}' AND `password` = '{password}'";
+                    string query = $"SELECT * FROM `users` WHERE `user_name` = '{login_username}' AND `password` = '{login_password}'";
                     DataTable results = DatabaseHelper.Select(query);
 
                     if (results.Rows.Count > 0)
@@ -93,16 +93,17 @@ namespace HotelAndResort.Views
         {
             string firstname = tbxRegisFirstName.Text;
             string lastname = tbxRegisLastName.Text;
-            string username = tbxRegisUsername.Text;
+            string regis_username = tbxRegisUsername.Text;
             string email = tbxRegisEmail.Text;
             string phonenumber = tbxRegisPhone.Text;
-            string password = tbxLoginPassword.Text;
+            string regis_password = tbxRegisPassword.Text;
 
-            if (ValidateInput("Registration", firstname, lastname, username, email, phonenumber, password))
+            if (ValidateInput("Registration", firstname, lastname, regis_username, email, phonenumber, regis_password))
             {
                 try
                 {
-                    string query = $"INSERT (`user_name`, `password`, `email`, `phone_number`, `role`) INTO `users` VALUES ({username}, {password}, {email}, {phonenumber}, 'guest')";
+                    string query = $"INSERT INTO `Users` (user_name, first_name, last_name, email, phone_number, password, role) VALUES ('{regis_username}', '{firstname}', '{lastname}', '{email}', '{phonenumber}', '{regis_password}', 'guest')";
+
                     DatabaseHelper.Execute(query);
 
                     MessageBox.Show("Registration successful. Please login again.", "Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
