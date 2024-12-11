@@ -65,6 +65,7 @@ namespace HotelAndResort.Views
                     {
                         DataRow row = results.Rows[0];
 
+                        Global.IsLoggedIn = true;
                         Global.UserId = (int)row["user_id"];
                         Global.UserName = (string)row["user_name"];
                         string role = (string)row["role"];
@@ -80,6 +81,10 @@ namespace HotelAndResort.Views
                         ClearAllFields();
 
                         MessageBox.Show("Login successful.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)

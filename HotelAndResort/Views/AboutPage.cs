@@ -42,7 +42,14 @@ namespace HotelAndResort.Views
 
         private void lblNavBooking_Click(object sender, EventArgs e)
         {
-            Global.OpenForm(this, Global.frmBookingPage);
+            if (Global.IsLoggedIn == true)
+            {
+                Global.OpenForm(this, Global.frmBookingPage);
+            }
+            else
+            {
+                Global.OpenForm(this, Global.frmLoginPage);
+            }
         }
 
         private void lblNavAbout_Click(object sender, EventArgs e)

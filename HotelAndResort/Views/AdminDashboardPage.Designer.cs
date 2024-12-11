@@ -100,6 +100,7 @@
             // 
             // btnNavLogin
             // 
+            this.btnNavLogin.AutoSize = true;
             this.btnNavLogin.BackColor = System.Drawing.Color.Black;
             this.btnNavLogin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavLogin.ForeColor = System.Drawing.Color.White;
