@@ -35,9 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlReservationDetails = new System.Windows.Forms.Panel();
-            this.btnCTAReceipt = new System.Windows.Forms.Button();
-            this.btnBackBooking = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flpReservedItems = new System.Windows.Forms.FlowLayoutPanel();
             this.flpReservedRooms = new System.Windows.Forms.FlowLayoutPanel();
             this.lblReservedRooms = new System.Windows.Forms.Label();
@@ -52,6 +49,8 @@
             this.lblDetailsCheckInDate = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCTAReceipt = new System.Windows.Forms.Button();
+            this.btnBackBooking = new System.Windows.Forms.Button();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.pnlReservationDetails.SuspendLayout();
@@ -122,12 +121,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(17, 186);
+            this.label3.Location = new System.Drawing.Point(142, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 57);
+            this.label3.Size = new System.Drawing.Size(253, 117);
             this.label3.TabIndex = 16;
             this.label3.Text = "Please confirm all\r\nof the reservation\r\ndetails.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,42 +149,6 @@
             this.pnlReservationDetails.Name = "pnlReservationDetails";
             this.pnlReservationDetails.Size = new System.Drawing.Size(380, 407);
             this.pnlReservationDetails.TabIndex = 17;
-            // 
-            // btnCTAReceipt
-            // 
-            this.btnCTAReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
-            this.btnCTAReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCTAReceipt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTAReceipt.ForeColor = System.Drawing.Color.White;
-            this.btnCTAReceipt.Location = new System.Drawing.Point(12, 299);
-            this.btnCTAReceipt.Name = "btnCTAReceipt";
-            this.btnCTAReceipt.Size = new System.Drawing.Size(140, 51);
-            this.btnCTAReceipt.TabIndex = 49;
-            this.btnCTAReceipt.Text = "I confirm all details are correct.";
-            this.btnCTAReceipt.UseVisualStyleBackColor = false;
-            this.btnCTAReceipt.Click += new System.EventHandler(this.btnCTAReceipt_Click);
-            // 
-            // btnBackBooking
-            // 
-            this.btnBackBooking.BackColor = System.Drawing.Color.DarkRed;
-            this.btnBackBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackBooking.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackBooking.ForeColor = System.Drawing.Color.White;
-            this.btnBackBooking.Location = new System.Drawing.Point(12, 356);
-            this.btnBackBooking.Name = "btnBackBooking";
-            this.btnBackBooking.Size = new System.Drawing.Size(140, 35);
-            this.btnBackBooking.TabIndex = 50;
-            this.btnBackBooking.Text = "Return to editing";
-            this.btnBackBooking.UseVisualStyleBackColor = false;
-            this.btnBackBooking.Click += new System.EventHandler(this.btnBackBooking_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(166, 82);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(380, 407);
-            this.panel1.TabIndex = 51;
             // 
             // flpReservedItems
             // 
@@ -342,13 +305,40 @@
             this.panel6.Size = new System.Drawing.Size(274, 1);
             this.panel6.TabIndex = 73;
             // 
+            // btnCTAReceipt
+            // 
+            this.btnCTAReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(0)))));
+            this.btnCTAReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCTAReceipt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCTAReceipt.ForeColor = System.Drawing.Color.White;
+            this.btnCTAReceipt.Location = new System.Drawing.Point(149, 342);
+            this.btnCTAReceipt.Name = "btnCTAReceipt";
+            this.btnCTAReceipt.Size = new System.Drawing.Size(240, 51);
+            this.btnCTAReceipt.TabIndex = 49;
+            this.btnCTAReceipt.Text = "I confirm all details are correct.";
+            this.btnCTAReceipt.UseVisualStyleBackColor = false;
+            this.btnCTAReceipt.Click += new System.EventHandler(this.btnCTAReceipt_Click);
+            // 
+            // btnBackBooking
+            // 
+            this.btnBackBooking.BackColor = System.Drawing.Color.DarkRed;
+            this.btnBackBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackBooking.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackBooking.ForeColor = System.Drawing.Color.White;
+            this.btnBackBooking.Location = new System.Drawing.Point(149, 399);
+            this.btnBackBooking.Name = "btnBackBooking";
+            this.btnBackBooking.Size = new System.Drawing.Size(240, 35);
+            this.btnBackBooking.TabIndex = 50;
+            this.btnBackBooking.Text = "Return to editing";
+            this.btnBackBooking.UseVisualStyleBackColor = false;
+            this.btnBackBooking.Click += new System.EventHandler(this.btnBackBooking_Click);
+            // 
             // frmConfirmationModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 501);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBackBooking);
             this.Controls.Add(this.btnCTAReceipt);
             this.Controls.Add(this.pnlReservationDetails);
@@ -385,7 +375,6 @@
         private System.Windows.Forms.Panel pnlReservationDetails;
         private System.Windows.Forms.Button btnCTAReceipt;
         private System.Windows.Forms.Button btnBackBooking;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flpReservedItems;
         private System.Windows.Forms.FlowLayoutPanel flpReservedRooms;
         private System.Windows.Forms.Label lblReservedRooms;

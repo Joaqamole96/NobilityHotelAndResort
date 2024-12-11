@@ -21,7 +21,7 @@ namespace HotelAndResort.Views
             btnCTAAmenities.FlatStyle = FlatStyle.Flat;
             btnCTAAmenities.FlatAppearance.BorderSize = 0;
 
-            DatabaseHelper.Initialize();
+            // DatabaseHelper.Initialize();
         }
 
         private void frmHomePage_Load(object sender, System.EventArgs e)

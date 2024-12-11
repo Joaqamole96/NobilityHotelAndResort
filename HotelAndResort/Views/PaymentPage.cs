@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelAndResort.Models.Data;
+using HotelAndResort.Models.UserControls;
 
 namespace HotelAndResort.Views
 {
@@ -35,7 +36,19 @@ namespace HotelAndResort.Views
 
         private void frmPaymentPage_Load(object sender, EventArgs e)
         {
+            lblDetailsReservationPrice.Text = frmBookingPage.reservation.ReservationPrice.ToString();
+            lblDetailsCheckInDate.Text = frmBookingPage.reservation.CheckInDateTime.ToString();
+            lblDetailsCheckOutDate.Text = frmBookingPage.reservation.CheckOutDateTime.ToString();
 
+            foreach (ReservedRoom reservedRoom in frmBookingPage.reservationItem.reservedRoomList)
+            {
+                flpReservedRooms.Controls.Add(new ReservedRoomItem(reservedRoom, true));
+            }
+
+            foreach (ReservedAmenity reservedAmenity in frmBookingPage.reservationItem.reservedAmenityList)
+            {
+                flpReservedAmenities.Controls.Add(new ReservedAmenityItem(reservedAmenity, true));
+            }
         }
 
         private void lblBackBooking_Click(object sender, EventArgs e)
